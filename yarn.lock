@@ -5,24 +5,6 @@ __metadata:
   version: 7
   cacheKey: 9
 
-"@aurora-balancer-labs/v2-helpers@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "@aurora-balancer-labs/v2-helpers@npm:1.4.0"
-  dependencies:
-    "@nomiclabs/hardhat-ethers": "npm:^2.0.1"
-    "@types/lodash": "npm:^4.14.161"
-    "@types/node": "npm:^14.6.0"
-    decimal.js: "npm:^10.2.1"
-    ethers: "npm:^5.4.1"
-    hardhat: "npm:^2.8.3"
-    lodash.frompairs: "npm:^4.0.1"
-    prettier: "npm:^2.1.2"
-    ts-node: "npm:^8.10.2"
-    typescript: "npm:^4.0.2"
-  checksum: 78defb90b6cf96892b19a9e8185378f175b46db9199ecfc70a04c71143eccebe1957e89b493ee39680928ba558800c8bd1a96062ea2a9fa760758abb0cf3b89d
-  languageName: node
-  linkType: hard
-
 "@babel/code-frame@npm:^7.0.0":
   version: 7.21.4
   resolution: "@babel/code-frame@npm:7.21.4"
@@ -93,10 +75,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@balancer-labs/v2-deployments@workspace:."
   dependencies:
-    "@aurora-balancer-labs/v2-helpers": "npm:^1.4.0"
     "@balancer-labs/sdk": "npm:^1.0.5"
     "@balancer-labs/v2-interfaces": "npm:latest"
     "@balancer-labs/v2-solidity-utils": "npm:^3.0.2"
+    "@ethersproject/address": "npm:^5.7.0"
     "@ethersproject/contracts": "npm:^5.0.0"
     "@nomicfoundation/hardhat-network-helpers": "npm:^1.0.6"
     "@nomiclabs/hardhat-ethers": "npm:^2.2.1"
@@ -1168,7 +1150,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nomiclabs/hardhat-ethers@npm:^2.0.1, @nomiclabs/hardhat-ethers@npm:^2.2.1":
+"@nomiclabs/hardhat-ethers@npm:^2.2.1":
   version: 2.2.3
   resolution: "@nomiclabs/hardhat-ethers@npm:2.2.3"
   peerDependencies:
@@ -1580,13 +1562,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.161":
-  version: 4.14.195
-  resolution: "@types/lodash@npm:4.14.195"
-  checksum: a503fc2cef87abc17ec6f388009a787e609b799b8fcb69c47f9b91d5a47e564b5c00fd121f691acf2b2bb43b788e28ca22781de1ac561b2c35bea380c6446f79
-  languageName: node
-  linkType: hard
-
 "@types/lru-cache@npm:^5.1.0":
   version: 5.1.1
   resolution: "@types/lru-cache@npm:5.1.1"
@@ -1638,13 +1613,6 @@ __metadata:
   version: 14.18.46
   resolution: "@types/node@npm:14.18.46"
   checksum: 737160b8df4aafe3d1bdab4d5425e01d48fc67dfa296fffa3a7b17d359dea198bbb1652e7cfbb277a0646d59fd9955e3a11119c2e828ef7e44e8bb28134e1de2
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^14.6.0":
-  version: 14.18.53
-  resolution: "@types/node@npm:14.18.53"
-  checksum: 0fd6807175097b8f6d774932907fc56a242dee321a1ed8242ec632e9af016dde2dd44a34540d6a56265bd44c643143e4cb6f974510a728beb44104541db4a366
   languageName: node
   linkType: hard
 
@@ -4242,7 +4210,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decimal.js@npm:^10.2.1, decimal.js@npm:^10.4.3":
+"decimal.js@npm:^10.4.3":
   version: 10.4.3
   resolution: "decimal.js@npm:10.4.3"
   checksum: 0fbf4c97adc9826a2f1cf2ae8be8cc00cca3f2b61643ee19f0dd8ee55f11385ed0111d77c8cd234e151c80da1454b20c8e61f0354e3b90b5bec3a72379359049
@@ -5425,7 +5393,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ethers@npm:^5.0.1, ethers@npm:^5.0.2, ethers@npm:^5.4.1, ethers@npm:^5.5.2, ethers@npm:^5.7.1, ethers@npm:^5.7.2":
+"ethers@npm:^5.0.1, ethers@npm:^5.0.2, ethers@npm:^5.5.2, ethers@npm:^5.7.1, ethers@npm:^5.7.2":
   version: 5.7.2
   resolution: "ethers@npm:5.7.2"
   dependencies:
@@ -6520,73 +6488,6 @@ __metadata:
   bin:
     hardhat: internal/cli/bootstrap.js
   checksum: 94bff2a87a397b4bfd1b021362f4d439fe8ba867df3ccee6768f66192de8b8d3e9f8f9328f5909004bd57c080ddc33b7592883226e03bdf9012152da98c33755
-  languageName: node
-  linkType: hard
-
-"hardhat@npm:^2.8.3":
-  version: 2.17.0
-  resolution: "hardhat@npm:2.17.0"
-  dependencies:
-    "@ethersproject/abi": "npm:^5.1.2"
-    "@metamask/eth-sig-util": "npm:^4.0.0"
-    "@nomicfoundation/ethereumjs-block": "npm:5.0.1"
-    "@nomicfoundation/ethereumjs-blockchain": "npm:7.0.1"
-    "@nomicfoundation/ethereumjs-common": "npm:4.0.1"
-    "@nomicfoundation/ethereumjs-evm": "npm:2.0.1"
-    "@nomicfoundation/ethereumjs-rlp": "npm:5.0.1"
-    "@nomicfoundation/ethereumjs-statemanager": "npm:2.0.1"
-    "@nomicfoundation/ethereumjs-trie": "npm:6.0.1"
-    "@nomicfoundation/ethereumjs-tx": "npm:5.0.1"
-    "@nomicfoundation/ethereumjs-util": "npm:9.0.1"
-    "@nomicfoundation/ethereumjs-vm": "npm:7.0.1"
-    "@nomicfoundation/solidity-analyzer": "npm:^0.1.0"
-    "@sentry/node": "npm:^5.18.1"
-    "@types/bn.js": "npm:^5.1.0"
-    "@types/lru-cache": "npm:^5.1.0"
-    abort-controller: "npm:^3.0.0"
-    adm-zip: "npm:^0.4.16"
-    aggregate-error: "npm:^3.0.0"
-    ansi-escapes: "npm:^4.3.0"
-    chalk: "npm:^2.4.2"
-    chokidar: "npm:^3.4.0"
-    ci-info: "npm:^2.0.0"
-    debug: "npm:^4.1.1"
-    enquirer: "npm:^2.3.0"
-    env-paths: "npm:^2.2.0"
-    ethereum-cryptography: "npm:^1.0.3"
-    ethereumjs-abi: "npm:^0.6.8"
-    find-up: "npm:^2.1.0"
-    fp-ts: "npm:1.19.3"
-    fs-extra: "npm:^7.0.1"
-    glob: "npm:7.2.0"
-    immutable: "npm:^4.0.0-rc.12"
-    io-ts: "npm:1.10.4"
-    keccak: "npm:^3.0.2"
-    lodash: "npm:^4.17.11"
-    mnemonist: "npm:^0.38.0"
-    mocha: "npm:^10.0.0"
-    p-map: "npm:^4.0.0"
-    raw-body: "npm:^2.4.1"
-    resolve: "npm:1.17.0"
-    semver: "npm:^6.3.0"
-    solc: "npm:0.7.3"
-    source-map-support: "npm:^0.5.13"
-    stacktrace-parser: "npm:^0.1.10"
-    tsort: "npm:0.0.1"
-    undici: "npm:^5.14.0"
-    uuid: "npm:^8.3.2"
-    ws: "npm:^7.4.6"
-  peerDependencies:
-    ts-node: "*"
-    typescript: "*"
-  peerDependenciesMeta:
-    ts-node:
-      optional: true
-    typescript:
-      optional: true
-  bin:
-    hardhat: internal/cli/bootstrap.js
-  checksum: 9cb23c305b17b3f9056be176bef04d718dca5adebdf20e37b7d9cf7598bf47d6f63cd407c6d0da4cc3b57cf80f0ec05fd35e772841d3760f5e8cee8093167675
   languageName: node
   linkType: hard
 
@@ -8094,13 +7995,6 @@ __metadata:
   version: 4.2.0
   resolution: "lodash.assign@npm:4.2.0"
   checksum: dfb341ad4b56382aa0def0767b009ef0a5f4f5213fd6a20a58734ca3cef2bd80d5c36c5c3d3f52a9a245b139834bfc9a8fd3611a40029bd98960dd376bfcac21
-  languageName: node
-  linkType: hard
-
-"lodash.frompairs@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "lodash.frompairs@npm:4.0.1"
-  checksum: 4f1fe0f3b568b9e97c2b9e88f060abcf5273ee8f35cddaab30f4854471ca83a58ff1a75393d4bb096c7f8762240c6338ef84207a5369633024e01aa16b8d2bbd
   languageName: node
   linkType: hard
 
@@ -11039,7 +10933,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-support@npm:^0.5.13, source-map-support@npm:^0.5.16, source-map-support@npm:^0.5.17":
+"source-map-support@npm:^0.5.13, source-map-support@npm:^0.5.16":
   version: 0.5.21
   resolution: "source-map-support@npm:0.5.21"
   dependencies:
@@ -11674,26 +11568,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:^8.10.2":
-  version: 8.10.2
-  resolution: "ts-node@npm:8.10.2"
-  dependencies:
-    arg: "npm:^4.1.0"
-    diff: "npm:^4.0.1"
-    make-error: "npm:^1.1.1"
-    source-map-support: "npm:^0.5.17"
-    yn: "npm:3.1.1"
-  peerDependencies:
-    typescript: ">=2.7"
-  bin:
-    ts-node: dist/bin.js
-    ts-node-script: dist/bin-script.js
-    ts-node-transpile-only: dist/bin-transpile.js
-    ts-script: dist/bin-script-deprecated.js
-  checksum: 92d6fa807921a0785c035ed5e57f759a3bbb44e8c4a3cb706f9111cebfbc61c5ffb5d00c3ad860a6f70460934ce171d619f51c232a9e3afc82217149b59f28f7
-  languageName: node
-  linkType: hard
-
 "tsconfig-paths@npm:^4.1.2":
   version: 4.2.0
   resolution: "tsconfig-paths@npm:4.2.0"
@@ -11865,7 +11739,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.0.2, typescript@npm:^4.3.2":
+"typescript@npm:^4.3.2":
   version: 4.9.5
   resolution: "typescript@npm:4.9.5"
   bin:
@@ -11875,7 +11749,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^4.0.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^4.3.2#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^4.3.2#optional!builtin<compat/typescript>":
   version: 4.9.5
   resolution: "typescript@patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"
   bin:
