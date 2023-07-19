@@ -4,6 +4,8 @@ import '@nomiclabs/hardhat-waffle';
 import 'hardhat-local-networks-config-plugin';
 import 'hardhat-ignore-warnings';
 import 'tsconfig-paths/register';
+import dotenv from 'dotenv';
+dotenv.config();
 
 import './src/helpers/setupTests';
 
@@ -300,6 +302,10 @@ task(
 
 task(TASK_TEST).addOptionalParam('id', 'Specific task ID of the fork test to run.').setAction(test);
 
+const DEPLOYER_PRIVATE_KEY =
+  process.env.DEPLOYER_PRIVATE_KEY || '0000000000000000000000000000000000000000000000000000000000000000';
+const INFURA_KEY = process.env.INFURA_KEY || '';
+
 export default {
   mocha: {
     timeout: 600000,
@@ -338,5 +344,29 @@ export default {
         },
       },
     ],
+  },
+  networks: {
+    opera: {
+      chainId: 250,
+      url: `https://rpc.ftm.tools/`,
+      accounts: [`0x${DEPLOYER_PRIVATE_KEY}`], // Using private key instead of mnemonic for vanity deploy
+      etherscan: {
+        apiKey: `${process.env.ETHERSCAN_API_KEY}`,
+      },
+    },
+    optimism: {
+      chainId: 10,
+      url: `https://opt-mainnet.g.alchemy.com/v2/XmTfwyK5Tar5RGmyxjyFFL9G2fm_6TuY`,
+      accounts: [`0x${DEPLOYER_PRIVATE_KEY}`], // Using private key instead of mnemonic for vanity deploy
+      saveDeployments: true,
+      // gasMultiplier: 10,
+    },
+    rinkeby: {
+      chainId: 4,
+      url: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
+      accounts: [`0x${DEPLOYER_PRIVATE_KEY}`], // Using private key instead of mnemonic for vanity deploy
+      saveDeployments: true,
+      gasMultiplier: 10,
+    },
   },
 };
