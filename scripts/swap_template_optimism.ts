@@ -1,11 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { ethers } from 'hardhat';
-import { BatchSwap, FundManagement, SingleSwap } from '@balancer-labs/balancer-js/src';
-import { MAX_UINT256 } from '@balancer-labs/v2-helpers/src/constants';
+import { BatchSwap, FundManagement, SingleSwap } from '@balancer-labs/sdk';
+import { MAX_UINT256 } from '../src/helpers/constants';
 import { BigNumber } from 'ethers';
 import VaultAbi from '../tasks/20210418-vault/artifact/Vault.json';
-import { fp } from '@balancer-labs/v2-helpers/src/numbers';
+import { fp } from '../src/helpers/numbers';
 import { getAddress } from '@ethersproject/address';
 import ERC20 from './abi/ERC20.json';
 import { parseUnits } from 'ethers/lib/utils';
@@ -34,8 +34,8 @@ const MAI = '0xdFA46478F9e5EA86d57387849598dbFB2e964b02';
 // const bbrfUSDC = '0xDc2007D9e9A33f50630F26069FAab69c25f7758C';
 // const id = '0xdc2007d9e9a33f50630f26069faab69c25f7758c0000000000000000000000d6';
 
-// const bbrfUSDT = getAddress('0xBEF1ccAaDA458a570C37B11A8872988bA1E4FDb9');
-// const id = '0xbef1ccaada458a570c37b11a8872988ba1e4fdb90000000000000000000000dd';
+const bbrfUSDT = getAddress('0xBEF1ccAaDA458a570C37B11A8872988bA1E4FDb9');
+const id = '0xbef1ccaada458a570c37b11a8872988ba1e4fdb90000000000000000000000dd';
 
 // const bbrfDAI = '0x8fE33d737484CA194dedF64AaFa8485327fC5372';
 // const id = '0x8fe33d737484ca194dedf64aafa8485327fc53720000000000000000000000d8';
@@ -49,10 +49,12 @@ const MAI = '0xdFA46478F9e5EA86d57387849598dbFB2e964b02';
 // const bbrfWBTC = '0xd32F78F5aE235269c6d2cABBD26A57fF9FD62967';
 // const id = '0xd32f78f5ae235269c6d2cabbd26a57ff9fd629670000000000000000000000db';
 
-const bbrfOP = '0x55b1F937B1335Be355C82e207FD437182c986Ba1';
-const id = '0x55b1f937b1335be355c82e207fd437182c986ba10000000000000000000000dc';
+// const bbrfOP = '0x55b1F937B1335Be355C82e207FD437182c986Ba1';
+// const id = '0x55b1f937b1335be355c82e207fd437182c986ba10000000000000000000000dc';
 
 const bbrfusd = '0x64cee2338369aa9b36fc756ea231eb9bc242926f';
+
+const sender = process.env.DEPLOYER_ADDRESS || ''; //deployer
 
 async function swap() {
   const vault = await ethers.getContractAt(VaultAbi.abi, '0xBA12222222228d8Ba445958a75a0704d566BF2C8');
@@ -68,23 +70,23 @@ async function swap() {
   //   userData: '0x', //the user data here is not relevant on the swap
   // };
 
-  const token = await ethers.getContractAt(ERC20, OP);
-  await token.approve('0xBA12222222228d8Ba445958a75a0704d566BF2C8', parseUnits('1', 18));
+  const token = await ethers.getContractAt(ERC20, USDC);
+  await token.approve('0xBA12222222228d8Ba445958a75a0704d566BF2C8', parseUnits('1', 6));
 
   const data: SingleSwap = {
     poolId: id,
     kind: 0, //0 means the amount is givenIn. 1 is for giventOut
-    assetIn: USDC,
-    assetOut: bbrfOP,
-    amount: parseUnits('1', 18),
+    assetIn: USDT,
+    assetOut: bbrfUSDT,
+    amount: parseUnits('1', 6),
     userData: '0x', //the user data here is not relevant on the swap
   };
 
   const funds: FundManagement = {
-    sender: '0x4fbe899d37fb7514adf2f41B0630E018Ec275a0C',
+    sender,
     fromInternalBalance: false,
     toInternalBalance: false,
-    recipient: '0x4fbe899d37fb7514adf2f41B0630E018Ec275a0C',
+    recipient: sender,
   };
 
   const transaction = await vault.swap(data, funds, '0', MAX_UINT256);
