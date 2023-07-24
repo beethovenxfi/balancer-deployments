@@ -9,19 +9,17 @@ import WeightedPoolV4Factory from '../tasks/20230320-weighted-pool-v4/artifact/W
 
 import { fp } from '../src/helpers/numbers';
 import { toNormalizedWeights } from '@balancer-labs/sdk';
-import { TOKENS } from './constants';
+import { POOL_OWNER_OP, TOKENS } from './constants';
 
 const WEIGHTED_POOL_V4_FACTORY_ADDRESS = '0x230a59f4d9adc147480f03b0d3fffecd56c3289a';
-
-const POOL_OWNER = '0xd9e2889AC8C6fFF8e94c7c1bEEAde1352dF1A513';
 
 async function create() {
   const factory = await ethers.getContractAt(WeightedPoolV4Factory.abi, WEIGHTED_POOL_V4_FACTORY_ADDRESS);
 
   const poolName = 'Triple Yield Symphony';
-  const poolSymbol = 'bb-rf-triyie';
+  const poolSymbol = 'bb-rf-triple';
   const swapFee = fp(0.004);
-  const random = '0xc4084939b87f183e144bbf3fdbcbbd0c356f0813344f298f8de1404f5e6d20e2'; // https://www.browserling.com/tools/random-hex
+  const random = '0x358f522748365a86506595b02b3bc918b16168b5a25c5b550e021018e484acee'; // https://www.browserling.com/tools/random-hex
 
   const tokens = [
     {
@@ -51,7 +49,7 @@ async function create() {
     toNormalizedWeights(sortedTokens.map((token) => token.weight)),
     sortedTokens.map((token) => token.rateProvider), // rate provider
     swapFee, //swap fee
-    POOL_OWNER,
+    POOL_OWNER_OP,
     random //random string
   );
 

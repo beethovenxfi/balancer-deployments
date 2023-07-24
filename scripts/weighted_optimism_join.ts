@@ -4,14 +4,13 @@ import { ethers } from 'hardhat';
 import { parseUnits } from 'ethers/lib/utils';
 import Vault from '../tasks/20210418-vault/artifact/Vault.json';
 import { initJoinPool } from './helpers';
-import { TOKENS } from './constants';
+import { TOKENS, VAULT_ADDRESS_OP } from './constants';
 
-const VAULT_ADDRESS = '0xBA12222222228d8Ba445958a75a0704d566BF2C8';
 
 async function join() {
-  const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS);
+  const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_OP);
 
-  const POOL_ID = '0x362715c164d606682c4ea7e479633e419d9345eb0001000000000000000000e7';
+  const POOL_ID = '0x8a2872fd28f42bd9f6559907235e83fbf4167f480001000000000000000000f2';
   const tokens = [
     { ...TOKENS['OPTIMISM'].BBRFUSDC, balance: parseUnits('0.1', TOKENS['OPTIMISM'].BBRFUSDC.decimals) },
     {
