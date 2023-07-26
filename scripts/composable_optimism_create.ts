@@ -16,14 +16,14 @@ async function create() {
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolName = 'Rock Steady';
-  const poolSymbol = 'bb-rf-usd';
-  const amp = 100;
+  const poolName = 'Overnight Steady Accord';
+  const poolSymbol = 'bpt-onsteady';
+  const amp = 500;
   const feeExemption = false;
-  const swapFee = fp(0.0001);
-  const random = '0xeb7dd91a898e11f84d4d980b2d129603642ff4867bc5aa804196456fa23a808a'; // https://www.browserling.com/tools/random-hex
+  const swapFee = fp(0.00005);
+  const random = '0x95ed8bf203e29ae6a3484e870494fc7dd901505aaf4cedffb81bcf01f4249170'; // https://www.browserling.com/tools/random-hex
 
-  const tokens = [TOKENS['OPTIMISM'].BBRFDAI, TOKENS['OPTIMISM'].BBRFUSDC, TOKENS['OPTIMISM'].BBRFUSDT];
+  const tokens = [TOKENS['OPTIMISM'].BBDAIPLUS, TOKENS['OPTIMISM'].BBUSDPLUS];
 
   // END ====== variables ====== END
 

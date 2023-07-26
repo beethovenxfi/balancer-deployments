@@ -79,5 +79,17 @@ export const TOKENS = {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
+    BBDAIPLUS: {
+      address: '0xb5ad7d6d6F92a77F47f98C28C84893FBccc94809',
+      decimals: 18,
+      rateProvider: '0xb5ad7d6d6F92a77F47f98C28C84893FBccc94809',
+      cache: 30,
+    },
+    BBUSDPLUS: {
+      address: '0x88D07558470484c03d3bb44c3ECc36CAfCF43253',
+      decimals: 18,
+      rateProvider: '0x88D07558470484c03d3bb44c3ECc36CAfCF43253',
+      cache: 30,
+    },
   },
 };
