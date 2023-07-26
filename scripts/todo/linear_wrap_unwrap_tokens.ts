@@ -64,10 +64,13 @@ const linearPoolId = bbrfWFtmPoolId;
 const linearPoolAddress = bbrfWFTM;
 const mainTokenAddress = WFTM;
 
-const direction: 'wrap' | 'unwrap' = 'unwrap';
+const direction: 'wrap' | 'unwrap' = 'wrap';
+
+const VAULT_ADDRESS_OP = '0xBA12222222228d8Ba445958a75a0704d566BF2C8';
+const VAULT_ADDRESS_FTM = '0x20dd72Ed959b6147912C2e529F0a0C651c33c9ce';
 
 async function loop() {
-  const balancerVault = await ethers.getContractAt(VaultAbi.abi, '0x20dd72Ed959b6147912C2e529F0a0C651c33c9ce');
+  const balancerVault = await ethers.getContractAt(VaultAbi.abi, VAULT_ADDRESS_OP);
 
   const remoteVault = await ethers.getContractAt(remoteVaultAbi, vaultTokenAddress);
   const mainToken = await ethers.getContractAt(IERC20Abi, mainTokenAddress);
@@ -169,11 +172,11 @@ async function wrap(
     return;
   }
 
-  // const approveTransaction = await mainToken.approve(remoteVault.address, mainTokenBalance);
-  // await approveTransaction.wait();
+  const approveTransaction = await mainToken.approve(remoteVault.address, mainTokenBalance);
+  await approveTransaction.wait();
 
-  // const depositTransaction = await remoteVault.deposit(mainTokenBalance);
-  // await depositTransaction.wait();
+  const depositTransaction = await remoteVault.deposit(mainTokenBalance);
+  await depositTransaction.wait();
 
   console.log('wrap complete ' + i);
   const vaultTokenBalance = await remoteVault.balanceOf(sender);
