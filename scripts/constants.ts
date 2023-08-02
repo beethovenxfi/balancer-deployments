@@ -1,5 +1,10 @@
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 
+
+export const POOL_OWNER_FTM = '0xCd983793ADb846dcE4830c22F30C7Ef0C864a776';
+export const VAULT_ADDRESS_FTM = '0x20dd72Ed959b6147912C2e529F0a0C651c33c9ce';
+
+
 export const POOL_OWNER_OP = '0xd9e2889AC8C6fFF8e94c7c1bEEAde1352dF1A513';
 export const VAULT_ADDRESS_OP = '0xBA12222222228d8Ba445958a75a0704d566BF2C8';
 
@@ -11,6 +16,31 @@ export const TOKENS = {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
+    WPGUNK: {
+      address: '0x2b6850bf31874d96a21ed4dc7c6415b9640be2a4',
+      decimals: 9,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    FBOMB: {
+      address: '0x74ccbe53f77b08632ce0cb91d3a545bf6b8e0979',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    MCLB: {
+      address: '0x5deb27e51dbeef691ba1175a2e563870499c2acb',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    TAROT: {
+      address: '0xb7C2ddB1EBAc1056231ef22c1b0A13988537a274',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+
   },
   ['OPTIMISM']: {
     USDC: {
@@ -19,6 +49,7 @@ export const TOKENS = {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
+
     WETH: {
       address: '0x4200000000000000000000000000000000000006',
       decimals: 18,
