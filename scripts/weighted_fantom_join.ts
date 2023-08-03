@@ -6,20 +6,15 @@ import Vault from '../tasks/20210418-vault/artifact/Vault.json';
 import { initJoinPool } from './helpers';
 import { TOKENS, VAULT_ADDRESS_FTM } from './constants';
 
-
 async function join() {
   const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_FTM);
 
-  const POOL_ID = '0x5cf22419e61845b1a0695eded343559411f9c7f4000100000000000000000773';
+  const POOL_ID = '0x0970597d68dfb0833e3863b4e6e6bbb0d6e65723000200000000000000000774';
   const tokens = [
-    { ...TOKENS['FANTOM'].WFTM, balance: parseUnits('0.1', TOKENS['FANTOM'].WFTM.decimals) },
+    { ...TOKENS['FANTOM'].WFTM, balance: parseUnits('1', TOKENS['FANTOM'].WFTM.decimals) },
     {
-      ...TOKENS['FANTOM'].FBOMB,
-      balance: parseUnits('10', TOKENS['FANTOM'].FBOMB.decimals),
-    },
-    {
-      ...TOKENS['FANTOM'].MCLB,
-      balance: parseUnits('0.6', TOKENS['FANTOM'].MCLB.decimals),
+      ...TOKENS['FANTOM'].TAROT,
+      balance: parseUnits('10', TOKENS['FANTOM'].TAROT.decimals),
     },
   ];
 
