@@ -34,5 +34,13 @@
   "zkevm": {
     "chainId": 1101,
     "block-explorer": "https://zkevm.polygonscan.com"
+  },
+  "base": {
+    "chainId": 8453,
+    "block-explorer": "https://basescan.org"
+  },
+  "fantom": {
+    "chainId": 250,
+    "block-explorer": "https://ftmscan.com"
   }
 }

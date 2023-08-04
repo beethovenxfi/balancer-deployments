@@ -1131,7 +1131,7 @@
         "address": "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230529-avalanche-root-gauge-factory": {
     "contracts": [
@@ -1173,6 +1173,15 @@
       {
         "name": "ChainlinkRateProviderFactory",
         "address": "0x1311Fbc9F60359639174c1e7cC2032DbDb5Cc4d1"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20230731-stakeless-gauge-checkpointer": {
+    "contracts": [
+      {
+        "name": "StakelessGaugeCheckpointer",
+        "address": "0x0f08eEf2C785AA5e7539684aF04755dEC1347b7c"
       }
     ],
     "status": "ACTIVE"
