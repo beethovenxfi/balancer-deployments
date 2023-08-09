@@ -40,12 +40,6 @@ export const TOKENS = {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
-    ANKRFTM: {
-      address: '0xCfC785741Dc0e98ad4c9F6394Bb9d43Cd1eF5179',
-      decimals: 18,
-      rateProvider: '0x7D896Ac06cA45E6a2982E236f3bf6b4C8D7B5705',
-      cache: 30,
-    },
   },
   ['OPTIMISM']: {
     USDC: {
