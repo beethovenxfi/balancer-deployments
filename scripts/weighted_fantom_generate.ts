@@ -1,7 +1,7 @@
 import { Etherscan } from 'etherscan-ts';
 import Web3 from 'web3';
 import WeightedPoolFactory from '../tasks/20230320-weighted-pool-v4/artifact/WeightedPoolFactory.json';
-import WeightedPool from './abi/WeightedPool.json';
+import WeightedPool from '../tasks/20230320-weighted-pool-v4/artifact/WeightedPool.json';
 import InputDataDecoder from 'ethereum-input-data-decoder';
 import { AddressZero } from '@ethersproject/constants';
 import { VAULT_ADDRESS_FTM, PROTOCOL_FEE_PERCENTAGES_PROVIDER_FTM, WEIGHTED_POOL_V4_FACTORY_FTM } from './constants';
