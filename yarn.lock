@@ -112,7 +112,7 @@ __metadata:
     ethereum-waffle: "npm:^3.4.4"
     ethereumjs-util: "npm:^7.1.5"
     ethers: "npm:^5.7.2"
-    etherscan-ts: groninge01/etherscan-ts
+    etherscan-ts: "npm:^1.1.0"
     graphql: "npm:^16.6.0"
     graphql-request: "npm:^5.2.0"
     hardhat: "npm:^2.12.5"
@@ -5599,14 +5599,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-etherscan-ts@groninge01/etherscan-ts:
+"etherscan-ts@npm:^1.1.0":
   version: 1.1.0
-  resolution: "etherscan-ts@https://github.com/groninge01/etherscan-ts.git#commit=cd30dd25ff5c91ed08f67d1999183db668caa414"
+  resolution: "etherscan-ts@npm:1.1.0"
   dependencies:
     axios: "npm:^1.4.0"
     dotenv: "npm:^16.3.1"
     tslib: "npm:^2.6.1"
-  checksum: 8818788e1795c6e379e73df22d893b09ce96b7ecdbdc4d18e16a1399ccbf45d10ae4245dbada5229db4aee632f15350fd66171626b16d45200a4bec67d3fbb40
+  checksum: d28d69508c8e6d176721e30aca7d764a7351d0b342ee9340545312f9b61a550eade3302ef8e3ae4477994c7682b656f11ffa8946aced78a8ac0e3030aa74fa36
   languageName: node
   linkType: hard
 

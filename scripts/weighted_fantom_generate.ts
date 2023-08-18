@@ -22,7 +22,7 @@ interface DecodedPoolData {
 
 // BEGIN ====== variables ====== BEGIN
 
-const WEIGHTED_POOL_ADDRESS = '0x7761Ddb82e5B81ad56FFB7B99F6fFf59514EA2c3';
+const WEIGHTED_POOL_ADDRESS = '0xcafa903a95d40a3c1867908515ae4f211af8115b';
 const NETWORK = 'fantom';
 
 // manually added for now
@@ -32,7 +32,7 @@ const VERSION = `{"name":"${NAME}","version":${ID.slice(-1)},"deployment":"${ID}
 
 // END ====== variables ====== END
 
-const etherscan = new Etherscan(process.env.ETHERSCAN_API_URL || '', process.env.ETHERSCAN_API_KEY || '');
+const etherscan = new Etherscan(process.env.ETHERSCAN_API_KEY || '', process.env.ETHERSCAN_API_URL || '');
 const decoder = new InputDataDecoder(WeightedPoolFactory.abi);
 const web3 = new Web3(process.env.RPC_URL);
 

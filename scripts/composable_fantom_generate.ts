@@ -37,7 +37,7 @@ const VERSION = `{"name":"${NAME}","version":${ID.slice(-1)},"deployment":"${ID}
 
 // END ====== variables ====== END
 
-const etherscan = new Etherscan(process.env.ETHERSCAN_API_URL || '', process.env.ETHERSCAN_API_KEY || '');
+const etherscan = new Etherscan(process.env.ETHERSCAN_API_KEY || '', process.env.ETHERSCAN_API_URL || '');
 const decoder = new InputDataDecoder(ComposableStablePoolFactory.abi);
 const web3 = new Web3(process.env.RPC_URL);
 

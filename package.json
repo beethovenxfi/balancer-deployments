@@ -69,7 +69,7 @@
     "ethereum-waffle": "^3.4.4",
     "ethereumjs-util": "^7.1.5",
     "ethers": "^5.7.2",
-    "etherscan-ts": "groninge01/etherscan-ts",
+    "etherscan-ts": "^1.1.0",
     "graphql": "^16.6.0",
     "graphql-request": "^5.2.0",
     "hardhat": "^2.12.5",
