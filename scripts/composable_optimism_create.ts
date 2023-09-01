@@ -4,26 +4,25 @@ import { ethers } from 'hardhat';
 
 import ComposableStablePoolV5Factory from '../tasks/20230711-composable-stable-pool-v5/artifact/ComposableStablePoolFactory.json';
 import { fp } from '../src/helpers/numbers';
-import { POOL_OWNER_OP, TOKENS } from './constants';
+import { COMPOSABLE_STABLE_POOL_V5_FACTORY_OP, POOL_OWNER_OP, TOKENS } from './constants';
 
-const COMPOSABLESTABLE_POOL_V5_FACTORY_ADDRESS = '0x043A2daD730d585C44FB79D2614F295D2d625412';
 
 async function create() {
   const factory = await ethers.getContractAt(
     ComposableStablePoolV5Factory.abi,
-    COMPOSABLESTABLE_POOL_V5_FACTORY_ADDRESS
+    COMPOSABLE_STABLE_POOL_V5_FACTORY_OP
   );
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolName = 'Overnight Steady Accord';
-  const poolSymbol = 'bpt-onsteady';
-  const amp = 500;
+  const poolName = 'Sonata for Two: DOLA & USDC';
+  const poolSymbol = 'bpt-dolausdc';
+  const amp = 200;
   const feeExemption = false;
-  const swapFee = fp(0.00005);
-  const random = '0x95ed8bf203e29ae6a3484e870494fc7dd901505aaf4cedffb81bcf01f4249170'; // https://www.browserling.com/tools/random-hex
+  const swapFee = fp(0.002);
+  const random = '0x3204c89905c57b192942dfb2afd8236150c85a68a88880bda05256b2300d8a30'; // https://www.browserling.com/tools/random-hex
 
-  const tokens = [TOKENS['OPTIMISM'].BBDAIPLUS, TOKENS['OPTIMISM'].BBUSDPLUS];
+  const tokens = [TOKENS['OPTIMISM'].USDC, TOKENS['OPTIMISM'].DOLA];
 
   // END ====== variables ====== END
 

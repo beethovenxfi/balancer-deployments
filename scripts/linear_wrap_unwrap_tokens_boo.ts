@@ -36,11 +36,19 @@ async function loop() {
   // 10 USDC
   const mainTokenBalanceUsed = '0';
 
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < 50; i++) {
     if (direction === 'unwrap') {
-      await unwrap(mainToken, balancerVault, i, remoteVault, linearPoolId, vaultToken, mainTokenBalanceUsed);
+      try {
+        await unwrap(mainToken, balancerVault, i, remoteVault, linearPoolId, vaultToken, mainTokenBalanceUsed);
+      } catch (e) {
+        console.log(`failed, keep trying`);
+      }
     } else if (direction === 'wrap') {
-      await wrap(mainToken, balancerVault, i, remoteVault, linearPoolId, vaultToken, mainTokenBalanceUsed);
+      try {
+        await wrap(mainToken, balancerVault, i, remoteVault, linearPoolId, vaultToken, mainTokenBalanceUsed);
+      } catch (e) {
+        console.log(`failed, keep trying`);
+      }
     }
   }
 }
@@ -66,35 +74,32 @@ async function unwrap(
   }
   console.log('main token balance', mainTokenBalance.toString());
 
-  if (mainTokenBalance.lte('0')) {
-    console.log('no maintoken');
-    return;
+  if (mainTokenBalance.gt('0')) {
+    console.log(`Approve swap`);
+    const approve = await mainToken.approve(vault, mainTokenBalance);
+    await approve.wait();
+
+    // swap for vault token
+    const data: SingleSwap = {
+      poolId: linearPoolId,
+      kind: 0,
+      assetIn: mainToken.address,
+      assetOut: vaultToken.address,
+      amount: mainTokenBalance,
+      userData: '0x', //the user data here is not relevant on the swap
+    };
+
+    const funds: FundManagement = {
+      sender,
+      fromInternalBalance: false,
+      toInternalBalance: false,
+      recipient: sender,
+    };
+
+    const swapTransaction = await balancerVault.swap(data, funds, BigNumber.from('0'), MAX_UINT256);
+    await swapTransaction.wait();
+    console.log('swap complete ' + i);
   }
-
-  console.log(`Approve swap`);
-  const approve = await mainToken.approve(vault, mainTokenBalance);
-  await approve.wait();
-
-  // swap for vault token
-  const data: SingleSwap = {
-    poolId: linearPoolId,
-    kind: 0,
-    assetIn: mainToken.address,
-    assetOut: vaultToken.address,
-    amount: mainTokenBalance,
-    userData: '0x', //the user data here is not relevant on the swap
-  };
-
-  const funds: FundManagement = {
-    sender,
-    fromInternalBalance: false,
-    toInternalBalance: false,
-    recipient: sender,
-  };
-
-  const swapTransaction = await balancerVault.swap(data, funds, BigNumber.from('0'), MAX_UINT256);
-  await swapTransaction.wait();
-  console.log('swap complete ' + i);
 
   // withdraw main asset
   const vaultTokenBalance = await remoteVault.balanceOf(sender);
