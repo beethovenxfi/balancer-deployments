@@ -11,14 +11,14 @@ async function create() {
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolName = 'Steady Mountain Rhythms';
-  const poolSymbol = 'bpt-steamounrhyt';
-  const amp = 500;
-  const yieldFeeExemption = true;
-  const swapFee = 0.04; // as true percentage 0.04 => 0.04%
-  const random = '0xb455f5822d28217659deec268b99d6067b268caf495be907ae536faa0540511d'; // https://www.browserling.com/tools/random-hex
+  const poolName = "Ankr's Galactic Harmony";
+  const poolSymbol = 'bpt-ankrgalaharm';
+  const amp = 100;
+  const yieldFeeExemption = false;
+  const swapFee = 0.2; // as true percentage 0.04 => 0.04%
+  const random = '0xe2562e1ccce9c43b697f6d275dcf53fec957ecd7799c9fe7b7d6821456a22dac'; // https://www.browserling.com/tools/random-hex
 
-  const tokens = [TOKENS['OPTIMISM'].DUSD, TOKENS['OPTIMISM'].CSP_NATIVE_STABLE_BEETS];
+  const tokens = [TOKENS['OPTIMISM'].RETH, TOKENS['OPTIMISM'].ANKRETH];
 
   // END ====== variables ====== END
 
