@@ -11,14 +11,14 @@ async function create() {
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolName = 'Native Stable Beets';
-  const poolSymbol = 'bpt-stablebeets';
-  const amp = 1000;
-  const feeExemption = false;
-  const swapFee = fp(0.001);
-  const random = '0xce7150605ee9404c3922c1d2ad3aa99b811a46a77df42cbb1d2c5143d3379289'; // https://www.browserling.com/tools/random-hex
+  const poolName = 'Steady Mountain Rhythms';
+  const poolSymbol = 'bpt-steamounrhyt';
+  const amp = 500;
+  const yieldFeeExemption = true;
+  const swapFee = 0.04; // as true percentage 0.04 => 0.04%
+  const random = '0xb455f5822d28217659deec268b99d6067b268caf495be907ae536faa0540511d'; // https://www.browserling.com/tools/random-hex
 
-  const tokens = [TOKENS['OPTIMISM'].USDCE, TOKENS['OPTIMISM'].USDC, TOKENS['OPTIMISM'].USDT, TOKENS['OPTIMISM'].DAI];
+  const tokens = [TOKENS['OPTIMISM'].DUSD, TOKENS['OPTIMISM'].CSP_NATIVE_STABLE_BEETS];
 
   // END ====== variables ====== END
 
@@ -35,10 +35,10 @@ async function create() {
     amp, //amp
     sortedTokens.map((token) => token.rateProvider), // rate provider
     sortedTokens.map((token) => token.cache), // cache
-    feeExemption, //fee exemption
-    swapFee, //swap fee
+    yieldFeeExemption, // yield fee exemption
+    fp(swapFee / 100), // swap fee
     POOL_OWNER_OP,
-    random //random string
+    random // random string
   );
 
   const { poolAddress, blockHash } = await getPoolAddressAndBlockHashFromTransaction(tx);

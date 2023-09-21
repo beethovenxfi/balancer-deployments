@@ -16,25 +16,17 @@ async function join() {
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolId = '0x9DA11FF60BFC5AF527F58FD61679C3AC98D040D9000000000000000000000100';
-  const poolAddress = '0x9Da11Ff60bfc5aF527f58fd61679c3AC98d040d9';
+  const poolId = '0xC05AB1B0AD472CE802E2C8DB6F23E4A2865FDCA6000000000000000000000103';
+  const poolAddress = '0xc05ab1b0ad472ce802e2c8db6f23e4a2865fdca6';
 
   const tokens = [
     {
-      ...TOKENS['OPTIMISM'].USDCE,
-      balance: parseUnits('0.1', TOKENS['OPTIMISM'].USDCE.decimals),
+      ...TOKENS['OPTIMISM'].DUSD,
+      balance: parseUnits('0.1', TOKENS['OPTIMISM'].DUSD.decimals),
     },
     {
-      ...TOKENS['OPTIMISM'].USDC,
-      balance: parseUnits('0.1', TOKENS['OPTIMISM'].USDC.decimals),
-    },
-    {
-      ...TOKENS['OPTIMISM'].USDT,
-      balance: parseUnits('0.1', TOKENS['OPTIMISM'].USDT.decimals),
-    },
-    {
-      ...TOKENS['OPTIMISM'].DAI,
-      balance: parseUnits('0.1', TOKENS['OPTIMISM'].DAI.decimals),
+      ...TOKENS['OPTIMISM'].CSP_NATIVE_STABLE_BEETS,
+      balance: parseUnits('0.1', TOKENS['OPTIMISM'].CSP_NATIVE_STABLE_BEETS.decimals),
     },
     {
       address: poolAddress,

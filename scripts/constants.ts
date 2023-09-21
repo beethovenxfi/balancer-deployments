@@ -6,13 +6,9 @@ export const PROTOCOL_FEE_PERCENTAGES_PROVIDER_FTM = '0xe101551C4772F771FEDEBecc
 export const WEIGHTED_POOL_V4_FACTORY_FTM = '0xb841Df73861E65E6D61a80F503F095a91ce75e15';
 export const COMPOSABLE_STABLE_POOL_V5_FACTORY_FTM = '0x23F03a4fb344d8B98833d2ACe093cc305E03474f';
 
-
-
 export const POOL_OWNER_OP = '0xd9e2889AC8C6fFF8e94c7c1bEEAde1352dF1A513';
 export const VAULT_ADDRESS_OP = '0xBA12222222228d8Ba445958a75a0704d566BF2C8';
 export const COMPOSABLE_STABLE_POOL_V5_FACTORY_OP = '0x043A2daD730d585C44FB79D2614F295D2d625412';
-
-
 
 export const TOKENS: {
   [chain: string]: {
@@ -96,7 +92,7 @@ export const TOKENS: {
     RETH: {
       address: '0x9Bcef72be871e61ED4fBbc7630889beE758eb81D',
       decimals: 18,
-      rateProvider: ZERO_ADDRESS,
+      rateProvider: '0x658843BB859B7b85cEAb5cF77167e3F0a78dFE7f',
       cache: 30,
     },
     BBRFUSDC: {
@@ -157,6 +153,24 @@ export const TOKENS: {
       address: '0x88D07558470484c03d3bb44c3ECc36CAfCF43253',
       decimals: 18,
       rateProvider: '0x88D07558470484c03d3bb44c3ECc36CAfCF43253',
+      cache: 30,
+    },
+    DUSD: {
+      address: '0xb396b31599333739a97951b74652c117be86ee1d',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    ANKRETH: {
+      address: '0xe05a08226c49b636acf99c40da8dc6af83ce5bb3',
+      decimals: 18,
+      rateProvider: '0x97b323fc033323B66159402bcDb9D7B9DC604235',
+      cache: 30,
+    },
+    CSP_NATIVE_STABLE_BEETS: {
+      address: '0x9Da11Ff60bfc5aF527f58fd61679c3AC98d040d9',
+      decimals: 18,
+      rateProvider: '0x9Da11Ff60bfc5aF527f58fd61679c3AC98d040d9',
       cache: 30,
     },
   },
