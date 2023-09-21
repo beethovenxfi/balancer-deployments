@@ -1144,7 +1144,7 @@
         "address": "0xc57b4BE50BF6BBe5f6a4fE379DA342B32b37bF2f"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230613-balancer-pool-data-queries": {
     "contracts": [
@@ -1182,6 +1182,32 @@
       {
         "name": "StakelessGaugeCheckpointer",
         "address": "0x0f08eEf2C785AA5e7539684aF04755dEC1347b7c"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20230811-avalanche-root-gauge-factory-v2": {
+    "contracts": [
+      {
+        "name": "AvalancheRootGaugeFactory",
+        "address": "0x22625eEDd92c81a219A83e1dc48f88d54786B017"
+      },
+      {
+        "name": "AvalancheRootGauge",
+        "address": "0x3Eae4a1c2E36870A006E816930d9f55DF0a72a13"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20230911-base-root-gauge-factory": {
+    "contracts": [
+      {
+        "name": "BaseRootGaugeFactory",
+        "address": "0x8e3B64b3737097F283E965869e3503AA20F31E4D"
+      },
+      {
+        "name": "BaseRootGauge",
+        "address": "0x9a4d642b9876231BB9062559521A48097abFe6CB"
       }
     ],
     "status": "ACTIVE"
