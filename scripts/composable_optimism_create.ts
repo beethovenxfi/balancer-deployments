@@ -6,23 +6,19 @@ import ComposableStablePoolV5Factory from '../tasks/20230711-composable-stable-p
 import { fp } from '../src/helpers/numbers';
 import { COMPOSABLE_STABLE_POOL_V5_FACTORY_OP, POOL_OWNER_OP, TOKENS } from './constants';
 
-
 async function create() {
-  const factory = await ethers.getContractAt(
-    ComposableStablePoolV5Factory.abi,
-    COMPOSABLE_STABLE_POOL_V5_FACTORY_OP
-  );
+  const factory = await ethers.getContractAt(ComposableStablePoolV5Factory.abi, COMPOSABLE_STABLE_POOL_V5_FACTORY_OP);
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolName = 'Sonata for Two: DOLA & USDC';
-  const poolSymbol = 'bpt-dolausdc';
-  const amp = 200;
+  const poolName = 'Native Stable Beets';
+  const poolSymbol = 'bpt-stablebeets';
+  const amp = 1000;
   const feeExemption = false;
-  const swapFee = fp(0.002);
-  const random = '0x3204c89905c57b192942dfb2afd8236150c85a68a88880bda05256b2300d8a30'; // https://www.browserling.com/tools/random-hex
+  const swapFee = fp(0.001);
+  const random = '0xce7150605ee9404c3922c1d2ad3aa99b811a46a77df42cbb1d2c5143d3379289'; // https://www.browserling.com/tools/random-hex
 
-  const tokens = [TOKENS['OPTIMISM'].USDC, TOKENS['OPTIMISM'].DOLA];
+  const tokens = [TOKENS['OPTIMISM'].USDCE, TOKENS['OPTIMISM'].USDC, TOKENS['OPTIMISM'].USDT, TOKENS['OPTIMISM'].DAI];
 
   // END ====== variables ====== END
 

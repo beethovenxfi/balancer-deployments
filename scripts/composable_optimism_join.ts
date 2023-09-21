@@ -16,17 +16,25 @@ async function join() {
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolId = '0xacfe9b4782910a853b68abba60f3fd8049ffe6380000000000000000000000ff';
-  const poolAddress = '0xacfe9b4782910a853b68abba60f3fd8049ffe638';
+  const poolId = '0x9DA11FF60BFC5AF527F58FD61679C3AC98D040D9000000000000000000000100';
+  const poolAddress = '0x9Da11Ff60bfc5aF527f58fd61679c3AC98d040d9';
 
   const tokens = [
     {
-      ...TOKENS['OPTIMISM'].DOLA,
-      balance: parseUnits('0.1', TOKENS['OPTIMISM'].DOLA.decimals),
+      ...TOKENS['OPTIMISM'].USDCE,
+      balance: parseUnits('0.1', TOKENS['OPTIMISM'].USDCE.decimals),
     },
     {
       ...TOKENS['OPTIMISM'].USDC,
       balance: parseUnits('0.1', TOKENS['OPTIMISM'].USDC.decimals),
+    },
+    {
+      ...TOKENS['OPTIMISM'].USDT,
+      balance: parseUnits('0.1', TOKENS['OPTIMISM'].USDT.decimals),
+    },
+    {
+      ...TOKENS['OPTIMISM'].DAI,
+      balance: parseUnits('0.1', TOKENS['OPTIMISM'].DAI.decimals),
     },
     {
       address: poolAddress,

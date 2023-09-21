@@ -15,14 +15,14 @@ export const COMPOSABLE_STABLE_POOL_V5_FACTORY_OP = '0x043A2daD730d585C44FB79D26
 
 
 export const TOKENS: {
-  [chain: string]:{
-    [token: string] : {
+  [chain: string]: {
+    [token: string]: {
       address: string;
       decimals: number;
       rateProvider: string;
       cache: number;
-    }
-  }
+    };
+  };
 } = {
   ['FANTOM']: {
     WFTM: {
@@ -57,7 +57,7 @@ export const TOKENS: {
     },
   },
   ['OPTIMISM']: {
-    USDC: {
+    USDCE: {
       address: '0x7F5c764cBc14f9669B88837ca1490cCa17c31607',
       decimals: 6,
       rateProvider: ZERO_ADDRESS,
@@ -65,6 +65,24 @@ export const TOKENS: {
     },
     DOLA: {
       address: '0x8ae125e8653821e851f12a49f7765db9a9ce7384',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    USDC: {
+      address: '0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85',
+      decimals: 6,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    USDT: {
+      address: '0x94b008aa00579c1307b0ef2c499ad98a8ce58e58',
+      decimals: 6,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    DAI: {
+      address: '0xda10009cbd5d07dd0cecc66161fc93d7c9000da1',
       decimals: 18,
       rateProvider: ZERO_ADDRESS,
       cache: 30,
