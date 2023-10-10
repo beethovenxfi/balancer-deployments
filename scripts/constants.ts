@@ -173,5 +173,17 @@ export const TOKENS: {
       rateProvider: '0x9Da11Ff60bfc5aF527f58fd61679c3AC98d040d9',
       cache: 30,
     },
+    SFRXETH: {
+      address: '0x484c2D6e3cDd945a8B2DF735e079178C1036578c',
+      decimals: 18,
+      rateProvider: '0xf752dd899F87a91370C1C8ac1488Aef6be687505',
+      cache: 30,
+    },
+    WSTETH: {
+      address: '0x1f32b1c2345538c0c6f582fcb022739c4a194ebb',
+      decimals: 18,
+      rateProvider: '0x9aa3cd420f830E049e2b223D0b07D8c809C94d15',
+      cache: 30,
+    },
   },
 };
