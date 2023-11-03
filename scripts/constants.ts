@@ -185,5 +185,11 @@ export const TOKENS: {
       rateProvider: '0x9aa3cd420f830E049e2b223D0b07D8c809C94d15',
       cache: 30,
     },
+    LZBEETS: {
+      address: '0xb4Bc46bc6cB217B59ea8F4530BaE26Bf69F677f0',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
   },
 };

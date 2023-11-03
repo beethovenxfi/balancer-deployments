@@ -16,23 +16,19 @@ const WEIGHTED_POOL_V4_FACTORY_ADDRESS = '0x230a59f4d9adc147480f03b0d3fffecd56c3
 async function create() {
   const factory = await ethers.getContractAt(WeightedPoolV4Factory.abi, WEIGHTED_POOL_V4_FACTORY_ADDRESS);
 
-  const poolName = 'Triple Yield Symphony';
-  const poolSymbol = 'bb-rf-triple';
-  const swapFee = fp(0.004);
-  const random = '0x358f522748365a86506595b02b3bc918b16168b5a25c5b550e021018e484acee'; // https://www.browserling.com/tools/random-hex
+  const poolName = 'Roast Beets';
+  const poolSymbol = 'bpt-roabee';
+  const swapFee = 1.0; // as true percentage 0.04 => 0.04%
+  const random = '0xda085bdeef8eb8f8ebabeaddde47cb75744d385d4fb70401d09c06cb00066877'; // https://www.browserling.com/tools/random-hex
 
   const tokens = [
     {
-      ...TOKENS['OPTIMISM'].BBRFUSDC,
-      weight: fp(0.25),
+      ...TOKENS['OPTIMISM'].LZBEETS,
+      weight: fp(0.8),
     },
     {
-      ...TOKENS['OPTIMISM'].BBRFWSTETH,
-      weight: fp(0.5),
-    },
-    {
-      ...TOKENS['OPTIMISM'].BBRFWBTC,
-      weight: fp(0.25),
+      ...TOKENS['OPTIMISM'].RETH,
+      weight: fp(0.2),
     },
   ];
 
@@ -48,7 +44,7 @@ async function create() {
     sortedTokens.map((token) => token.address),
     toNormalizedWeights(sortedTokens.map((token) => token.weight)),
     sortedTokens.map((token) => token.rateProvider), // rate provider
-    swapFee, //swap fee
+    fp(swapFee / 100), // swap fee
     POOL_OWNER_OP,
     random //random string
   );

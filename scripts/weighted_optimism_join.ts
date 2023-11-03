@@ -6,18 +6,13 @@ import Vault from '../tasks/20210418-vault/artifact/Vault.json';
 import { initJoinPool } from './helpers';
 import { TOKENS, VAULT_ADDRESS_OP } from './constants';
 
-
 async function join() {
   const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_OP);
 
-  const POOL_ID = '0x8a2872fd28f42bd9f6559907235e83fbf4167f480001000000000000000000f2';
+  const POOL_ID = '0xc1f46ce83439886f0ea9c21512b36e7e67239d2c000200000000000000000108';
   const tokens = [
-    { ...TOKENS['OPTIMISM'].BBRFUSDC, balance: parseUnits('0.1', TOKENS['OPTIMISM'].BBRFUSDC.decimals) },
-    {
-      ...TOKENS['OPTIMISM'].BBRFWSTETH,
-      balance: parseUnits('0.00010582010582', TOKENS['OPTIMISM'].BBRFWSTETH.decimals),
-    },
-    { ...TOKENS['OPTIMISM'].BBRFWBTC, balance: parseUnits('0.00000335', TOKENS['OPTIMISM'].BBRFWBTC.decimals) },
+    { ...TOKENS['OPTIMISM'].RETH, balance: parseUnits('0.000013', TOKENS['OPTIMISM'].RETH.decimals) },
+    { ...TOKENS['OPTIMISM'].LZBEETS, balance: parseUnits('10', TOKENS['OPTIMISM'].LZBEETS.decimals) },
   ];
 
   const sortedTokens = tokens.sort((a, b) => ('' + a.address).localeCompare(b.address));
