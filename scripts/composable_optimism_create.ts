@@ -11,14 +11,14 @@ async function create() {
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolName = 'Ethereum Triplets';
-  const poolSymbol = 'bpt-ethtri';
-  const amp = 2000;
+  const poolName = 'Fraximalist Ethereum';
+  const poolSymbol = 'bpt-fraxethe';
+  const amp = 500;
   const yieldFeeExemption = false;
-  const swapFee = 0.1; // as true percentage 0.04 => 0.04%
-  const random = '0xdbc28b77271a1eb307dd426dc42139a5c886910ee10c8a35532068abdeceab0d'; // https://www.browserling.com/tools/random-hex
+  const swapFee = 0.04; // as true percentage 0.04 => 0.04%
+  const random = '0x0db3847b8422931bb2ded160730d31d7e601ecb1076ecc5774c34cf51676cb4f'; // https://www.browserling.com/tools/random-hex
 
-  const tokens = [TOKENS['OPTIMISM'].RETH, TOKENS['OPTIMISM'].SFRXETH, TOKENS['OPTIMISM'].WSTETH];
+  const tokens = [TOKENS['OPTIMISM'].SFRXETH, TOKENS['OPTIMISM'].FRXETH];
 
   // END ====== variables ====== END
 

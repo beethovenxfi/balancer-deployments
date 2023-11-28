@@ -125,12 +125,6 @@ export const TOKENS: {
       rateProvider: '0x9Da11Ff60bfc5aF527f58fd61679c3AC98d040d9',
       cache: 30,
     },
-    SFRXETH: {
-      address: '0x484c2D6e3cDd945a8B2DF735e079178C1036578c',
-      decimals: 18,
-      rateProvider: '0xf752dd899F87a91370C1C8ac1488Aef6be687505',
-      cache: 30,
-    },
     WSTETH: {
       address: '0x1f32b1c2345538c0c6f582fcb022739c4a194ebb',
       decimals: 18,
@@ -141,6 +135,24 @@ export const TOKENS: {
       address: '0xb4Bc46bc6cB217B59ea8F4530BaE26Bf69F677f0',
       decimals: 18,
       rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    FRAX: {
+      address: '0x2e3d870790dc77a83dd1d18184acc7439a53f475',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    FRXETH: {
+      address: '0x6806411765af15bddd26f8f544a34cc40cb9838b',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    SFRXETH: {
+      address: '0x484c2D6e3cDd945a8B2DF735e079178C1036578c',
+      decimals: 18,
+      rateProvider: '0xf752dd899F87a91370C1C8ac1488Aef6be687505',
       cache: 30,
     },
   },

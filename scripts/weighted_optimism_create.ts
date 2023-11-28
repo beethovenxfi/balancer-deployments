@@ -16,19 +16,19 @@ const WEIGHTED_POOL_V4_FACTORY_ADDRESS = '0x230a59f4d9adc147480f03b0d3fffecd56c3
 async function create() {
   const factory = await ethers.getContractAt(WeightedPoolV4Factory.abi, WEIGHTED_POOL_V4_FACTORY_ADDRESS);
 
-  const poolName = 'Roast Beets';
-  const poolSymbol = 'bpt-roabee';
-  const swapFee = 1.0; // as true percentage 0.04 => 0.04%
-  const random = '0xda085bdeef8eb8f8ebabeaddde47cb75744d385d4fb70401d09c06cb00066877'; // https://www.browserling.com/tools/random-hex
+  const poolName = 'All Roads Lead to Frax';
+  const poolSymbol = 'bpt-allrdsfrx';
+  const swapFee = 0.2; // as true percentage 0.04 => 0.04%
+  const random = '0x624e3faa7bb0a5404564d2dc982eeacd680f8d703ad67d03e80345807f1929bc'; // https://www.browserling.com/tools/random-hex
 
   const tokens = [
     {
-      ...TOKENS['OPTIMISM'].LZBEETS,
-      weight: fp(0.8),
+      ...TOKENS['OPTIMISM'].FRAX,
+      weight: fp(0.5),
     },
     {
-      ...TOKENS['OPTIMISM'].RETH,
-      weight: fp(0.2),
+      ...TOKENS['OPTIMISM'].SFRXETH,
+      weight: fp(0.5),
     },
   ];
 
