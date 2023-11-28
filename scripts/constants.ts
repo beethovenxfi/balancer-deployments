@@ -27,6 +27,12 @@ export const TOKENS: {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
+    BEETS: {
+      address: '0xf24bcf4d1e507740041c9cfd2dddb29585adce1e',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
     WPGUNK: {
       address: '0x2b6850bf31874d96a21ed4dc7c6415b9640be2a4',
       decimals: 9,
@@ -95,64 +101,10 @@ export const TOKENS: {
       rateProvider: '0x658843BB859B7b85cEAb5cF77167e3F0a78dFE7f',
       cache: 30,
     },
-    BBRFUSDC: {
-      address: '0xf970659221bb9d01b615321b63a26e857ffc030b',
-      decimals: 18,
-      rateProvider: '0xf970659221bb9d01b615321b63a26e857ffc030b',
-      cache: 30,
-    },
-    BBRFWSTETH: {
-      address: '0x48ace81c09382bfc08ed102e7eadd37e3b049752',
-      decimals: 18,
-      rateProvider: '0x48ace81c09382bfc08ed102e7eadd37e3b049752',
-      cache: 30,
-    },
-    BBRFWBTC: {
-      address: '0x8025586ac5fb265a23b9492e7414beccc2059ec3',
-      decimals: 18,
-      rateProvider: '0x8025586ac5fb265a23b9492e7414beccc2059ec3',
-      cache: 30,
-    },
-    BBRFUSDT: {
-      address: '0x20715545c15c76461861cb0d6ba96929766d05a5',
-      decimals: 18,
-      rateProvider: '0x20715545c15c76461861cb0d6ba96929766d05a5',
-      cache: 30,
-    },
-    BBRFOP: {
-      address: '0x3e9cbffd270ae67abb09d28988e7e785498c7373',
-      decimals: 18,
-      rateProvider: '0x3e9cbffd270ae67abb09d28988e7e785498c7373',
-      cache: 30,
-    },
-    BBRFWETH: {
-      address: '0x2e2b8b82123789d895fd79913f6dfa51f5b5a0e6',
-      decimals: 18,
-      rateProvider: '0x2e2b8b82123789d895fd79913f6dfa51f5b5a0e6',
-      cache: 30,
-    },
-    BBRFDAI: {
-      address: '0xa5d4802b4ce6b745b0c9e1b4a79c093d197869c8',
-      decimals: 18,
-      rateProvider: '0xa5d4802b4ce6b745b0c9e1b4a79c093d197869c8',
-      cache: 30,
-    },
     ERN: {
       address: '0xc5b001dc33727f8f26880b184090d3e252470d45',
       decimals: 18,
       rateProvider: ZERO_ADDRESS,
-      cache: 30,
-    },
-    BBDAIPLUS: {
-      address: '0xb5ad7d6d6F92a77F47f98C28C84893FBccc94809',
-      decimals: 18,
-      rateProvider: '0xb5ad7d6d6F92a77F47f98C28C84893FBccc94809',
-      cache: 30,
-    },
-    BBUSDPLUS: {
-      address: '0x88D07558470484c03d3bb44c3ECc36CAfCF43253',
-      decimals: 18,
-      rateProvider: '0x88D07558470484c03d3bb44c3ECc36CAfCF43253',
       cache: 30,
     },
     DUSD: {
