@@ -45,6 +45,12 @@ export const TOKENS: {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
+    LZFMULTI: {
+      address: '0xf386eb6780a1e875616b5751794f909095283860',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
     MCLB: {
       address: '0x5deb27e51dbeef691ba1175a2e563870499c2acb',
       decimals: 18,

@@ -9,12 +9,16 @@ import { TOKENS, VAULT_ADDRESS_FTM } from './constants';
 async function join() {
   const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_FTM);
 
-  const POOL_ID = '0x0970597d68dfb0833e3863b4e6e6bbb0d6e65723000200000000000000000774';
+  const POOL_ID = '0x4961ACD896399537CF8DFC277C376913E21042D00001000000000000000007BD';
   const tokens = [
-    { ...TOKENS['FANTOM'].WFTM, balance: parseUnits('1', TOKENS['FANTOM'].WFTM.decimals) },
+    { ...TOKENS['FANTOM'].WFTM, balance: parseUnits('0.05', TOKENS['FANTOM'].WFTM.decimals) },
     {
-      ...TOKENS['FANTOM'].TAROT,
-      balance: parseUnits('10', TOKENS['FANTOM'].TAROT.decimals),
+      ...TOKENS['FANTOM'].LZFMULTI,
+      balance: parseUnits('42.25', TOKENS['FANTOM'].LZFMULTI.decimals),
+    },
+    {
+      ...TOKENS['FANTOM'].FBOMB,
+      balance: parseUnits('8.4', TOKENS['FANTOM'].FBOMB.decimals),
     },
   ];
 

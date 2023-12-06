@@ -22,7 +22,7 @@ interface DecodedPoolData {
 
 // BEGIN ====== variables ====== BEGIN
 
-const WEIGHTED_POOL_ADDRESS = '0xcafa903a95d40a3c1867908515ae4f211af8115b';
+const WEIGHTED_POOL_ADDRESS = '0x4961ACD896399537Cf8DFc277c376913e21042d0';
 const NETWORK = 'fantom';
 
 // manually added for now
