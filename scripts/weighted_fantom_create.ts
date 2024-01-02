@@ -13,23 +13,27 @@ const WEIGHTED_POOL_V4_FACTORY_ADDRESS = '0xb841Df73861E65E6D61a80F503F095a91ce7
 async function create() {
   const factory = await ethers.getContractAt(WeightedPoolV4Factory.abi, WEIGHTED_POOL_V4_FACTORY_ADDRESS);
 
-  const poolName = 'The f(MULTIBOMB) Profanity';
-  const poolSymbol = 'bpt-thefmupro';
+  const poolName = '4 test';
+  const poolSymbol = 'bpt-4test';
   const swapFee = 2.5; // as true percentage 0.04 => 0.04%
-  const random = '0x905f3a1d0268a988835be800fccb6fade16338abcb0317994177b3c0a58f54e8'; // https://www.browserling.com/tools/random-hex
+  const random = '0xda79d5f534640a7104c7fc9ed1b12ac6bf3fe28f3061ebc39ddde7b1f18baca2'; // https://www.browserling.com/tools/random-hex
 
   const tokens = [
     {
-      ...TOKENS['FANTOM'].WFTM,
-      weight: fp(0.2),
+      ...TOKENS['FANTOM'].FSONIC,
+      weight: fp(0.25),
     },
     {
-      ...TOKENS['FANTOM'].LZFMULTI,
-      weight: fp(0.4),
+      ...TOKENS['FANTOM'].KIRBY,
+      weight: fp(0.25),
     },
     {
-      ...TOKENS['FANTOM'].FBOMB,
-      weight: fp(0.4),
+      ...TOKENS['FANTOM'].CEKKE,
+      weight: fp(0.25),
+    },
+    {
+      ...TOKENS['FANTOM'].SANIK,
+      weight: fp(0.25),
     },
   ];
 

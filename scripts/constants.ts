@@ -63,6 +63,30 @@ export const TOKENS: {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
+    FSONIC: {
+      address: '0x05e31a691405d06708A355C029599c12d5da8b28',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    KIRBY: {
+      address: '0x97bdAfe3830734acF12Da25359674277fcc33729',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    CEKKE: {
+      address: '0x3bc34d8Ace32D768a3F76e17AAEF2B1D8f261e1D',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    SANIK: {
+      address: '0x73E30eb2e469cc542d86397bECA97Ea6547e1cA7',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
   },
   ['OPTIMISM']: {
     USDCE: {
