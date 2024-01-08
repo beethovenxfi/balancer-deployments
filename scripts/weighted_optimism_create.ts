@@ -16,18 +16,18 @@ const WEIGHTED_POOL_V4_FACTORY_ADDRESS = '0x230a59f4d9adc147480f03b0d3fffecd56c3
 async function create() {
   const factory = await ethers.getContractAt(WeightedPoolV4Factory.abi, WEIGHTED_POOL_V4_FACTORY_ADDRESS);
 
-  const poolName = 'All Roads Lead to Frax';
-  const poolSymbol = 'bpt-allrdsfrx';
-  const swapFee = 0.2; // as true percentage 0.04 => 0.04%
-  const random = '0x624e3faa7bb0a5404564d2dc982eeacd680f8d703ad67d03e80345807f1929bc'; // https://www.browserling.com/tools/random-hex
+  const poolName = 'Yield Concerto by FRAX';
+  const poolSymbol = 'bpt-yieldconcerto';
+  const swapFee = 0.1; // as true percentage 0.04 => 0.04%
+  const random = '0xe76a2ee214490935556143e15df7fcfcad305777eb46ecf9d5d47c3f4cecbe2e'; // https://www.browserling.com/tools/random-hex
 
   const tokens = [
     {
-      ...TOKENS['OPTIMISM'].FRAX,
+      ...TOKENS['OPTIMISM'].SFRXETH,
       weight: fp(0.5),
     },
     {
-      ...TOKENS['OPTIMISM'].SFRXETH,
+      ...TOKENS['OPTIMISM'].SFRAX,
       weight: fp(0.5),
     },
   ];
