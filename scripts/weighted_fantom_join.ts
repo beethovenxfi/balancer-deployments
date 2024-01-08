@@ -9,13 +9,12 @@ import { TOKENS, VAULT_ADDRESS_FTM } from './constants';
 async function join() {
   const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_FTM);
 
-  const POOL_ID = '0x0970597d68dfb0833e3863b4e6e6bbb0d6e65723000200000000000000000774';
+  const POOL_ID = '0xBA8183F0C67E8A84BED641B9EC8F5A2BA2F5285F0001000000000000000007CB';
   const tokens = [
-    { ...TOKENS['FANTOM'].WFTM, balance: parseUnits('1', TOKENS['FANTOM'].WFTM.decimals) },
-    {
-      ...TOKENS['FANTOM'].TAROT,
-      balance: parseUnits('10', TOKENS['FANTOM'].TAROT.decimals),
-    },
+    { ...TOKENS['FANTOM'].FSONIC, balance: parseUnits('0.000108536564307784', TOKENS['FANTOM'].FSONIC.decimals) },
+    { ...TOKENS['FANTOM'].KIRBY, balance: parseUnits('28.19308376447694717', TOKENS['FANTOM'].KIRBY.decimals) },
+    { ...TOKENS['FANTOM'].CEKKE, balance: parseUnits('41284310.0785056015', TOKENS['FANTOM'].CEKKE.decimals) },
+    { ...TOKENS['FANTOM'].SANIK, balance: parseUnits('36331.2602886496726', TOKENS['FANTOM'].SANIK.decimals) },
   ];
 
   const sortedTokens = tokens.sort((a, b) => ('' + a.address).localeCompare(b.address));

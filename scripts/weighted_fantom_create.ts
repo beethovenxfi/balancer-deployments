@@ -13,19 +13,27 @@ const WEIGHTED_POOL_V4_FACTORY_ADDRESS = '0xb841Df73861E65E6D61a80F503F095a91ce7
 async function create() {
   const factory = await ethers.getContractAt(WeightedPoolV4Factory.abi, WEIGHTED_POOL_V4_FACTORY_ADDRESS);
 
-  const poolName = 'Tarot Presents: Friends on the Other Side';
-  const poolSymbol = 'bpt-tpfos';
-  const swapFee = fp(0.01);
-  const random = '0x0b685e70bb29ddde12db55d1d1d2fcc00e55305d8a5486d939f42d8470208902'; // https://www.browserling.com/tools/random-hex
+  const poolName = '4 test';
+  const poolSymbol = 'bpt-4test';
+  const swapFee = 2.5; // as true percentage 0.04 => 0.04%
+  const random = '0xda79d5f534640a7104c7fc9ed1b12ac6bf3fe28f3061ebc39ddde7b1f18baca2'; // https://www.browserling.com/tools/random-hex
 
   const tokens = [
     {
-      ...TOKENS['FANTOM'].TAROT,
-      weight: fp(0.8),
+      ...TOKENS['FANTOM'].FSONIC,
+      weight: fp(0.25),
     },
     {
-      ...TOKENS['FANTOM'].WFTM,
-      weight: fp(0.2),
+      ...TOKENS['FANTOM'].KIRBY,
+      weight: fp(0.25),
+    },
+    {
+      ...TOKENS['FANTOM'].CEKKE,
+      weight: fp(0.25),
+    },
+    {
+      ...TOKENS['FANTOM'].SANIK,
+      weight: fp(0.25),
     },
   ];
 
@@ -41,7 +49,7 @@ async function create() {
     sortedTokens.map((token) => token.address),
     toNormalizedWeights(sortedTokens.map((token) => token.weight)),
     sortedTokens.map((token) => token.rateProvider), // rate provider
-    swapFee, //swap fee
+    fp(swapFee / 100), // swap fee
     POOL_OWNER_FTM,
     random //random string
   );
