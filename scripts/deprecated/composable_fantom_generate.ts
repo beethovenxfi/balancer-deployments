@@ -1,10 +1,13 @@
 import { Etherscan } from 'etherscan-ts';
 import Web3 from 'web3';
-import WeightedPoolFactory from '../tasks/20230320-weighted-pool-v4/artifact/WeightedPoolFactory.json';
-import WeightedPool from '../tasks/20230320-weighted-pool-v4/artifact/WeightedPool.json';
+import ComposableStablePoolFactory from '../../tasks/20230711-composable-stable-pool-v5/artifact/ComposableStablePoolFactory.json';
+import ComposableStablePool from '../../tasks/20230711-composable-stable-pool-v5/artifact/ComposableStablePool.json';
 import InputDataDecoder from 'ethereum-input-data-decoder';
-import { AddressZero } from '@ethersproject/constants';
-import { VAULT_ADDRESS_FTM, PROTOCOL_FEE_PERCENTAGES_PROVIDER_FTM, WEIGHTED_POOL_V4_FACTORY_FTM } from './constants';
+import {
+  VAULT_ADDRESS_FTM,
+  PROTOCOL_FEE_PERCENTAGES_PROVIDER_FTM,
+  COMPOSABLE_STABLE_POOL_V5_FACTORY_FTM,
+} from '../constants';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -13,8 +16,10 @@ interface DecodedPoolData {
   name: string;
   symbol: string;
   tokens: string[];
-  normalizedWeights: any[];
+  amplificationParameter: any;
   rateProviders: string[];
+  tokenRateCacheDurations: any;
+  exemptFromYieldProtocolFeeFlag: boolean;
   swapFeePercentage: any;
   owner: string;
   salt: string;
@@ -22,26 +27,28 @@ interface DecodedPoolData {
 
 // BEGIN ====== variables ====== BEGIN
 
-const WEIGHTED_POOL_ADDRESS = '0x4961ACD896399537Cf8DFc277c376913e21042d0';
+const COMPOSABLE_STABLE_POOL_ADDRESS = '0x6a488fa7DE0641511580AD833ADED393D64D6956';
 const NETWORK = 'fantom';
 
 // manually added for now
-const ID = '20230320-weighted-pool-v4';
-const NAME = 'WeightedPool';
+const ID = '20230711-composable-stable-pool-v5';
+const NAME = 'ComposableStablePool';
 const VERSION = `{"name":"${NAME}","version":${ID.slice(-1)},"deployment":"${ID}"}`;
 
 // END ====== variables ====== END
 
 const etherscan = new Etherscan(process.env.ETHERSCAN_API_KEY || '', process.env.ETHERSCAN_API_URL || '');
-const decoder = new InputDataDecoder(WeightedPoolFactory.abi);
+const decoder = new InputDataDecoder(ComposableStablePoolFactory.abi);
 const web3 = new Web3(process.env.RPC_URL);
 
 const decodedPoolData: DecodedPoolData = {
   name: '',
   symbol: '',
   tokens: [],
-  normalizedWeights: [],
+  amplificationParameter: null,
   rateProviders: [],
+  tokenRateCacheDurations: [],
+  exemptFromYieldProtocolFeeFlag: false,
   swapFeePercentage: null,
   owner: '',
   salt: '',
@@ -53,10 +60,10 @@ async function getTransactionsByAddress(address: string) {
 }
 
 async function generate() {
-  const txnsFactory = await getTransactionsByAddress(WEIGHTED_POOL_V4_FACTORY_FTM);
+  const txnsFactory = await getTransactionsByAddress(COMPOSABLE_STABLE_POOL_V5_FACTORY_FTM);
   const stampFactory = txnsFactory.result[0].timeStamp;
 
-  const txnsPool = await getTransactionsByAddress(WEIGHTED_POOL_ADDRESS);
+  const txnsPool = await getTransactionsByAddress(COMPOSABLE_STABLE_POOL_ADDRESS);
   const stampPool = txnsPool.result[0].timeStamp;
   const inputData = (await web3.eth.getTransaction(txnsPool.result[0].hash)).input;
   const decoded = decoder.decodeData(inputData);
@@ -76,32 +83,28 @@ async function generate() {
     bufferPeriodDurationSec = 0;
   }
 
-  const zero_ams: string[] = [];
-  for (let i = 1; i <= decodedPoolData.tokens.length; i++) {
-    zero_ams.push(AddressZero);
-  }
-
   const args = [
     [
+      VAULT_ADDRESS_FTM,
+      PROTOCOL_FEE_PERCENTAGES_PROVIDER_FTM,
       decodedPoolData.name,
       decodedPoolData.symbol,
       decodedPoolData.tokens,
-      decodedPoolData.normalizedWeights.map((weight) => weight.toString()),
       decodedPoolData.rateProviders.map((address) => `0x${address}`),
-      zero_ams,
+      decodedPoolData.tokenRateCacheDurations.map((value) => value.toString()),
+      decodedPoolData.exemptFromYieldProtocolFeeFlag,
+      decodedPoolData.amplificationParameter.toString(),
       decodedPoolData.swapFeePercentage.toString(),
+      pauseWindowDurationSec,
+      bufferPeriodDurationSec,
+      decodedPoolData.owner,
+      VERSION,
     ],
-    VAULT_ADDRESS_FTM,
-    PROTOCOL_FEE_PERCENTAGES_PROVIDER_FTM,
-    pauseWindowDurationSec,
-    bufferPeriodDurationSec,
-    decodedPoolData.owner,
-    VERSION,
   ];
 
-  const encodedPoolData = web3.eth.abi.encodeParameters(WeightedPool.abi[0].inputs, args);
+  const encodedPoolData = web3.eth.abi.encodeParameters(ComposableStablePool.abi[0].inputs, args);
 
-  return `yarn hardhat verify-contract --id ${ID} --name ${NAME} --address ${WEIGHTED_POOL_ADDRESS} --network ${NETWORK} --key ${
+  return `yarn hardhat verify-contract --id ${ID} --name ${NAME} --address ${COMPOSABLE_STABLE_POOL_ADDRESS} --network ${NETWORK} --key ${
     process.env.ETHERSCAN_API_KEY
   } --args ${encodedPoolData.slice(2)}`;
 }
