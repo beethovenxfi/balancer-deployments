@@ -364,7 +364,7 @@ export default {
   networks: {
     opera: {
       chainId: 250,
-      url: 'https://rpc.fantom.network',
+      url: 'https://rpc.ftm.tools',
       accounts: [`0x${DEPLOYER_PRIVATE_KEY}`], // Using private key instead of mnemonic for vanity deploy
       etherscan: {
         apiKey: `${process.env.ETHERSCAN_API_KEY}`,
