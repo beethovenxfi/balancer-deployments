@@ -21,8 +21,26 @@ export const TOKENS: {
   };
 } = {
   ['FANTOM']: {
+    LZUSDC: {
+      address: '0x28a92dde19d9989f39a49905d7c9c2fac7799bdf',
+      decimals: 6,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    AXLUSDC: {
+      address: '0x1b6382dbdea11d97f24495c9a90b7c88469134a4',
+      decimals: 6,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
     WFTM: {
       address: '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    SFTMX: {
+      address: '0xd7028092c830b5C8FcE061Af2E593413EbbC1fc1',
       decimals: 18,
       rateProvider: ZERO_ADDRESS,
       cache: 30,
