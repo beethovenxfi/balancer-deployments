@@ -191,6 +191,12 @@ export const TOKENS: {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
+    SFRAX: {
+      address: '0x2dd1b4d4548accea497050619965f91f78b3b532',
+      decimals: 18,
+      rateProvider: '0xde3b7ec86b67b05d312ac8fd935b6f59836f2c41',
+      cache: 30,
+    },
     FRXETH: {
       address: '0x6806411765af15bddd26f8f544a34cc40cb9838b',
       decimals: 18,
@@ -203,5 +209,11 @@ export const TOKENS: {
       rateProvider: '0xf752dd899F87a91370C1C8ac1488Aef6be687505',
       cache: 30,
     },
+    STERN: {
+      address: '0x3ee6107d9c93955acbb3f39871d32b02f82b78ab',
+      decimals: 18,
+      rateProvider: '0xbcebb4dcdec1c12bf7eb31bd26bc9c3b8f55c966',
+      cache: 30,
+    }
   },
 };
