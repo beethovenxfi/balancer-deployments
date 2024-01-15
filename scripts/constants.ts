@@ -111,6 +111,12 @@ export const TOKENS: {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
+    CATRONJE: {
+      address: '0x96312c36cB278bB84BB1c180E33f17b8857fFFab',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
   },
   ['OPTIMISM']: {
     USDCE: {
