@@ -105,6 +105,12 @@ export const TOKENS: {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
+    DEUS: {
+      address: '0xDE55B113A27Cc0c5893CAa6Ee1C020b6B46650C0',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
   },
   ['OPTIMISM']: {
     USDCE: {
@@ -214,6 +220,6 @@ export const TOKENS: {
       decimals: 18,
       rateProvider: '0xbcebb4dcdec1c12bf7eb31bd26bc9c3b8f55c966',
       cache: 30,
-    }
+    },
   },
 };
