@@ -117,6 +117,12 @@ export const TOKENS: {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
+    HYPERION: {
+      address: '0xA7C79841E7e9D751Bb25c08684b10c649C60fC86',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
   },
   ['OPTIMISM']: {
     USDCE: {
