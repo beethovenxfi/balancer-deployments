@@ -42,7 +42,7 @@ export const TOKENS: {
     SFTMX: {
       address: '0xd7028092c830b5C8FcE061Af2E593413EbbC1fc1',
       decimals: 18,
-      rateProvider: ZERO_ADDRESS,
+      rateProvider: '0x629d4c27057915e59dd94bca8d48c6d80735b521',
       cache: 30,
     },
     BEETS: {
