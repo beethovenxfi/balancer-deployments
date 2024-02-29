@@ -13,19 +13,19 @@ const WEIGHTED_POOL_V4_FACTORY_ADDRESS = '0xb841Df73861E65E6D61a80F503F095a91ce7
 async function create() {
   const factory = await ethers.getContractAt(WeightedPoolV4Factory.abi, WEIGHTED_POOL_V4_FACTORY_ADDRESS);
 
-  const poolName = 'Layered & Staked Fantom Opera';
-  const poolSymbol = 'bpt-lsfo';
-  const swapFee = 0.4; // as true percentage 0.04 => 0.04%
-  const random = '0x5463f7e6045a954a2b64ecc7cd6fc6aec698d1c09dc4bb87d704815869f4464a'; // https://www.browserling.com/tools/random-hex
+  const poolName = 'goat test';
+  const poolSymbol = 'bpt-gote';
+  const swapFee = 2.5; // as true percentage 0.04 => 0.04%
+  const random = '0x6d68c53fde543261096bdfe06a86ebb31191c19c618b54304fdf713e38ed1a57'; // https://www.browserling.com/tools/random-hex
 
   const tokens = [
     {
-      ...TOKENS['FANTOM'].SFTMX,
-      weight: fp(0.7),
+      ...TOKENS['FANTOM'].GOAT,
+      weight: fp(0.5),
     },
     {
-      ...TOKENS['FANTOM'].LZUSDC,
-      weight: fp(0.3),
+      ...TOKENS['FANTOM'].WFTM,
+      weight: fp(0.5),
     },
   ];
 
