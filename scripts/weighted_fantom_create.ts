@@ -13,14 +13,14 @@ const WEIGHTED_POOL_V4_FACTORY_ADDRESS = '0xb841Df73861E65E6D61a80F503F095a91ce7
 async function create() {
   const factory = await ethers.getContractAt(WeightedPoolV4Factory.abi, WEIGHTED_POOL_V4_FACTORY_ADDRESS);
 
-  const poolName = 'goat test';
-  const poolSymbol = 'bpt-gote';
+  const poolName = 'fbux test';
+  const poolSymbol = 'bpt-fbte';
   const swapFee = 2.5; // as true percentage 0.04 => 0.04%
-  const random = '0x6d68c53fde543261096bdfe06a86ebb31191c19c618b54304fdf713e38ed1a57'; // https://www.browserling.com/tools/random-hex
+  const random = '0x4de67d398fa92cf41828a938b1427630754b8eb7f71be596791f462230ba58c2'; // https://www.browserling.com/tools/random-hex
 
   const tokens = [
     {
-      ...TOKENS['FANTOM'].GOAT,
+      ...TOKENS['FANTOM'].FBUX,
       weight: fp(0.5),
     },
     {
