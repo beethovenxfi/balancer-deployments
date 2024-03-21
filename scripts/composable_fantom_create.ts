@@ -11,14 +11,14 @@ async function create() {
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolName = 'Love Thy Stables';
-  const poolSymbol = 'bpt-lts';
-  const amp = 250;
+  const poolName = 'Duet of Staked Fanties';
+  const poolSymbol = 'bpt-dosf';
+  const amp = 10;
   const yieldFeeExemption = false;
-  const swapFee = 0.008; // as true percentage 0.04 => 0.04%
-  const random = '0x99b6020907acbfe26afc081f0e97cbccad86a470b2ffeb204e3207e7c17a9257'; // https://www.browserling.com/tools/random-hex
+  const swapFee = 0.8; // as true percentage 0.04 => 0.04%
+  const random = '0xb1ebe37a9c76fb258c26b84cbc20ea66bcc46c1982a87effff65fa749da0593f'; // https://www.browserling.com/tools/random-hex
 
-  const tokens = [TOKENS['FANTOM'].LZUSDC, TOKENS['FANTOM'].AXLUSDC];
+  const tokens = [TOKENS['FANTOM'].SFTMX, TOKENS['FANTOM'].MFTM];
 
   // END ====== variables ====== END
 
