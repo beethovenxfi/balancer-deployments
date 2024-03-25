@@ -21,6 +21,24 @@ export const TOKENS: {
   };
 } = {
   ['FANTOM']: {
+    BLACKY: {
+      address: '0xb5fd949436772e07cbbf35fb6524e79924c54cb3',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    MUTTSKI: {
+      address: '0xa80058bdf71f4044942107e33a802752b3bfb4d0',
+      decimals: 9,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    FKNUCKLES: {
+      address: '0x1f008f9af47b387bdf67a25f2b8219942207298f',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
     FANTIE: {
       address: '0x5a27c97bf717f455c9eeb838a53fb9f044509c59',
       decimals: 18,
