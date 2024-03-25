@@ -9,9 +9,9 @@ import { TOKENS, VAULT_ADDRESS_FTM } from './constants';
 async function join() {
   const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_FTM);
 
-  const POOL_ID = '0x7086355713F5B148E5891CDEEC35CB49176AEC9B0002000000000000000007F0';
+  const POOL_ID = '0xA1146ACD006891AB0CC806737540B84A984C6F6A0002000000000000000007F4';
   const tokens = [
-    { ...TOKENS['FANTOM'].SGOAT, balance: parseUnits('0.12', TOKENS['FANTOM'].SGOAT.decimals) },
+    { ...TOKENS['FANTOM'].FANTIE, balance: parseUnits('136', TOKENS['FANTOM'].FANTIE.decimals) },
     { ...TOKENS['FANTOM'].WFTM, balance: parseUnits('0.05', TOKENS['FANTOM'].WFTM.decimals) },
   ];
 
