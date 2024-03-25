@@ -21,6 +21,12 @@ export const TOKENS: {
   };
 } = {
   ['FANTOM']: {
+    SGOAT: {
+      address: '0x43f9a13675e352154f745d6402e853fecc388aa5',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
     MFTM: {
       address: '0x62227c75908b7d358a9d70ea4670f57f8b012ccc',
       decimals: 18,
