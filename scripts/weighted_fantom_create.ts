@@ -13,19 +13,39 @@ const WEIGHTED_POOL_V4_FACTORY_ADDRESS = '0xb841Df73861E65E6D61a80F503F095a91ce7
 async function create() {
   const factory = await ethers.getContractAt(WeightedPoolV4Factory.abi, WEIGHTED_POOL_V4_FACTORY_ADDRESS);
 
-  const poolName = 'fknuckles test';
-  const poolSymbol = 'bpt-knte';
-  const swapFee = 2.5; // as true percentage 0.04 => 0.04%
-  const random = '0xa5a383e30e729f5e56f0e72e03955a66dae3a492d9c6240e67856c502e7c7e27'; // https://www.browserling.com/tools/random-hex
+  const poolName = 'meme2 test';
+  const poolSymbol = 'bpt-me2te';
+  const swapFee = 1; // as true percentage 0.04 => 0.04%
+  const random = '0x1795dbe5df9eb8bd14ff1d9e9727cead3190736c21f3341a7071de409372546c'; // https://www.browserling.com/tools/random-hex
 
   const tokens = [
     {
-      ...TOKENS['FANTOM'].FKNUCKLES,
-      weight: fp(0.5),
+      ...TOKENS['FANTOM'].WFTM,
+      weight: fp(0.15),
     },
     {
-      ...TOKENS['FANTOM'].WFTM,
-      weight: fp(0.5),
+      ...TOKENS['FANTOM'].LFG,
+      weight: fp(0.15),
+    },
+    {
+      ...TOKENS['FANTOM'].PXL,
+      weight: fp(0.14),
+    },
+    {
+      ...TOKENS['FANTOM'].BPEPE,
+      weight: fp(0.14),
+    },
+    {
+      ...TOKENS['FANTOM'].POOH,
+      weight: fp(0.14),
+    },
+    {
+      ...TOKENS['FANTOM'].CONK2,
+      weight: fp(0.14),
+    },
+    {
+      ...TOKENS['FANTOM'].FDUCK,
+      weight: fp(0.14),
     },
   ];
 

@@ -21,6 +21,66 @@ export const TOKENS: {
   };
 } = {
   ['FANTOM']: {
+    LFG: {
+      address: '0xc8065302b6877416c095ace72278ec4ccea664bb',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    PXL: {
+      address: '0x24b06ef70da341486ebf96a5ea6de1ae8881d106',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    BPEPE: {
+      address: '0x46e64b8cd1811ddc9899d607f24debc46b7a611c',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    POOH: {
+      address: '0x29cfbab01ca34864402f4c0f20837a5f05490d69',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    CONK2: {
+      address: '0x4cae69117657f1f10c2aaa9c8c79dc3e5306f7ec',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    FDUCK: {
+      address: '0x79a6a56645d11f6d3464aaf422afb82d462177b7',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    FTAILS: {
+      address: '0x5cf90b977c86415a53ce3b7be13b26f6abddfee2',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    BAY: {
+      address: '0xd361474bb19c8b98870bb67f5759cdf277dee7f9',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    GOAT: {
+      address: '0x9ab1070d74216a5f627c6937c0767ea5b990c3d8',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    GROK: {
+      address: '0x0e3b1c9be555ec9806f6eab9bd101487f53cf0c9',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
     BLACKY: {
       address: '0xb5fd949436772e07cbbf35fb6524e79924c54cb3',
       decimals: 18,
@@ -63,7 +123,7 @@ export const TOKENS: {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
-    GOAT: {
+    GOAT404: {
       address: '0xcd62f054eee65c8d23fe2adc8bae0443d4ec82db',
       decimals: 18,
       rateProvider: ZERO_ADDRESS,
