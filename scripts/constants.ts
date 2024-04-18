@@ -21,6 +21,12 @@ export const TOKENS: {
   };
 } = {
   ['FANTOM']: {
+    SPEEDY: {
+      address: '0x0ce12ae7c899ebf2bcda7aa570c5af98b6688c95',
+      decimals: 9,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
     CABRON: {
       address: '0x1d631adc479309aa073949e0d67973555bbbdcd0',
       decimals: 18,
