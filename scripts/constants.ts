@@ -21,6 +21,12 @@ export const TOKENS: {
   };
 } = {
   ['FANTOM']: {
+    NATIS: {
+      address: '0x5be1789a6928f8659305bf86ad3054530501f424',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
     SPEEDY: {
       address: '0x0ce12ae7c899ebf2bcda7aa570c5af98b6688c95',
       decimals: 9,
