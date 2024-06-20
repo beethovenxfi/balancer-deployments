@@ -171,6 +171,12 @@ export const TOKENS: {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
+    USDCE: {
+      address: '0x2F733095B80A04b38b0D10cC884524a3d09b836a',
+      decimals: 6,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    }
   },
   ['OPTIMISM']: {
     USDCE: {
