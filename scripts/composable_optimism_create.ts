@@ -11,14 +11,14 @@ async function create() {
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolName = 'Fraximalist Ethereum';
-  const poolSymbol = 'bpt-fraxethe';
-  const amp = 500;
+  const poolName = 'Stake me baby one more time';
+  const poolSymbol = 'bpt-weethwsteth';
+  const amp = 100;
   const yieldFeeExemption = false;
   const swapFee = 0.04; // as true percentage 0.04 => 0.04%
-  const random = '0x0db3847b8422931bb2ded160730d31d7e601ecb1076ecc5774c34cf51676cb4f'; // https://www.browserling.com/tools/random-hex
+  const random = '0x20d83280560cd1358fb501dfde87eda028fcad0fabd2cced3a7bcd7bcd94a671'; // https://www.browserling.com/tools/random-hex
 
-  const tokens = [TOKENS['OPTIMISM'].SFRXETH, TOKENS['OPTIMISM'].FRXETH];
+  const tokens = [TOKENS['OPTIMISM'].WSTETH, TOKENS['OPTIMISM'].WEETH];
 
   // END ====== variables ====== END
 

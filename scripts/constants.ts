@@ -365,5 +365,11 @@ export const TOKENS: {
       rateProvider: '0xbcebb4dcdec1c12bf7eb31bd26bc9c3b8f55c966',
       cache: 30,
     },
+    WEETH: {
+      address: '0x5A7fACB970D094B6C7FF1df0eA68D99E6e73CBFF',
+      decimals: 18,
+      rateProvider: '0xef42D000a3e85C4e71C57e2C6A1E600e86f5a91B',
+      cache: 30,
+    },
   },
 };
