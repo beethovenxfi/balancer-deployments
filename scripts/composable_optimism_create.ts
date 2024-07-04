@@ -4,10 +4,10 @@ import { ethers } from 'hardhat';
 
 import ComposableStablePoolV5Factory from '../tasks/20230711-composable-stable-pool-v5/artifact/ComposableStablePoolFactory.json';
 import { fp } from '../src/helpers/numbers';
-import { COMPOSABLE_STABLE_POOL_V5_FACTORY_OP, POOL_OWNER_OP, TOKENS } from './constants';
+import { COMPOSABLE_STABLE_POOL_V6_FACTORY_OP, POOL_OWNER_OP, TOKENS } from './constants';
 
 async function create() {
-  const factory = await ethers.getContractAt(ComposableStablePoolV5Factory.abi, COMPOSABLE_STABLE_POOL_V5_FACTORY_OP);
+  const factory = await ethers.getContractAt(ComposableStablePoolV5Factory.abi, COMPOSABLE_STABLE_POOL_V6_FACTORY_OP);
 
   // BEGIN ====== variables ====== BEGIN
 
