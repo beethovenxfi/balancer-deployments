@@ -11,14 +11,14 @@ async function create() {
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolName = 'Stake me baby one more time';
-  const poolSymbol = 'bpt-weethwsteth';
-  const amp = 100;
+  const poolName = "Staked Inception Opus No 1";
+  const poolSymbol = 'bpt-insteth-wsteth';
+  const amp = 50;
   const yieldFeeExemption = false;
-  const swapFee = 0.04; // as true percentage 0.04 => 0.04%
-  const random = '0x20d83280560cd1358fb501dfde87eda028fcad0fabd2cced3a7bcd7bcd94a671'; // https://www.browserling.com/tools/random-hex
+  const swapFee = 0.1; // as true percentage 0.04 => 0.04%
+  const random = '0xc7c981b7422e4fd4e9021856bdd284d9380424c35c53104b56bad34511361d79'; // https://www.browserling.com/tools/random-hex
 
-  const tokens = [TOKENS['OPTIMISM'].WSTETH, TOKENS['OPTIMISM'].WEETH];
+  const tokens = [TOKENS['OPTIMISM'].INSTETH, TOKENS['OPTIMISM'].WSTETH];
 
   // END ====== variables ====== END
 
@@ -26,7 +26,7 @@ async function create() {
 
   console.log({ sortedTokens });
 
-  console.log('Calling create on the ComposableStableV5Factory...');
+  console.log('Calling create on the ComposableStableV6Factory...');
 
   const tx = await factory.create(
     poolName,

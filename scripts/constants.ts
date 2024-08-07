@@ -371,5 +371,29 @@ export const TOKENS: {
       rateProvider: '0xef42D000a3e85C4e71C57e2C6A1E600e86f5a91B',
       cache: 30,
     },
+    UNIBTC: {
+      address: '0x93919784c523f39cacaa98ee0a9d96c3f32b593e',
+      decimals: 8,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    WBTC: {
+      address: '0x68f180fcce6836688e9084f035309e29bf0a2095',
+      decimals: 8,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    INETH: {
+      address: '0x5A7a183B6B44Dc4EC2E3d2eF43F98C5152b1d76d',
+      decimals: 18,
+      rateProvider: '0x210ABdFD989f3eE5C08614a8f4e096Cf8408f5DF',
+      cache: 30,
+    },
+    INSTETH: {
+      address: '0xd08C3F25862077056cb1b710937576Af899a4959',
+      decimals: 18,
+      rateProvider: '0xC092E0a4f5a2AdF3CF91E27cf4B7d7917D12CA2B',
+      cache: 30,
+    }
   },
 };
