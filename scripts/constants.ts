@@ -254,7 +254,7 @@ export const TOKENS: {
       decimals: 6,
       rateProvider: ZERO_ADDRESS,
       cache: 30,
-    }
+    },
   },
   ['OPTIMISM']: {
     USDCE: {
@@ -394,6 +394,12 @@ export const TOKENS: {
       decimals: 18,
       rateProvider: '0xC092E0a4f5a2AdF3CF91E27cf4B7d7917D12CA2B',
       cache: 30,
-    }
+    },
+    WRSETH: {
+      address: '0x87eee96d50fb761ad85b1c982d28a042169d61b1',
+      decimals: 18,
+      rateProvider: '0x1373a61449c26cc3f48c1b4c547322edaa36eb12',
+      cache: 30,
+    },
   },
 };
