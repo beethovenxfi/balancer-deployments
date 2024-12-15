@@ -359,6 +359,14 @@ export default {
           browserURL: 'https://ftmscan.com',
         },
       },
+      {
+        network: 'sonic',
+        chainId: 146,
+        urls: {
+          apiURL: 'https://api.ftmscan.com/api',
+          browserURL: 'https://api.sonicscan.org/api',
+        },
+      },
     ],
   },
   networks: {
@@ -370,12 +378,22 @@ export default {
         apiKey: `${process.env.ETHERSCAN_API_KEY}`,
       },
     },
+    sonic: {
+      chainId: 146,
+      url: 'https://rpc.soniclabs.com',
+      accounts: [`0x${DEPLOYER_PRIVATE_KEY}`], // Using private key instead of mnemonic for vanity deploy
+      etherscan: {
+        apiKey: `${process.env.ETHERSCAN_API_KEY}`,
+      },
+      gasMultiplier: 10,
+      // gasPrice: 50,
+    },
     optimism: {
       chainId: 10,
       url: `https://opt-mainnet.g.alchemy.com/v2/XmTfwyK5Tar5RGmyxjyFFL9G2fm_6TuY`,
       accounts: [`0x${DEPLOYER_PRIVATE_KEY}`], // Using private key instead of mnemonic for vanity deploy
       saveDeployments: true,
-      // gasMultiplier: 10,
+      gasMultiplier: 10,
     },
     rinkeby: {
       chainId: 4,

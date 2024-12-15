@@ -7,7 +7,7 @@ export const WEIGHTED_POOL_V4_FACTORY_FTM = '0xb841Df73861E65E6D61a80F503F095a91
 export const COMPOSABLE_STABLE_POOL_V5_FACTORY_FTM = '0x23F03a4fb344d8B98833d2ACe093cc305E03474f';
 
 export const POOL_OWNER_OP = '0xd9e2889AC8C6fFF8e94c7c1bEEAde1352dF1A513';
-export const VAULT_ADDRESS_OP = '0xBA12222222228d8Ba445958a75a0704d566BF2C8';
+export const VAULT_ADDRESS_CANONCIAL = '0xBA12222222228d8Ba445958a75a0704d566BF2C8';
 export const COMPOSABLE_STABLE_POOL_V6_FACTORY_OP = '0x4bdCc2fb18AEb9e2d281b0278D946445070EAda7';
 
 export const TOKENS: {
@@ -20,6 +20,20 @@ export const TOKENS: {
     };
   };
 } = {
+  ['SONIC']: {
+    BEETS: {
+      address: '0x2D0E0814E62D80056181F5cd932274405966e4f0',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    STS: {
+      address: '0xf4fa7f3308a1543e7d89950519341c7ce479400b',
+      decimals: 18,
+      rateProvider: '0xf4fa7f3308a1543e7d89950519341c7ce479400b',
+      cache: 30,
+    },
+  },
   ['FANTOM']: {
     NATIS: {
       address: '0x5be1789a6928f8659305bf86ad3054530501f424',

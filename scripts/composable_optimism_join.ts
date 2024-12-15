@@ -8,11 +8,11 @@ import Vault from '../tasks/20210418-vault/artifact/Vault.json';
 // import ReaperLinearPool from './abi/ReaperLinearPool.json';
 
 import { initJoinPool } from './helpers';
-import { TOKENS, VAULT_ADDRESS_OP } from './constants';
+import { TOKENS, VAULT_ADDRESS_CANONCIAL } from './constants';
 import { fp } from '../src/helpers/numbers';
 
 async function join() {
-  const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_OP);
+  const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_CANONCIAL);
 
   // BEGIN ====== variables ====== BEGIN
 

@@ -9,10 +9,10 @@ import { TOKENS, VAULT_ADDRESS_CANONCIAL } from './constants';
 async function join() {
   const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_CANONCIAL);
 
-  const POOL_ID = '0x2feb76966459d7841fa8a7ed0aa4bf574d6111bf00020000000000000000011d';
+  const POOL_ID = '0x3081e0fb04cd5afe1f8c2300dc5d54df23b14b2e000200000000000000000002';
   const tokens = [
-    { ...TOKENS['OPTIMISM'].SFRAX, balance: parseUnits('0.1', TOKENS['OPTIMISM'].SFRAX.decimals) },
-    { ...TOKENS['OPTIMISM'].SFRXETH, balance: parseUnits('0.00004415', TOKENS['OPTIMISM'].SFRXETH.decimals) },
+    { ...TOKENS['SONIC'].BEETS, balance: parseUnits('5', TOKENS['SONIC'].BEETS.decimals) },
+    { ...TOKENS['SONIC'].STS, balance: parseUnits('0.07', TOKENS['SONIC'].STS.decimals) },
   ];
 
   const sortedTokens = tokens.sort((a, b) => ('' + a.address).localeCompare(b.address));
@@ -24,7 +24,7 @@ async function join() {
       tokens: sortedTokens.map((token) => token.address),
       initialBalances: sortedTokens.map((token) => token.balance),
     },
-    true
+    false
   );
 }
 
