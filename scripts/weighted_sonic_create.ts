@@ -2,7 +2,7 @@
 // @ts-ignore
 import { ethers } from 'hardhat';
 
-import WeightedPoolV4Factory from '../tasks/20230320-weighted-pool-v4/artifact/WeightedPoolFactory.json';
+import WeightedPoolV4Factory from '../v2/tasks/20230320-weighted-pool-v4/artifact/WeightedPoolFactory.json';
 
 import { toNormalizedWeights } from '@balancer-labs/sdk';
 import { fp } from '../src/helpers/numbers';
@@ -14,9 +14,9 @@ async function create() {
   const factory = await ethers.getContractAt(WeightedPoolV4Factory.abi, WEIGHTED_POOL_V4_FACTORY_ADDRESS);
 
   const poolName = 'Fresh Beets';
-  const poolSymbol = 'bpt-fresh-beets';
+  const poolSymbol = 'bpt-fbeets-sts';
   const swapFee = 1; // as true percentage 0.04 => 0.04%
-  const random = '0x21b8a74496a7f69bf49e6a097a0b291a037521147941b36ce890250e85d68456'; // https://www.browserling.com/tools/random-hex
+  const random = '0xc0bd3be808b757c58ac9c8b0dda2d353a6518a1af30d495b86ffc372d281e13a'; // https://www.browserling.com/tools/random-hex
 
   const tokens = [
     {
@@ -48,7 +48,7 @@ async function create() {
 
   const { poolAddress, blockHash } = await getPoolAddressAndBlockHashFromTransaction(tx);
 
-  console.log(`Successfully deployed the WeightedPoolV4Factory at address ${poolAddress}`);
+  console.log(`Successfully deployed the WeightedPoolV4 at address ${poolAddress}`);
   console.log(`Pool deployment block hash: ${blockHash}`);
 }
 

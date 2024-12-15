@@ -1,9 +1,7 @@
-import { ethers, network } from 'hardhat';
+import { network, ethers } from 'hardhat';
 import { BigNumber, Contract } from 'ethers';
 import ERC20 from './abi/ERC20.json';
-import VaultInput from '../tasks/20210418-vault/input';
-import Verifier from '../src/verifier';
-import { BuildInfo } from 'hardhat/types';
+import VaultInput from '../v2/tasks/20210418-vault/input';
 import { delay } from '@nomiclabs/hardhat-etherscan/dist/src/etherscan/EtherscanService';
 import path from 'path';
 import fs from 'fs';

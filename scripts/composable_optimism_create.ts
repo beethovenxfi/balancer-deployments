@@ -2,7 +2,7 @@
 // @ts-ignore
 import { ethers } from 'hardhat';
 
-import ComposableStablePoolV5Factory from '../tasks/20230711-composable-stable-pool-v5/artifact/ComposableStablePoolFactory.json';
+import ComposableStablePoolV5Factory from '../v2/deprecated/20230711-composable-stable-pool-v5/artifact/ComposableStablePoolFactory.json';
 import { fp } from '../src/helpers/numbers';
 import { COMPOSABLE_STABLE_POOL_V6_FACTORY_OP, POOL_OWNER_OP, TOKENS } from './constants';
 

@@ -2,12 +2,12 @@
 // @ts-ignore
 import { ethers } from 'hardhat';
 
-import ComposableStablePoolV5Factory from '../tasks/20230711-composable-stable-pool-v5/artifact/ComposableStablePoolFactory.json';
+import ComposableStablePoolV6Factory from '../v2/tasks/20240223-composable-stable-pool-v6/artifact/ComposableStablePoolFactory.json';
 import { fp } from '../src/helpers/numbers';
-import { COMPOSABLE_STABLE_POOL_V5_FACTORY_FTM, POOL_OWNER_SONIC, TOKENS } from './constants';
+import { COMPOSABLE_STABLE_POOL_V6_FACTORY_SONIC, POOL_OWNER_SONIC, TOKENS } from './constants';
 
 async function create() {
-  const factory = await ethers.getContractAt(ComposableStablePoolV5Factory.abi, COMPOSABLE_STABLE_POOL_V5_FACTORY_FTM);
+  const factory = await ethers.getContractAt(ComposableStablePoolV6Factory.abi, COMPOSABLE_STABLE_POOL_V6_FACTORY_SONIC);
 
   // BEGIN ====== variables ====== BEGIN
 
@@ -16,9 +16,9 @@ async function create() {
   const amp = 200;
   const yieldFeeExemption = false;
   const swapFee = 0.1; // as true percentage 0.04 => 0.04%
-  const random = '0xd7941ad06b864dd4b5c7f25cbd5485858120efe55be6ca1a20224e942acebc35'; // https://www.browserling.com/tools/random-hex
+  const random = '0xbc4592c5a1775ba532a595c891ff539651c30d23b1a484fabf25a529946599bd'; // https://www.browserling.com/tools/random-hex
 
-  const tokens = [TOKENS['FANTOM'].LZUSDC, TOKENS['FANTOM'].AXLUSDC, TOKENS['FANTOM'].USDCE];
+  const tokens = [TOKENS['SONIC'].STS, TOKENS['SONIC'].WS, ];
 
   // END ====== variables ====== END
 
@@ -26,7 +26,7 @@ async function create() {
 
   console.log({ sortedTokens });
 
-  console.log('Calling create on the ComposableStableV5Factory...');
+  console.log('Calling create on the ComposableStableV6Factory...');
 
   const tx = await factory.create(
     poolName,
@@ -43,7 +43,7 @@ async function create() {
 
   const { poolAddress, blockHash } = await getPoolAddressAndBlockHashFromTransaction(tx);
 
-  console.log(`Successfully deployed the ComposableStableV5Factory at address ${poolAddress}`);
+  console.log(`Successfully deployed the ComposableStableV6 at address ${poolAddress}`);
   console.log(`Pool deployment block hash: ${blockHash}`);
 }
 

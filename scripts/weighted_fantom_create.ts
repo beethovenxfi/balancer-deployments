@@ -2,7 +2,7 @@
 // @ts-ignore
 import { ethers } from 'hardhat';
 
-import WeightedPoolV4Factory from '../tasks/20230320-weighted-pool-v4/artifact/WeightedPoolFactory.json';
+import WeightedPoolV4Factory from '../v2/tasks/20230320-weighted-pool-v4/artifact/WeightedPoolFactory.json';
 
 import { toNormalizedWeights } from '@balancer-labs/sdk';
 import { fp } from '../src/helpers/numbers';

@@ -2,17 +2,17 @@
 // @ts-ignore
 import { ethers } from 'hardhat';
 import { parseUnits } from 'ethers/lib/utils';
-import Vault from '../tasks/20210418-vault/artifact/Vault.json';
+import Vault from '../v2/tasks/20210418-vault/artifact/Vault.json';
 import { initJoinPool } from './helpers';
 import { TOKENS, VAULT_ADDRESS_CANONCIAL } from './constants';
 
 async function join() {
   const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_CANONCIAL);
 
-  const POOL_ID = '0x425f2f2b7f2255ee3e676efb504765616ce5c768000200000000000000000004';
+  const POOL_ID = '0x10ac2f9dae6539e77e372adb14b1bf8fbd16b3e8000200000000000000000005';
   const tokens = [
-    { ...TOKENS['SONIC'].BEETS, balance: parseUnits('5', TOKENS['SONIC'].BEETS.decimals) },
-    { ...TOKENS['SONIC'].STS, balance: parseUnits('0.07', TOKENS['SONIC'].STS.decimals) },
+    { ...TOKENS['SONIC'].BEETS, balance: parseUnits('1', TOKENS['SONIC'].BEETS.decimals) },
+    { ...TOKENS['SONIC'].STS, balance: parseUnits('0.01', TOKENS['SONIC'].STS.decimals) },
   ];
 
   const sortedTokens = tokens.sort((a, b) => ('' + a.address).localeCompare(b.address));

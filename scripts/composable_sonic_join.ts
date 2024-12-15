@@ -2,32 +2,28 @@
 // @ts-ignore
 import { ethers } from 'hardhat';
 import { parseUnits } from 'ethers/lib/utils';
-import Vault from '../tasks/20210418-vault/artifact/Vault.json';
+import Vault from '../v2/tasks/20210418-vault/artifact/Vault.json';
 
 import { initJoinPool } from './helpers';
-import { TOKENS, VAULT_ADDRESS_FTM } from './constants';
+import { TOKENS, VAULT_ADDRESS_CANONCIAL } from './constants';
 import { fp } from '../src/helpers/numbers';
 
 async function join() {
-  const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_FTM);
+  const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_CANONCIAL);
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolId = '0xaac7b8d6d7009428d6ddad895bdf50c6fcbbe2c000000000000000000000080d';
-  const poolAddress = '0xaAc7B8d6D7009428d6DdaD895bdf50C6FCBbe2C0';
+  const poolId = '0x374641076b68371e69d03c417dac3e5f236c32fa000000000000000000000006';
+  const poolAddress = '0x374641076b68371e69d03c417dac3e5f236c32fa';
 
   const tokens = [
     {
-      ...TOKENS['FANTOM'].LZUSDC,
-      balance: parseUnits('0.1', TOKENS['FANTOM'].LZUSDC.decimals),
+      ...TOKENS['SONIC'].STS,
+      balance: parseUnits('0.5', TOKENS['SONIC'].STS.decimals),
     },
     {
-      ...TOKENS['FANTOM'].AXLUSDC,
-      balance: parseUnits('0.1', TOKENS['FANTOM'].AXLUSDC.decimals),
-    },
-    {
-      ...TOKENS['FANTOM'].USDCE,
-      balance: parseUnits('0.1', TOKENS['FANTOM'].USDCE.decimals),
+      ...TOKENS['SONIC'].WS,
+      balance: parseUnits('0.5', TOKENS['SONIC'].WS.decimals),
     },
     {
       address: poolAddress,
@@ -41,7 +37,6 @@ async function join() {
 
   console.log({ sortedTokens });
 
-  //linear 1
   await initJoinPool(
     {
       vault,
@@ -49,7 +44,7 @@ async function join() {
       tokens: sortedTokens.map((token) => token.address),
       initialBalances: sortedTokens.map((token) => token.balance),
     },
-    false
+    true
   );
 
   //linear 2

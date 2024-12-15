@@ -2,7 +2,7 @@
 // @ts-ignore
 import { ethers } from 'hardhat';
 import { parseUnits } from 'ethers/lib/utils';
-import Vault from '../tasks/20210418-vault/artifact/Vault.json';
+import Vault from '../v2/tasks/20210418-vault/artifact/Vault.json';
 
 // import ReaperLinearPoolV2Factory from './abi/ReaperLinearPoolV2Factory.json';
 // import ReaperLinearPool from './abi/ReaperLinearPool.json';

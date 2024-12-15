@@ -2,7 +2,7 @@
 // @ts-ignore
 import { ethers } from 'hardhat';
 
-import WeightedPoolV4Factory from '../tasks/20230320-weighted-pool-v4/artifact/WeightedPoolFactory.json';
+import WeightedPoolV4Factory from '../v2/tasks/20230320-weighted-pool-v4/artifact/WeightedPoolFactory.json';
 
 // import ReaperLinearPoolV2Factory from './abi/ReaperLinearPoolV2Factory.json';
 // import ReaperLinearPool from './abi/ReaperLinearPool.json';

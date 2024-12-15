@@ -31,9 +31,15 @@ export const TOKENS: {
       cache: 30,
     },
     STS: {
-      address: '0xf4fa7f3308a1543e7d89950519341c7ce479400b',
+      address: '0xe5da20f15420ad15de0fa650600afc998bbe3955',
       decimals: 18,
-      rateProvider: '0xf4fa7f3308a1543e7d89950519341c7ce479400b',
+      rateProvider: '0xe5da20f15420ad15de0fa650600afc998bbe3955',
+      cache: 30,
+    },
+    WS: {
+      address: '0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
   },
