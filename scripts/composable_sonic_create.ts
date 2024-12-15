@@ -2,53 +2,48 @@
 // @ts-ignore
 import { ethers } from 'hardhat';
 
-import WeightedPoolV4Factory from '../tasks/20230320-weighted-pool-v4/artifact/WeightedPoolFactory.json';
-
-import { toNormalizedWeights } from '@balancer-labs/sdk';
+import ComposableStablePoolV5Factory from '../tasks/20230711-composable-stable-pool-v5/artifact/ComposableStablePoolFactory.json';
 import { fp } from '../src/helpers/numbers';
-import { POOL_OWNER_SONIC, TOKENS } from './constants';
-
-const WEIGHTED_POOL_V4_FACTORY_ADDRESS = '0x22f5b7FDD99076f1f20f8118854ce3984544D56d';
+import { COMPOSABLE_STABLE_POOL_V5_FACTORY_FTM, POOL_OWNER_SONIC, TOKENS } from './constants';
 
 async function create() {
-  const factory = await ethers.getContractAt(WeightedPoolV4Factory.abi, WEIGHTED_POOL_V4_FACTORY_ADDRESS);
+  const factory = await ethers.getContractAt(ComposableStablePoolV5Factory.abi, COMPOSABLE_STABLE_POOL_V5_FACTORY_FTM);
 
-  const poolName = 'Fresh Beets';
-  const poolSymbol = 'bpt-fresh-beets';
-  const swapFee = 1; // as true percentage 0.04 => 0.04%
-  const random = '0x21b8a74496a7f69bf49e6a097a0b291a037521147941b36ce890250e85d68456'; // https://www.browserling.com/tools/random-hex
+  // BEGIN ====== variables ====== BEGIN
 
-  const tokens = [
-    {
-      ...TOKENS['SONIC'].BEETS,
-      weight: fp(0.80),
-    },
-    {
-      ...TOKENS['SONIC'].STS,
-      weight: fp(0.20),
-    },
-  ];
+  const poolName = 'Staked Sonic Symphony'
+  const poolSymbol = 'bpt-sss';
+  const amp = 200;
+  const yieldFeeExemption = false;
+  const swapFee = 0.1; // as true percentage 0.04 => 0.04%
+  const random = '0xd7941ad06b864dd4b5c7f25cbd5485858120efe55be6ca1a20224e942acebc35'; // https://www.browserling.com/tools/random-hex
+
+  const tokens = [TOKENS['FANTOM'].LZUSDC, TOKENS['FANTOM'].AXLUSDC, TOKENS['FANTOM'].USDCE];
 
   // END ====== variables ====== END
 
   const sortedTokens = tokens.sort((a, b) => ('' + a.address).localeCompare(b.address)); // sort on address case insensitive
 
-  console.log('Calling create on the WeightedPoolV4Factory...');
+  console.log({ sortedTokens });
+
+  console.log('Calling create on the ComposableStableV5Factory...');
 
   const tx = await factory.create(
     poolName,
     poolSymbol,
     sortedTokens.map((token) => token.address),
-    toNormalizedWeights(sortedTokens.map((token) => token.weight)),
+    amp, //amp
     sortedTokens.map((token) => token.rateProvider), // rate provider
+    sortedTokens.map((token) => token.cache), // cache
+    yieldFeeExemption, // yield fee exemption
     fp(swapFee / 100), // swap fee
     POOL_OWNER_SONIC,
-    random //random string
+    random // random string
   );
 
   const { poolAddress, blockHash } = await getPoolAddressAndBlockHashFromTransaction(tx);
 
-  console.log(`Successfully deployed the WeightedPoolV4Factory at address ${poolAddress}`);
+  console.log(`Successfully deployed the ComposableStableV5Factory at address ${poolAddress}`);
   console.log(`Pool deployment block hash: ${blockHash}`);
 }
 
