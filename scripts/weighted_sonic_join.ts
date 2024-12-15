@@ -9,7 +9,7 @@ import { TOKENS, VAULT_ADDRESS_CANONCIAL } from './constants';
 async function join() {
   const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_CANONCIAL);
 
-  const POOL_ID = '0x3081e0fb04cd5afe1f8c2300dc5d54df23b14b2e000200000000000000000002';
+  const POOL_ID = '0x0c5f3b54ca6fae8a1838771a82508d82b6f521fd000200000000000000000003';
   const tokens = [
     { ...TOKENS['SONIC'].BEETS, balance: parseUnits('5', TOKENS['SONIC'].BEETS.decimals) },
     { ...TOKENS['SONIC'].STS, balance: parseUnits('0.07', TOKENS['SONIC'].STS.decimals) },

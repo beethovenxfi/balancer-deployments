@@ -6,7 +6,7 @@ import WeightedPoolV4Factory from '../tasks/20230320-weighted-pool-v4/artifact/W
 
 import { toNormalizedWeights } from '@balancer-labs/sdk';
 import { fp } from '../src/helpers/numbers';
-import { POOL_OWNER_FTM, TOKENS } from './constants';
+import { POOL_OWNER_SONIC, TOKENS } from './constants';
 
 const WEIGHTED_POOL_V4_FACTORY_ADDRESS = '0x22f5b7FDD99076f1f20f8118854ce3984544D56d';
 
@@ -42,7 +42,7 @@ async function create() {
     toNormalizedWeights(sortedTokens.map((token) => token.weight)),
     sortedTokens.map((token) => token.rateProvider), // rate provider
     fp(swapFee / 100), // swap fee
-    POOL_OWNER_FTM,
+    POOL_OWNER_SONIC,
     random //random string
   );
 
