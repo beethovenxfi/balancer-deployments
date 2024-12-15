@@ -85,7 +85,14 @@ export default class Verifier {
   ): Promise<EtherscanResponse> {
     const deployedBytecodeHex = await retrieveContractBytecode(address, this.network.provider, this.network.name);
     const deployedBytecode = new Bytecode(deployedBytecodeHex);
-    const buildInfos = await task.buildInfos();
+    let buildInfos: BuildInfo[];
+    try {
+      // First check if there's a specific file named like this.
+      buildInfos = [task.buildInfo(name)];
+    } catch {
+      // Otherwise search in every file.
+      buildInfos = task.buildInfos();
+    }
     const buildInfo = this.findBuildInfoWithContract(buildInfos, name);
     buildInfo.input = this.trimmedBuildInfoInput(name, buildInfo.input);
 
@@ -222,7 +229,7 @@ export default class Verifier {
   private getAbsoluteSourcePath(relativeSourcePath: string, input: CompilerInput): string {
     // We're not actually converting from relative to absolute but rather guessing: we'll extract the filename from the
     // relative path, and then look for a source name in the inputs that matches it.
-    const contractName = (relativeSourcePath.match(/.*\/(\w*)\.sol/) as RegExpMatchArray)[1];
+    const contractName = (relativeSourcePath.match(/.*\/([\w'-]+)\.sol/) as RegExpMatchArray)[1];
     return this.getContractSourceName(contractName, input);
   }
 

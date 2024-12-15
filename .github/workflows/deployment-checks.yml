@@ -107,26 +107,36 @@ jobs:
           BASE_RPC_ENDPOINT: ${{ secrets.BASE_RPC_ENDPOINT }}
         with:
           network-name: base
-  check-fantom-deployments:
+  check-fraxtal-deployments:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Check Fantom Deployment Addresses
+      - name: Check Fraxtal Deployment Addresses
         uses: ./.github/actions/check-network-deployments
         env:
-          FANTOM_RPC_ENDPOINT: ${{ secrets.FANTOM_RPC_ENDPOINT }}
+          FRAXTAL_RPC_ENDPOINT: ${{ secrets.FRAXTAL_RPC_ENDPOINT }}
         with:
-          network-name: fantom
-  check-goerli-deployments:
+          network-name: fraxtal
+  check-mode-deployments:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Check Goerli Deployment Addresses
+      - name: Check Mode Deployment Addresses
         uses: ./.github/actions/check-network-deployments
         env:
-          GOERLI_RPC_ENDPOINT: ${{ secrets.GOERLI_RPC_ENDPOINT }}
+          MODE_RPC_ENDPOINT: ${{ secrets.MODE_RPC_ENDPOINT }}
         with:
-          network-name: goerli
+          network-name: mode
+  check-sonic-deployments:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check Sonic Deployment Addresses
+        uses: ./.github/actions/check-network-deployments
+        env:
+          SONIC_RPC_ENDPOINT: ${{ secrets.SONIC_RPC_ENDPOINT }}
+        with:
+          network-name: sonic
   check-sepolia-deployments:
     runs-on: ubuntu-latest
     steps:
@@ -228,26 +238,36 @@ jobs:
           BASE_RPC_ENDPOINT: ${{ secrets.BASE_RPC_ENDPOINT }}
         with:
           network-name: base
-  check-fantom-action-ids:
+  check-fraxtal-action-ids:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Check Fantom Action IDs
+      - name: Check Fraxtal Action IDs
         uses: ./.github/actions/check-network-action-ids
         env:
-          FANTOM_RPC_ENDPOINT: ${{ secrets.FANTOM_RPC_ENDPOINT }}
+          FRAXTAL_RPC_ENDPOINT: ${{ secrets.FRAXTAL_RPC_ENDPOINT }}
         with:
-          network-name: fantom
-  check-goerli-action-ids:
+          network-name: fraxtal
+  check-mode-action-ids:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Check Goerli Action IDs
+      - name: Check Mode Action IDs
         uses: ./.github/actions/check-network-action-ids
         env:
-          GOERLI_RPC_ENDPOINT: ${{ secrets.GOERLI_RPC_ENDPOINT }}
+          MODE_RPC_ENDPOINT: ${{ secrets.MODE_RPC_ENDPOINT }}
         with:
-          network-name: goerli
+          network-name: mode
+  check-sonic-action-ids:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check Sonic Action IDs
+        uses: ./.github/actions/check-network-action-ids
+        env:
+          MODE_RPC_ENDPOINT: ${{ secrets.SONIC_RPC_ENDPOINT }}
+        with:
+          network-name: sonic
   check-sepolia-action-ids:
     runs-on: ubuntu-latest
     steps:
@@ -267,19 +287,19 @@ jobs:
         uses: ./.github/actions/setup
       - name: Prepare Config
         run: yarn ci:prepare-config
-        env:
-          MAINNET_RPC_ENDPOINT: ${{ secrets.MAINNET_RPC_ENDPOINT }}
-          POLYGON_RPC_ENDPOINT: ${{ secrets.POLYGON_RPC_ENDPOINT }}
-          ARBITRUM_RPC_ENDPOINT: ${{ secrets.ARBITRUM_RPC_ENDPOINT }}
-          OPTIMISM_RPC_ENDPOINT: ${{ secrets.OPTIMISM_RPC_ENDPOINT }}
-          BINANCE_RPC_ENDPOINT: ${{ secrets.BINANCE_RPC_ENDPOINT }}
-          GNOSIS_RPC_ENDPOINT: ${{ secrets.GNOSIS_RPC_ENDPOINT }}
-          AVALANCHE_RPC_ENDPOINT: ${{ secrets.AVALANCHE_RPC_ENDPOINT }}
-          ZKEVM_RPC_ENDPOINT: ${{ secrets.ZKEVM_RPC_ENDPOINT }}
-          GOERLI_RPC_ENDPOINT: ${{ secrets.GOERLI_RPC_ENDPOINT }}
-          SEPOLIA_RPC_ENDPOINT: ${{ secrets.SEPOLIA_RPC_ENDPOINT }}
       - name: Check Deployment Address Lookup File
         run: yarn check-address-lookup
+
+  check-timelock-authorizer-config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up environment
+        uses: ./.github/actions/setup
+      - name: Prepare Config
+        run: yarn ci:prepare-config
+      - name: Check Timelock Authorizer Configuration Files
+        run: yarn check-timelock-authorizer-config
 
   markdown-link-check:
     runs-on: ubuntu-latest

@@ -67,7 +67,7 @@
         "address": "0x809B79b53F18E9bc08A961ED4678B901aC93213a"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20220425-unbutton-aave-linear-pool": {
     "contracts": [
@@ -94,7 +94,7 @@
         "address": "0x1802953277FD955f9a254B80Aa0582f193cF1d77"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20220609-stable-pool-v2": {
     "contracts": [
@@ -130,7 +130,7 @@
         "address": "0xf7D5DcE55E6D47852F054697BAB6A1B48A00ddbd"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20220908-weighted-pool-v2": {
     "contracts": [
@@ -273,7 +273,7 @@
         "address": "0x3536fD480CA495Ac91E698A703248A8915c137a3"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230316-child-chain-gauge-factory-v2": {
     "contracts": [
@@ -364,7 +364,7 @@
         "address": "0x1AC55C31DaC78ca943CB8ebfCa5945ce09e036e2"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230411-managed-pool-v2": {
     "contracts": [
@@ -408,6 +408,15 @@
     ],
     "status": "ACTIVE"
   },
+  "20230524-lz-omni-voting-escrow-child": {
+    "contracts": [
+      {
+        "name": "OmniVotingEscrowChild",
+        "address": "0xE241C6e48CA045C7f631600a0f1403b2bFea05ad"
+      }
+    ],
+    "status": "ACTIVE"
+  },
   "20230525-l2-veboost-v2": {
     "contracts": [
       {
@@ -446,7 +455,7 @@
         "address": "0xa359b6BB0a89ED9f237C83f32fF05c658DA8b3aB"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230712-child-chain-gauge-checkpointer": {
     "contracts": [
@@ -466,6 +475,132 @@
       {
         "name": "ChainlinkRateProviderFactory",
         "address": "0xDB8d758BCb971e482B2C45f7F8a7740283A1bd3A"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20231031-batch-relayer-v6": {
+    "contracts": [
+      {
+        "name": "BatchRelayerLibrary",
+        "address": "0x8eA89804145c007e7D226001A96955ad53836087"
+      },
+      {
+        "name": "BatchRelayerQueryLibrary",
+        "address": "0x884976294666ccF6dd61006BBcDafe74ca889504"
+      },
+      {
+        "name": "BalancerRelayer",
+        "address": "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20240223-composable-stable-pool-v6": {
+    "contracts": [
+      {
+        "name": "ComposableStablePoolFactory",
+        "address": "0x47B489bf5836f83ABD928C316F8e39bC0587B020"
+      },
+      {
+        "name": "MockComposableStablePool",
+        "address": "0x5d98909Aa2b3d964907B3735597F47E06b04D8b4"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241204-v3-vault": {
+    "contracts": [
+      {
+        "name": "VaultFactory",
+        "address": "0xAc27df81663d139072E615855eF9aB0Af3FBD281"
+      },
+      {
+        "name": "Vault",
+        "address": "0xbA1333333333a1BA1108E8412f11850A5C319bA9"
+      },
+      {
+        "name": "VaultExtension",
+        "address": "0x0E8B07657D719B86e06bF0806D6729e3D528C9A9"
+      },
+      {
+        "name": "VaultAdmin",
+        "address": "0x35fFB749B273bEb20F40f35EdeB805012C539864"
+      },
+      {
+        "name": "ProtocolFeeController",
+        "address": "0xa731C23D7c95436Baaae9D52782f966E1ed07cc8"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-batch-router": {
+    "contracts": [
+      {
+        "name": "BatchRouter",
+        "address": "0xe2fa4e1d17725e72dcdAfe943Ecf45dF4B9E285b"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-buffer-router": {
+    "contracts": [
+      {
+        "name": "BufferRouter",
+        "address": "0x86e67E115f96DF37239E0479441303De0de7bc2b"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-composite-liquidity-router": {
+    "contracts": [
+      {
+        "name": "CompositeLiquidityRouter",
+        "address": "0xC1A64500E035D9159C8826E982dFb802003227f0"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-router": {
+    "contracts": [
+      {
+        "name": "Router",
+        "address": "0x84813aA3e079A665C0B80F944427eE83cBA63617"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-stable-pool": {
+    "contracts": [
+      {
+        "name": "StablePoolFactory",
+        "address": "0x22625eEDd92c81a219A83e1dc48f88d54786B017"
+      },
+      {
+        "name": "MockStablePool",
+        "address": "0x5006082D252c6315C3A83BD621927551a20F3b44"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-vault-explorer": {
+    "contracts": [
+      {
+        "name": "VaultExplorer",
+        "address": "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-weighted-pool": {
+    "contracts": [
+      {
+        "name": "WeightedPoolFactory",
+        "address": "0xEB1eeaBF0126d813589C3D2CfeFFE410D9aE3863"
+      },
+      {
+        "name": "MockWeightedPool",
+        "address": "0xd43c36038250c66D46854e536Bf959fdDE5294c3"
       }
     ],
     "status": "ACTIVE"

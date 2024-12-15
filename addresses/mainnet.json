@@ -780,7 +780,7 @@
         "address": "0xDEC02e6642e2c999aF429F5cE944653CAd15e093"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230213-gearbox-linear-pool": {
     "contracts": [
@@ -875,7 +875,7 @@
         "address": "0xfeA793Aa415061C483D2390414275AD314B3F621"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230315-silo-linear-pool": {
     "contracts": [
@@ -943,7 +943,7 @@
         "address": "0x9516a2d25958EdB8da246a320f2c7d94A0DBe25d"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230409-gearbox-linear-pool-v2": {
     "contracts": [
@@ -964,7 +964,7 @@
         "address": "0x0d05Aac44aC7Dd3c7ba5d50Be93EB884A057d234"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230409-yearn-linear-pool-v2": {
     "contracts": [
@@ -981,7 +981,7 @@
         "address": "0xAC5B4EF7eDe2F2843a704E96dcAA637F4BA3Dc3f"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230410-aave-linear-pool-v5": {
     "contracts": [
@@ -1002,7 +1002,7 @@
         "address": "0x4cE277Df0FeB5B4d07a0ca2ADCf5326E4005239d"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230410-silo-linear-pool-v2": {
     "contracts": [
@@ -1027,7 +1027,7 @@
         "address": "0x74CBfAF94A3577c539a9dCEE9870A6349a33b34f"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230411-managed-pool-v2": {
     "contracts": [
@@ -1102,6 +1102,15 @@
     ],
     "status": "ACTIVE"
   },
+  "20230524-mainnet-lz-omni-voting-escrow": {
+    "contracts": [
+      {
+        "name": "OmniVotingEscrow",
+        "address": "0xE241C6e48CA045C7f631600a0f1403b2bFea05ad"
+      }
+    ],
+    "status": "ACTIVE"
+  },
   "20230526-gauge-working-balance-helper": {
     "contracts": [
       {
@@ -1166,7 +1175,7 @@
         "address": "0x20356663C17D31549d1210379749E2aE36722D8f"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230717-chainlink-rate-provider-factory": {
     "contracts": [
@@ -1184,7 +1193,7 @@
         "address": "0x0f08eEf2C785AA5e7539684aF04755dEC1347b7c"
       }
     ],
-    "status": "ACTIVE"
+    "status": "DEPRECATED"
   },
   "20230811-avalanche-root-gauge-factory-v2": {
     "contracts": [
@@ -1208,6 +1217,154 @@
       {
         "name": "BaseRootGauge",
         "address": "0x9a4d642b9876231BB9062559521A48097abFe6CB"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20230915-stakeless-gauge-checkpointer-v2": {
+    "contracts": [
+      {
+        "name": "StakelessGaugeCheckpointer",
+        "address": "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20231031-batch-relayer-v6": {
+    "contracts": [
+      {
+        "name": "BatchRelayerLibrary",
+        "address": "0xeA66501dF1A00261E3bB79D1E90444fc6A186B62"
+      },
+      {
+        "name": "BatchRelayerQueryLibrary",
+        "address": "0x481Ca759BABB6fF011E11890e183bE00de3714e7"
+      },
+      {
+        "name": "BalancerRelayer",
+        "address": "0x35Cea9e57A393ac66Aaa7E25C391D52C74B5648f"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20240223-composable-stable-pool-v6": {
+    "contracts": [
+      {
+        "name": "ComposableStablePoolFactory",
+        "address": "0x5B42eC6D40f7B7965BE5308c70e2603c0281C1E9"
+      },
+      {
+        "name": "MockComposableStablePool",
+        "address": "0xF1C849190Ecfae64d0Bd0a0708708E1De906aaB5"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20240522-fraxtal-root-gauge-factory": {
+    "contracts": [
+      {
+        "name": "OptimisticRootGaugeFactory",
+        "address": "0x18CC3C68A5e64b40c846Aa6E45312cbcBb94f71b"
+      },
+      {
+        "name": "OptimisticRootGauge",
+        "address": "0x37302B98918382c43a176e5f3Bc7B11448cC6498"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241204-v3-vault": {
+    "contracts": [
+      {
+        "name": "VaultFactory",
+        "address": "0xAc27df81663d139072E615855eF9aB0Af3FBD281"
+      },
+      {
+        "name": "Vault",
+        "address": "0xbA1333333333a1BA1108E8412f11850A5C319bA9"
+      },
+      {
+        "name": "VaultExtension",
+        "address": "0x0E8B07657D719B86e06bF0806D6729e3D528C9A9"
+      },
+      {
+        "name": "VaultAdmin",
+        "address": "0x35fFB749B273bEb20F40f35EdeB805012C539864"
+      },
+      {
+        "name": "ProtocolFeeController",
+        "address": "0xa731C23D7c95436Baaae9D52782f966E1ed07cc8"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-batch-router": {
+    "contracts": [
+      {
+        "name": "BatchRouter",
+        "address": "0x136f1EFcC3f8f88516B9E94110D56FDBfB1778d1"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-buffer-router": {
+    "contracts": [
+      {
+        "name": "BufferRouter",
+        "address": "0x9179C06629ef7f17Cb5759F501D89997FE0E7b45"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-composite-liquidity-router": {
+    "contracts": [
+      {
+        "name": "CompositeLiquidityRouter",
+        "address": "0x1CD776897ef4f647bf8241Ec69549e4A9cb1D608"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-router": {
+    "contracts": [
+      {
+        "name": "Router",
+        "address": "0x5C6fb490BDFD3246EB0bB062c168DeCAF4bD9FDd"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-stable-pool": {
+    "contracts": [
+      {
+        "name": "StablePoolFactory",
+        "address": "0xB9d01CA61b9C181dA1051bFDd28e1097e920AB14"
+      },
+      {
+        "name": "MockStablePool",
+        "address": "0x89Ef89Fd9a6ec73bcE588F309C1F65C406d2891C"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-vault-explorer": {
+    "contracts": [
+      {
+        "name": "VaultExplorer",
+        "address": "0x774cB66e2B2dB59A9daF175e9b2B7A142E17EB94"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-weighted-pool": {
+    "contracts": [
+      {
+        "name": "WeightedPoolFactory",
+        "address": "0x201efd508c8DfE9DE1a13c2452863A78CB2a86Cc"
+      },
+      {
+        "name": "MockWeightedPool",
+        "address": "0x527d0E14acc53FB040DeBeae1cAb973D23FB3568"
       }
     ],
     "status": "ACTIVE"

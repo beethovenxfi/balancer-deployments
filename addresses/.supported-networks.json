@@ -19,10 +19,6 @@
     "chainId": 100,
     "block-explorer": "https://gnosisscan.io"
   },
-  "goerli": {
-    "chainId": 5,
-    "block-explorer": "https://goerli.etherscan.io"
-  },
   "optimism": {
     "chainId": 10,
     "block-explorer": "https://optimistic.etherscan.io"
@@ -43,8 +39,16 @@
     "chainId": 8453,
     "block-explorer": "https://basescan.org"
   },
-  "fantom": {
-    "chainId": 250,
-    "block-explorer": "https://ftmscan.com"
+  "fraxtal": {
+    "chainId": 252,
+    "block-explorer": "https://fraxscan.com"
+  },
+  "mode": {
+    "chainId": 34443,
+    "block-explorer": "https://modescan.io"
+  },
+  "sonic": {
+    "chainId": 146,
+    "block-explorer": "https://sonicscan.org/"
   }
 }

@@ -1,0 +1,203 @@
+{
+  "20210418-authorizer": {
+    "contracts": [
+      {
+        "name": "Authorizer",
+        "address": "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20210418-vault": {
+    "contracts": [
+      {
+        "name": "Vault",
+        "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
+      },
+      {
+        "name": "ProtocolFeesCollector",
+        "address": "0xce88686553686DA562CE7Cea497CE749DA109f9F"
+      },
+      {
+        "name": "BalancerHelpers",
+        "address": "0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20220325-authorizer-adaptor": {
+    "contracts": [
+      {
+        "name": "AuthorizerAdaptor",
+        "address": "0xF24917fB88261a37Cc57F686eBC831a5c0B9fD39"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20220721-balancer-queries": {
+    "contracts": [
+      {
+        "name": "BalancerQueries",
+        "address": "0x4B29DB997Ec0efDFEF13bAeE2a2D7783bCf67f17"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20220725-protocol-fee-percentages-provider": {
+    "contracts": [
+      {
+        "name": "ProtocolFeePercentagesProvider",
+        "address": "0x4d4DDc3e4479e42C4288F6B61554cAD9e41f4146"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20230320-weighted-pool-v4": {
+    "contracts": [
+      {
+        "name": "WeightedPoolFactory",
+        "address": "0x22f5b7FDD99076f1f20f8118854ce3984544D56d"
+      },
+      {
+        "name": "MockWeightedPool",
+        "address": "0x5a69130b9C0c0d49bE785fF7b6f5d39776f1075f"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20230613-balancer-pool-data-queries": {
+    "contracts": [
+      {
+        "name": "BalancerPoolDataQueries",
+        "address": "0x2f4799933c34127e715839445EbC90D62CB3E4E6"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20231031-batch-relayer-v6": {
+    "contracts": [
+      {
+        "name": "BatchRelayerLibrary",
+        "address": "0x965C2FDA059BF88aaAdc30cD00728FAF4b0ceF57"
+      },
+      {
+        "name": "BatchRelayerQueryLibrary",
+        "address": "0x083961C864cfB44B5B772341659587357acF21E6"
+      },
+      {
+        "name": "BalancerRelayer",
+        "address": "0xb5F8f253d0A6D4A18014cecA4253A2cEC6C98763"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20240223-composable-stable-pool-v6": {
+    "contracts": [
+      {
+        "name": "ComposableStablePoolFactory",
+        "address": "0x993767E29726dDb7F5e8A751fAF54d4b83F3FC62"
+      },
+      {
+        "name": "MockComposableStablePool",
+        "address": "0xEcA0bc45Fc02Ab59941BDB0bc3718EfE6D3f09b3"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241204-v3-vault": {
+    "contracts": [
+      {
+        "name": "VaultFactory",
+        "address": "0xAc27df81663d139072E615855eF9aB0Af3FBD281"
+      },
+      {
+        "name": "Vault",
+        "address": "0xbA1333333333a1BA1108E8412f11850A5C319bA9"
+      },
+      {
+        "name": "VaultExtension",
+        "address": "0x0E8B07657D719B86e06bF0806D6729e3D528C9A9"
+      },
+      {
+        "name": "VaultAdmin",
+        "address": "0x35fFB749B273bEb20F40f35EdeB805012C539864"
+      },
+      {
+        "name": "ProtocolFeeController",
+        "address": "0xa731C23D7c95436Baaae9D52782f966E1ed07cc8"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-batch-router": {
+    "contracts": [
+      {
+        "name": "BatchRouter",
+        "address": "0x7761659F9e9834ad367e4d25E0306ba7A4968DAf"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-buffer-router": {
+    "contracts": [
+      {
+        "name": "BufferRouter",
+        "address": "0x532dA919D3EB5606b5867A6f505969c57F3A721b"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-composite-liquidity-router": {
+    "contracts": [
+      {
+        "name": "CompositeLiquidityRouter",
+        "address": "0xcf21664262774eBB2C2b559e13b47F6cA10F3E65"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-router": {
+    "contracts": [
+      {
+        "name": "Router",
+        "address": "0x6077b9801B5627a65A5eeE70697C793751D1a71c"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-stable-pool": {
+    "contracts": [
+      {
+        "name": "StablePoolFactory",
+        "address": "0x815Ab57a5a2E4976cEC0b43C2D50CF26EF6F31Fd"
+      },
+      {
+        "name": "MockStablePool",
+        "address": "0x82F2d4c5BEaC74a1684C1792CaB67b04c7e5f6f3"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-vault-explorer": {
+    "contracts": [
+      {
+        "name": "VaultExplorer",
+        "address": "0x6F6CD1a69A19d45df0C300A57829b21713637300"
+      }
+    ],
+    "status": "ACTIVE"
+  },
+  "20241205-v3-weighted-pool": {
+    "contracts": [
+      {
+        "name": "WeightedPoolFactory",
+        "address": "0x4726Eb55c37F0353F6d5011B5652d44A87d60fc3"
+      },
+      {
+        "name": "MockWeightedPool",
+        "address": "0xE41C7F1bC019dd966072726A7ea3b617f3a475B3"
+      }
+    ],
+    "status": "ACTIVE"
+  }
+}
