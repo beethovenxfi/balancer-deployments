@@ -42,6 +42,12 @@ export const TOKENS: {
       rateProvider: ZERO_ADDRESS,
       cache: 30,
     },
+    SCUSD: {
+      address: '0xd3DCe716f3eF535C5Ff8d041c1A41C3bd89b97aE',
+      decimals: 6,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    }
   },
   ['FANTOM']: {
     NATIS: {
