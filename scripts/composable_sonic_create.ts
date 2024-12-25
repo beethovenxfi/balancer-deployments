@@ -11,14 +11,14 @@ async function create() {
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolName = 'Staked Sonic Symphony'
-  const poolSymbol = 'bpt-sss';
+  const poolName = 'Ringing Stable Beets'
+  const poolSymbol = 'bpt-rsb';
   const amp = 200;
   const yieldFeeExemption = false;
-  const swapFee = 0.1; // as true percentage 0.04 => 0.04%
-  const random = '0xbc4592c5a1775ba532a595c891ff539651c30d23b1a484fabf25a529946599bd'; // https://www.browserling.com/tools/random-hex
+  const swapFee = 0.05; // as true percentage 0.04 => 0.04%
+  const random = '0xfdbb437dd9e277669a9838c66e6d56acf4a76e9beb0a4b60c864e348758678b4'; // https://www.browserling.com/tools/random-hex
 
-  const tokens = [TOKENS['SONIC'].STS, TOKENS['SONIC'].WS, ];
+  const tokens = [TOKENS['SONIC'].SCUSD, TOKENS['SONIC'].USDCE, ];
 
   // END ====== variables ====== END
 

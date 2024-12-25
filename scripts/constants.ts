@@ -47,6 +47,12 @@ export const TOKENS: {
       decimals: 6,
       rateProvider: ZERO_ADDRESS,
       cache: 30,
+    },
+    USDCE: {
+      address: '0x29219dd400f2bf60e5a23d13be72b486d4038894',
+      decimals: 6,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
     }
   },
   ['FANTOM']: {
