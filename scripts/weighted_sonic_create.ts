@@ -13,10 +13,10 @@ const WEIGHTED_POOL_V4_FACTORY_ADDRESS = '0x22f5b7FDD99076f1f20f8118854ce3984544
 async function create() {
   const factory = await ethers.getContractAt(WeightedPoolV4Factory.abi, WEIGHTED_POOL_V4_FACTORY_ADDRESS);
 
-  const poolName = 'Put A Ring On It';
-  const poolSymbol = 'BPT-scUSD-stS';
+  const poolName = 'Staked Sonic & Circle Concerto';
+  const poolSymbol = 'BPT-USDCe-stS';
   const swapFee = 0.4; // as true percentage 0.04 => 0.04%
-  const random = '0xe3b37ab5f0779687414fd61c3d4444951b9edd4c43a362840e7651a5efff7832'; // https://www.browserling.com/tools/random-hex
+  const random = '0x4c393277952adbc463c0ca01dbe154da451afb54a620cedece6d636ebf287a77'; // https://www.browserling.com/tools/random-hex
 
   const tokens = [
     {
@@ -24,7 +24,7 @@ async function create() {
       weight: fp(0.70),
     },
     {
-      ...TOKENS['SONIC'].SCUSD,
+      ...TOKENS['SONIC'].USDCE,
       weight: fp(0.30),
     },
   ];

@@ -11,14 +11,14 @@ async function create() {
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolName = 'Ringing Stable Beets'
-  const poolSymbol = 'bpt-rsb';
+  const poolName = 'Atoll\'s Beeting Flow '
+  const poolSymbol = 'bpt-ats-sts';
   const amp = 200;
   const yieldFeeExemption = false;
-  const swapFee = 0.05; // as true percentage 0.04 => 0.04%
-  const random = '0xfdbb437dd9e277669a9838c66e6d56acf4a76e9beb0a4b60c864e348758678b4'; // https://www.browserling.com/tools/random-hex
+  const swapFee = 0.04; // as true percentage 0.04 => 0.04%
+  const random = '0x832ec487056ae8f5443ca00fa4e0433c7a20ca9142155b4e983396799dd91f5e'; // https://www.browserling.com/tools/random-hex
 
-  const tokens = [TOKENS['SONIC'].SCUSD, TOKENS['SONIC'].USDCE, ];
+  const tokens = [TOKENS['SONIC'].STS, TOKENS['SONIC'].ATS, ];
 
   // END ====== variables ====== END
 

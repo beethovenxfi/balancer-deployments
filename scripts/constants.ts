@@ -53,6 +53,24 @@ export const TOKENS: {
       decimals: 6,
       rateProvider: ZERO_ADDRESS,
       cache: 30,
+    },
+    SCETH: {
+      address: '0x3bcE5CB273F0F148010BbEa2470e7b5df84C7812',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    WETH: {
+      address: '0x50c42deacd8fc9773493ed674b675be577f2634b',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
+    ATS: {
+      address: '0x0E65f5a7cB56641e31bc5C9d53388dB7aC7eaCAE',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
     }
   },
   ['FANTOM']: {
