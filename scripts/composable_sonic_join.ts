@@ -13,17 +13,17 @@ async function join() {
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolId = '0x4534c46c3d967988b2c81fa7834f5be86d51430100000000000000000000008b';
-  const poolAddress = '0x4534c46c3d967988b2c81fa7834f5be86d514301';
+  const poolId = '0xe14a059bfe38000183b5033716a18bbf7125a621000000000000000000000097';
+  const poolAddress = '0xe14a059bfe38000183b5033716a18bbf7125a621';
 
   const tokens = [
     {
-      ...TOKENS['SONIC'].STS,
-      balance: parseUnits('0.101', TOKENS['SONIC'].STS.decimals),
+      ...TOKENS['SONIC'].ATETH,
+      balance: parseUnits('0.001', TOKENS['SONIC'].ATETH.decimals),
     },
     {
-      ...TOKENS['SONIC'].ATS,
-      balance: parseUnits('0.1', TOKENS['SONIC'].ATS.decimals),
+      ...TOKENS['SONIC'].WETH,
+      balance: parseUnits('0.001', TOKENS['SONIC'].WETH.decimals),
     },
     {
       address: poolAddress,

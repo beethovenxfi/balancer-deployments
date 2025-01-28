@@ -71,6 +71,12 @@ export const TOKENS: {
       decimals: 18,
       rateProvider: ZERO_ADDRESS,
       cache: 30,
+    },
+    ATETH: {
+      address: '0x284d81e48fbc782aa9186a03a226690aea5cbe0e',
+      decimals: 18,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
     }
   },
   ['FANTOM']: {
