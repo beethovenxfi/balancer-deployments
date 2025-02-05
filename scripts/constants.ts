@@ -77,6 +77,12 @@ export const TOKENS: {
       decimals: 18,
       rateProvider: ZERO_ADDRESS,
       cache: 30,
+    },
+    WOS: {
+      address: '0x9F0dF7799f6FDAd409300080cfF680f5A23df4b1',
+      decimals: 18,
+      rateProvider: '0xfbcee1fcaa2db776b4b575a8da3e8c93ea5eef53',
+      cache: 30,
     }
   },
   ['FANTOM']: {

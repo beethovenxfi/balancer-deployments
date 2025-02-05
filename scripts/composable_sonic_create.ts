@@ -11,14 +11,14 @@ async function create() {
 
   // BEGIN ====== variables ====== BEGIN
 
-  const poolName = 'Atoll\'s Ether '
-  const poolSymbol = 'bpt-ateth-weth';
-  const amp = 200;
+  const poolName = 'Sonic Fugue: Staked & Staked'
+  const poolSymbol = 'bpt-sts-wos';
+  const amp = 400;
   const yieldFeeExemption = false;
   const swapFee = 0.04; // as true percentage 0.04 => 0.04%
-  const random = '0x508386059394506d816cb2e782f2395981d492caf02ea51bfbe905a2972918f9'; // https://www.browserling.com/tools/random-hex
+  const random = '0x3b69cee70a6ece31a42e820daa5922eb7e7567a9dcf93a4fd0cca9d32041ddff'; // https://www.browserling.com/tools/random-hex
 
-  const tokens = [TOKENS['SONIC'].ATETH, TOKENS['SONIC'].WETH, ];
+  const tokens = [TOKENS['SONIC'].STS, TOKENS['SONIC'].WOS, ];
 
   // END ====== variables ====== END
 
