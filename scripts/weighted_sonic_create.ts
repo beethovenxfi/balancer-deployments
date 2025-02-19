@@ -13,19 +13,27 @@ const WEIGHTED_POOL_V4_FACTORY_ADDRESS = '0x22f5b7FDD99076f1f20f8118854ce3984544
 async function create() {
   const factory = await ethers.getContractAt(WeightedPoolV4Factory.abi, WEIGHTED_POOL_V4_FACTORY_ADDRESS);
 
-  const poolName = 'Staked Sonic & Circle Concerto';
-  const poolSymbol = 'BPT-USDCe-stS';
-  const swapFee = 0.4; // as true percentage 0.04 => 0.04%
-  const random = '0x4c393277952adbc463c0ca01dbe154da451afb54a620cedece6d636ebf287a77'; // https://www.browserling.com/tools/random-hex
+  const poolName = 'Sonic Quartet Audition - Act II';
+  const poolSymbol = 'BPT-scaa-ii';
+  const swapFee = 0.3; // as true percentage 0.04 => 0.04%
+  const random = '0x0bd8e286f83ee8cb62771185529fc5492de1969fbb5e9ea11aa6827dedadcaad'; // https://www.browserling.com/tools/random-hex
 
   const tokens = [
     {
-      ...TOKENS['SONIC'].STS,
-      weight: fp(0.70),
+      ...TOKENS['SONIC'].SCBTC,
+      weight: fp(0.25),
     },
     {
-      ...TOKENS['SONIC'].USDCE,
-      weight: fp(0.30),
+      ...TOKENS['SONIC'].SCETH,
+      weight: fp(0.25),
+    },
+    {
+      ...TOKENS['SONIC'].SCUSD,
+      weight: fp(0.25),
+    },
+    {
+      ...TOKENS['SONIC'].STS,
+      weight: fp(0.25),
     },
   ];
 

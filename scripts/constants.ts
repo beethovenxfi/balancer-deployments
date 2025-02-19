@@ -83,7 +83,13 @@ export const TOKENS: {
       decimals: 18,
       rateProvider: '0xfbcee1fcaa2db776b4b575a8da3e8c93ea5eef53',
       cache: 30,
-    }
+    },
+    SCBTC: {
+      address: '0xbb30e76d9bb2cc9631f7fc5eb8e87b5aff32bfbd',
+      decimals: 8,
+      rateProvider: ZERO_ADDRESS,
+      cache: 30,
+    },
   },
   ['FANTOM']: {
     NATIS: {

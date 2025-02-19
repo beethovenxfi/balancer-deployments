@@ -9,10 +9,12 @@ import { TOKENS, VAULT_ADDRESS_CANONCIAL } from './constants';
 async function join() {
   const vault = await ethers.getContractAt(Vault.abi, VAULT_ADDRESS_CANONCIAL);
 
-  const POOL_ID = '0x713fb5036dc70012588d77a5b066f1dd05c712d7000200000000000000000041';
+  const POOL_ID = '0xbd4a2ecdcd7acb0d2b20744ac4cc1368dd8fdc410001000000000000000000a8';
   const tokens = [
-    { ...TOKENS['SONIC'].USDCE, balance: parseUnits('0.23', TOKENS['SONIC'].USDCE.decimals) },
-    { ...TOKENS['SONIC'].STS, balance: parseUnits('0.5', TOKENS['SONIC'].STS.decimals) },
+    { ...TOKENS['SONIC'].SCETH, balance: parseUnits('0.0002054', TOKENS['SONIC'].SCETH.decimals) },
+    { ...TOKENS['SONIC'].SCBTC, balance: parseUnits('0.00000543', TOKENS['SONIC'].SCBTC.decimals) },
+    { ...TOKENS['SONIC'].SCUSD, balance: parseUnits('0.58308', TOKENS['SONIC'].SCUSD.decimals) },
+    { ...TOKENS['SONIC'].STS, balance: parseUnits('0.843', TOKENS['SONIC'].STS.decimals) },
   ];
 
   const sortedTokens = tokens.sort((a, b) => ('' + a.address).localeCompare(b.address));
