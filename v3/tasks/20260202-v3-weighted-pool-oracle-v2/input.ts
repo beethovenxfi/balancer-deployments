@@ -65,4 +65,7 @@ export default {
   sepolia: {
     SequencerUptimeFeed: ZERO_ADDRESS,
   },
+  sonic: {
+    SequencerUptimeFeed: ZERO_ADDRESS,
+  },
 };
