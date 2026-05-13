@@ -147,7 +147,6 @@ Returns an object with all contracts from a deployment and their addresses.
 | V3 Prepaid Composite Liquidity Router (V3)             | [`20251010-v3-prepaid-composite-liquidity-router`](./v3/tasks/20251010-v3-prepaid-composite-liquidity-router-v3) |
 | Vault v2.1 (patched for new L2s)                       | [`20251020-vault-v2.1`](./v2/tasks/20251020-vault-v2.1)                                                 |
 | V3 Fixed Price Liquidity Bootstrapping Pool            | [`20251205-v3-fixed-price-lbp`](./v3/tasks/20251205-v3-fixed-price-lbp)                                 |
-| V3 Liquidity Bootstrapping Pool (V3)                   | [`20251219-v3-liquidity-bootstrapping-pool-v3`](./v3/tasks/20251219-v3-liquidity-bootstrapping-pool-v3) |
 | V3 Balancer Fee Burner (V2)                            | [`20251219-v3-balancer-fee-burner-v2`](./v3/tasks/20251219-v3-balancer-fee-burner-v2)                   |
 | V3 Weighted Pool (V2)                                  | [`20260115-v3-weighted-pool-v2`](./v3/tasks/20260115-v3-weighted-pool-v2)                               |
 | V3 Stable Pool (V3)                                    | [`20260116-v3-stable-pool-v3`](./v3/tasks/20260116-v3-stable-pool-v3)                                   |
@@ -158,6 +157,7 @@ Returns an object with all contracts from a deployment and their addresses.
 | V3 Stable LP Oracle (V2)                               | [`20260203-v3-stable-pool-oracle-v2`](./v3/tasks/20260203-v3-stable-pool-oracle-v2)                     |
 | V3 Gyro E-CLP Oracle                                   | [`20260209-v3-gyro-eclp-oracle`](./v3/tasks/20260209-v3-gyro-eclp-oracle)                               |
 | V3 ReClamm Pool (V3)                                   | [`20260428-v3-reclamm-pool-v3`](./v3/tasks/20260428-v3-reclamm-pool-v3).                                |
+| V3 Liquidity Bootstrapping Pool (V4)                   | [`20260501-v3-liquidity-bootstrapping-pool-v4`](./v3/tasks/20260501-v3-liquidity-bootstrapping-pool-v4) |
 
 ## Scripts
 
@@ -275,3 +275,4 @@ Go to each deprecated deployment's readme file to learn more about why it is dep
 | V3 ReClamm Pool (V2)                                | [`20250702-v3-reclamm-pool-v2`](./v3/deprecated/20250702-v3-reclamm-pool-v2)                             |
 | V3 Weighted LP Oracle                               | [`20250814-v3-weighted-pool-oracle`](./v3/deprecated/20250814-v3-weighted-pool-oracle)                   |
 | V3 Stable LP Oracle                                 | [`20250815-v3-stable-pool-oracle`](./v3/deprecated/20250815-v3-stable-pool-oracle)                       |
+| V3 Liquidity Bootstrapping Pool (V3)                | [`20251219-v3-liquidity-bootstrapping-pool-v3`](./v3/deprecated/20251219-v3-liquidity-bootstrapping-pool-v3) |
