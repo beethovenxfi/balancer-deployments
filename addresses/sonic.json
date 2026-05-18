@@ -376,7 +376,7 @@
         "address": "0xf687cbf48D1b1201Ff49c4C841a62a33c64129Da"
       }
     ],
-    "status": "ACTIVE",
+    "status": "DEPRECATED",
     "version": "v3"
   },
   "20250813-v3-constant-price-feed": {
@@ -462,7 +462,7 @@
         "address": "0x76ed61c83737cE668821D755fd1a4B2BE0E35796"
       }
     ],
-    "status": "ACTIVE",
+    "status": "DEPRECATED",
     "version": "v3"
   },
   "20260115-v3-weighted-pool-v2": {
@@ -558,6 +558,24 @@
       {
         "name": "MockStableLPOracle",
         "address": "0xe361d9FD8417828CA8523396247Fb61E9A32AD03"
+      }
+    ],
+    "status": "ACTIVE",
+    "version": "v3"
+  },
+  "20260428-v3-reclamm-pool-v3": {
+    "contracts": [
+      {
+        "name": "ReClammPoolHelper",
+        "address": "0xc80C02E6DF6203610231A7ccCa6057227DCd42D5"
+      },
+      {
+        "name": "ReClammPoolFactory",
+        "address": "0x78e48AEAf36666ae528De39c4300F09adb9722E8"
+      },
+      {
+        "name": "MockReClammPool",
+        "address": "0x5981F2977b81b3E47Eb0Aeec0a3831Be138364B4"
       }
     ],
     "status": "ACTIVE",
