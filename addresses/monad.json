@@ -296,7 +296,7 @@
         "address": "0x3dD13406D81Dbe497ff92d9E43E8F286fB5CAA53"
       }
     ],
-    "status": "ACTIVE",
+    "status": "DEPRECATED",
     "version": "v3"
   },
   "20250813-v3-constant-price-feed": {
@@ -416,7 +416,7 @@
         "address": "0xCEeaaA79222DB3bE51d82FAE9A32A1A04e7b3884"
       }
     ],
-    "status": "ACTIVE",
+    "status": "DEPRECATED",
     "version": "v3"
   },
   "20260115-v3-weighted-pool-v2": {
@@ -493,11 +493,11 @@
     "contracts": [
       {
         "name": "WeightedLPOracleFactory",
-        "address": "0x4BB42f71CAB7Bd13e9f958dA4351B9fa2d3A42FF"
+        "address": "0x18CC3C68A5e64b40c846Aa6E45312cbcBb94f71b"
       },
       {
         "name": "MockWeightedLPOracle",
-        "address": "0x1884CD33850838Cfc37c35e078bee098580aaD2b"
+        "address": "0x37302B98918382c43a176e5f3Bc7B11448cC6498"
       }
     ],
     "status": "ACTIVE",
@@ -507,11 +507,43 @@
     "contracts": [
       {
         "name": "StableLPOracleFactory",
-        "address": "0xbC169a08cBdCDB218d91Cd945D29B59F78c96B77"
+        "address": "0x4Cb42fc3b5fb9392Ce0772C3A540E4AE4da4Ac4d"
       },
       {
         "name": "MockStableLPOracle",
-        "address": "0xDC977dA80aeaca0F6E77455472dB0B238eC15b1F"
+        "address": "0x3a67b320e42cB7c777d8D2417a0b1A4CfDBa6e95"
+      }
+    ],
+    "status": "ACTIVE",
+    "version": "v3"
+  },
+  "20260209-v3-gyro-eclp-oracle": {
+    "contracts": [
+      {
+        "name": "EclpLPOracleFactory",
+        "address": "0x201efd508c8DfE9DE1a13c2452863A78CB2a86Cc"
+      },
+      {
+        "name": "MockEclpLPOracle",
+        "address": "0x3234658811D726835547FAE1dEfF3892a0D9D9A1"
+      }
+    ],
+    "status": "ACTIVE",
+    "version": "v3"
+  },
+  "20260428-v3-reclamm-pool-v3": {
+    "contracts": [
+      {
+        "name": "ReClammPoolHelper",
+        "address": "0x04E66e492Cc14947138608811Eeed0B17224F2b6"
+      },
+      {
+        "name": "ReClammPoolFactory",
+        "address": "0x3ccD78683efFffdDc1A16f5553C896ac6D3ab7FF"
+      },
+      {
+        "name": "MockReClammPool",
+        "address": "0x43aeEf39a675Bdd2A692e9c54D5A6B88B4B1a291"
       }
     ],
     "status": "ACTIVE",

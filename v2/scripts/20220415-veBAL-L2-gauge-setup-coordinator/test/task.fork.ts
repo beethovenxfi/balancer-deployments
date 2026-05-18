@@ -2,7 +2,7 @@ import hre, { ethers } from 'hardhat';
 import { expect } from 'chai';
 import { Contract } from 'ethers';
 
-import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signer-with-address';
+import { SignerWithAddress } from '@nomicfoundation/hardhat-ethers/signers';
 import * as expectEvent from '@helpers/expectEvent';
 
 import { describeForkTest } from '@src';
@@ -86,7 +86,7 @@ describeForkTest.skip('veBALL2GaugeSetupCoordinator', 'mainnet', 14616219, funct
 
     await authorizer
       .connect(govMultisig)
-      .grantRole('0x0000000000000000000000000000000000000000000000000000000000000000', coordinator.address);
+      .grantRole('0x0000000000000000000000000000000000000000000000000000000000000000', coordinator.target);
   });
 
   it('perform first stage', async () => {
@@ -172,8 +172,8 @@ describeForkTest.skip('veBALL2GaugeSetupCoordinator', 'mainnet', 14616219, funct
     const totalGauges = await gaugeController.n_gauges();
     // Arbitrum gauges are added before Polygon gauges, so the last gauge should be a Polygon one, and one of the
     // prior gauges should be an Arbitrum one.
-    const polygonGaugeAddress = await gaugeController.gauges(totalGauges.sub(1));
-    const arbitrumGaugeAddress = await gaugeController.gauges(totalGauges.sub(20));
+    const polygonGaugeAddress = await gaugeController.gauges(totalGauges - BigInt(1));
+    const arbitrumGaugeAddress = await gaugeController.gauges(totalGauges - BigInt(20));
 
     expect(await polygonRootGaugeFactory.isGaugeFromFactory(polygonGaugeAddress)).to.equal(true);
     expect(await arbitrumRootGaugeFactory.isGaugeFromFactory(arbitrumGaugeAddress)).to.equal(true);
@@ -181,7 +181,7 @@ describeForkTest.skip('veBALL2GaugeSetupCoordinator', 'mainnet', 14616219, funct
     // A new epoch needs to begin for gauges to be checkpointable
     await advanceTime(WEEK);
 
-    const gaugeInterface = new ethers.utils.Interface([
+    const gaugeInterface = new ethers.Interface([
       'function checkpoint()',
       'event Checkpoint(uint256 indexed periodTime, uint256 periodEmissions)',
     ]);
@@ -197,10 +197,7 @@ describeForkTest.skip('veBALL2GaugeSetupCoordinator', 'mainnet', 14616219, funct
 
   it('renounces the admin role', async () => {
     expect(
-      await authorizer.hasRole(
-        '0x0000000000000000000000000000000000000000000000000000000000000000',
-        coordinator.address
-      )
+      await authorizer.hasRole('0x0000000000000000000000000000000000000000000000000000000000000000', coordinator.target)
     ).to.equal(false);
   });
 });

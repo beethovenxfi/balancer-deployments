@@ -2102,5 +2102,63 @@
         "disable()": "0x2d0c285e5bb0971186e8f654e0e8de6a78aaa9baf88d4cb8925527fafef4a43f"
       }
     }
+  },
+  "20260202-v3-weighted-pool-oracle-v2": {
+    "WeightedLPOracleFactory": {
+      "useAdaptor": false,
+      "actionIds": {
+        "create(address,bool,bool,address[])": "0xa33767640d6a1aeb3919998836c3757376fe6513037da36e029b2c6a50dec519",
+        "disable()": "0xa92291375756a8f44e122d109add3f54f9f168f33e1965a187e7dbcc1d9303fb"
+      }
+    }
+  },
+  "20260203-v3-stable-pool-oracle-v2": {
+    "StableLPOracleFactory": {
+      "useAdaptor": false,
+      "actionIds": {
+        "create(address,bool,bool,address[])": "0xdd06cda5564a63fd0e314533f24d58cd1fb42830636c3dffe42145b2472b342e",
+        "disable()": "0xe4de6de0d546469f959ae33feb1766b17e9fb5757d083ebda606c39d066a7fe8"
+      }
+    }
+  },
+  "20260209-v3-gyro-eclp-oracle": {
+    "EclpLPOracleFactory": {
+      "useAdaptor": false,
+      "actionIds": {
+        "create(address,bool,bool,address[])": "0x70629e2bbcd8739f7d6fa7968a4cb5f36132fdf0069a312e21cd28cd9b32c0e7",
+        "disable()": "0x205221b7362ec6ee762e268303b8876f1b82a2adc9a682db1600a3c14aec64d6"
+      }
+    }
+  },
+  "20260428-v3-reclamm-pool-v3": {
+    "ReClammPoolFactory": {
+      "useAdaptor": false,
+      "actionIds": {
+        "create(string,string,(address,uint8,address,bool)[],(address,address,address),uint256,(uint256,uint256,uint256,bool,bool),uint256,uint256,bytes32)": "0x5592d951cf354fc774b8c20fccd238198f42c3576ff312ca0a51d077b488b222",
+        "disable()": "0xbf15008f80846e2c02997bacfd212e9d833b54945f1017902b349e7a8c2d9976"
+      }
+    },
+    "ReClammPool": {
+      "useAdaptor": false,
+      "factoryOutput": "0x8d75fA0348FD940C70eA0eE5B4D9f7d3d45DC5CC",
+      "actionIds": {
+        "emitApproval(address,address,uint256)": "0x842d49d27a5afcc2fe7c713823b1a589f05c0fa5ef3426624392f4ebab951f4c",
+        "emitTransfer(address,address,uint256)": "0xf23dc16be0efffe9a51394521dd1c74b1ca94f46eff74fc48ce9db1e7a66c10f",
+        "incrementNonce()": "0xa3c1f674965b61a39e7f782c67ef95ed6b6b022fe7214a230f9ee3991242b981",
+        "onAfterAddLiquidity(address,address,uint8,uint256[],uint256[],uint256,uint256[],bytes)": "0xe3b4d1f19e22cc71bd84665e5a2f4b2b550114ef8b76055078b47d54870c6128",
+        "onAfterInitialize(uint256[],uint256,bytes)": "0x6e224f6d6569ce26838bef1a57a6d133299978afdaaf89d34be94822164e548b",
+        "onAfterRemoveLiquidity(address,address,uint8,uint256,uint256[],uint256[],uint256[],bytes)": "0xaa63d9f6b2acbf41e8f744822bd9d60dbb79eb346069f05d1a4cc09007f96cfb",
+        "onAfterSwap((uint8,address,address,uint256,uint256,uint256,uint256,uint256,uint256,address,address,bytes))": "0x755fc842a07b3ae6d170be63c130d6bafd527685089b128b0e8256392bac0b7b",
+        "onBeforeAddLiquidity(address,address,uint8,uint256[],uint256,uint256[],bytes)": "0x4b9b83a66c4da0cadd76132e1f00d9478afbde8c9265ec30ebb0baa31bf34316",
+        "onBeforeInitialize(uint256[],bytes)": "0x54ce1264b1411263a66412fc5f19bbea955783e3f7e22a8f6f6966fff4512c92",
+        "onBeforeRemoveLiquidity(address,address,uint8,uint256,uint256[],uint256[],bytes)": "0xb53acd4bf68006872dc7578ae1dfd9c716a8d9647f9ede9623fb53daa5d8c317",
+        "onBeforeSwap((uint8,uint256,uint256[],uint256,uint256,address,bytes),address)": "0x95a900c329d900a63a95a757a070245f618ff17528ff5909248fc7ed8a04f839",
+        "onSwap((uint8,uint256,uint256[],uint256,uint256,address,bytes))": "0xdaaa69b5589e1463f599dc28a9ad16ce1b9ee1315d277b24bf9dd1fe5a737a40",
+        "setCenterednessMargin(uint256)": "0xeb187e36efa09d3d26728a9a448945c79bd8cac75df196c2b1c4c03bc4cbafc8",
+        "setDailyPriceShiftExponent(uint256)": "0xf4827c1e0309781e9b5cdeb4bf492f58e626346aebcfcbf31ad020fa00716095",
+        "startPriceRatioUpdate(uint256,uint256,uint256)": "0x738c2ec73b383b904cad291fe5a3dfa4b013d718b4b458ebf46dc13baa53edf8",
+        "stopPriceRatioUpdate()": "0xfe129b27994511fbdfac72d94ca6db208913a2387f9678c6d65ef606398e34a1"
+      }
+    }
   }
 }

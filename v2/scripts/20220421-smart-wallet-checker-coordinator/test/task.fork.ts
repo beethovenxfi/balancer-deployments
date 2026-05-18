@@ -2,7 +2,7 @@ import hre from 'hardhat';
 import { expect } from 'chai';
 import { Contract } from 'ethers';
 
-import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signer-with-address';
+import { SignerWithAddress } from '@nomicfoundation/hardhat-ethers/signers';
 import * as expectEvent from '@helpers/expectEvent';
 
 import { describeForkTest } from '@src';
@@ -53,7 +53,7 @@ describeForkTest.skip('SmartWalletCheckerCoordinator', 'mainnet', 14850000, func
 
     await authorizer
       .connect(govMultisig)
-      .grantRole('0x0000000000000000000000000000000000000000000000000000000000000000', coordinator.address);
+      .grantRole('0x0000000000000000000000000000000000000000000000000000000000000000', coordinator.target);
   });
 
   it('perform first stage', async () => {
@@ -62,7 +62,7 @@ describeForkTest.skip('SmartWalletCheckerCoordinator', 'mainnet', 14850000, func
   });
 
   it('sets the smart wallet checker in veBAL', async () => {
-    expect(await veBAL.smart_wallet_checker()).to.equal(smartWalletChecker.address);
+    expect(await veBAL.smart_wallet_checker()).to.equal(smartWalletChecker.target.toString());
   });
 
   it('authorizes the multisig to add contracts to the smart wallet checker', async () => {
@@ -81,10 +81,7 @@ describeForkTest.skip('SmartWalletCheckerCoordinator', 'mainnet', 14850000, func
 
   it('renounces the admin role', async () => {
     expect(
-      await authorizer.hasRole(
-        '0x0000000000000000000000000000000000000000000000000000000000000000',
-        coordinator.address
-      )
+      await authorizer.hasRole('0x0000000000000000000000000000000000000000000000000000000000000000', coordinator.target)
     ).to.equal(false);
   });
 });

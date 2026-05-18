@@ -1,10 +1,10 @@
 import hre from 'hardhat';
 import { expect } from 'chai';
-import { BigNumber, Contract } from 'ethers';
+import { Contract } from 'ethers';
 
 import { BigNumberish } from '@helpers/numbers';
 
-import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
+import { SignerWithAddress } from '@nomicfoundation/hardhat-ethers/signers';
 import { RelayerAuthorization } from '@helpers/models/misc/signatures';
 import { WeightedPoolEncoder } from '@helpers/models/pools/weighted/encoder';
 import { SwapKind } from '@helpers/models/types/types';
@@ -29,11 +29,11 @@ describeForkTest.skip('BatchRelayerLibrary', 'mainnet', 14850000, function () {
   const ETH_DAI_POOL = '0x0b09dea16768f0799065c475be02919503cb2a3500020000000000000000001a';
 
   const CHAINED_REFERENCE_PREFIX = 'ba10';
-  function toChainedReference(key: BigNumberish): BigNumber {
+  function toChainedReference(key: BigNumberish): bigint {
     // The full padded prefix is 66 characters long, with 64 hex characters and the 0x prefix.
     const paddedPrefix = `0x${CHAINED_REFERENCE_PREFIX}${'0'.repeat(64 - CHAINED_REFERENCE_PREFIX.length)}`;
 
-    return BigNumber.from(paddedPrefix).add(key);
+    return BigInt(paddedPrefix) + BigInt(key);
   }
 
   before('run task', async () => {
@@ -70,42 +70,24 @@ describeForkTest.skip('BatchRelayerLibrary', 'mainnet', 14850000, function () {
   before('approve tokens by sender', async () => {
     // Even though the sender only starts with USDC, they will eventually get DAI and need to use it in the Vault
     await Promise.all(
-      [usdc, dai].map(async (token) => await token.connect(sender).approve(vault.address, MAX_UINT256))
+      [usdc, dai].map(async (token) => await token.connect(sender).approve(vault.target.toString(), MAX_UINT256))
     );
   });
 
   before('approve relayer at the authorizer', async () => {
     const relayerActionIds = await Promise.all(
       ['swap', 'batchSwap', 'joinPool', 'exitPool', 'setRelayerApproval', 'manageUserBalance'].map((action) =>
-        vault.getActionId(vault.interface.getSighash(action))
+        vault.getActionId(vault.interface.getFunction(action)!.selector)
       )
     );
 
     // Grant relayer permission to call all relayer functions
-    await authorizer.connect(admin).grantRoles(relayerActionIds, relayer.address);
+    await authorizer.connect(admin).grantRoles(relayerActionIds, relayer.target);
   });
 
   afterEach('disapprove relayer by sender', async () => {
-    await vault.connect(sender).setRelayerApproval(sender.address, relayer.address, false);
+    await vault.connect(sender).setRelayerApproval(sender.address, relayer.target, false);
   });
-
-  async function getApprovalCalldata(deadline: BigNumber): Promise<string> {
-    return library.interface.encodeFunctionData('setRelayerApproval', [
-      relayer.address,
-      true,
-      RelayerAuthorization.encodeCalldataAuthorization(
-        '0x',
-        deadline,
-        await RelayerAuthorization.signSetRelayerApprovalAuthorization(
-          vault,
-          sender,
-          relayer,
-          vault.interface.encodeFunctionData('setRelayerApproval', [sender.address, relayer.address, true]),
-          deadline
-        )
-      ),
-    ]);
-  }
 
   it('sender can approve relayer, swap and join', async () => {
     const deadline = await fromNow(30 * MINUTE);
@@ -154,7 +136,25 @@ describeForkTest.skip('BatchRelayerLibrary', 'mainnet', 14850000, function () {
       0, // No output reference
     ]);
 
-    await relayer.connect(sender).multicall([getApprovalCalldata(deadline), swapCalldata, joinCalldata]);
+    const getApprovalCalldata = async (deadline: bigint): Promise<string> => {
+      return library.interface.encodeFunctionData('setRelayerApproval', [
+        relayer.target,
+        true,
+        RelayerAuthorization.encodeCalldataAuthorization(
+          '0x',
+          deadline,
+          await RelayerAuthorization.signSetRelayerApprovalAuthorization(
+            vault,
+            sender,
+            relayer,
+            vault.interface.encodeFunctionData('setRelayerApproval', [sender.address, relayer.target, true]),
+            deadline
+          )
+        ),
+      ]);
+    };
+
+    await relayer.connect(sender).multicall([await getApprovalCalldata(deadline), swapCalldata, joinCalldata]);
 
     const pool = await task.instanceAt('IERC20', ETH_DAI_POOL.slice(0, 42));
     expect(await pool.balanceOf(sender.address)).to.be.gt(0);

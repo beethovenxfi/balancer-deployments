@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { Contract } from 'ethers';
 
 import { defaultAbiCoder } from '@ethersproject/abi';
-import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signer-with-address';
+import { SignerWithAddress } from '@nomicfoundation/hardhat-ethers/signers';
 
 import { describeForkTest } from '@src';
 import { Task, TaskMode } from '@src';
@@ -73,7 +73,7 @@ describeForkTest.skip('SNXRecoveryCoordinator', 'mainnet', 14945041, function ()
     withdrawCollectedFeesRole = await actionId(protocolFeeWithdrawer, 'withdrawCollectedFees');
     await authorizer
       .connect(govMultisig)
-      .grantRoles([allowlistTokenRole, withdrawCollectedFeesRole], coordinator.address);
+      .grantRoles([allowlistTokenRole, withdrawCollectedFeesRole], coordinator.target);
   });
 
   // Before coordinator execution
@@ -120,23 +120,23 @@ describeForkTest.skip('SNXRecoveryCoordinator', 'mainnet', 14945041, function ()
 
     expectTransferEvent(
       await tx.wait(),
-      { from: await vault.getProtocolFeesCollector(), to: vault.address, value: SNX_AMOUNT },
+      { from: await vault.getProtocolFeesCollector(), to: vault.target.toString(), value: SNX_AMOUNT },
       SNX
     );
 
     expectTransferEvent(
       await tx.wait(),
-      { from: await vault.getProtocolFeesCollector(), to: vault.address, value: sBTC_AMOUNT },
+      { from: await vault.getProtocolFeesCollector(), to: vault.target.toString(), value: sBTC_AMOUNT },
       sBTC
     );
   });
 
   it('renounces its permissions to allowlist tokens on the ProtocolFeesWithdrawer', async () => {
-    expect(await authorizer.hasRole(allowlistTokenRole, coordinator.address)).to.be.false;
+    expect(await authorizer.hasRole(allowlistTokenRole, coordinator.target)).to.be.false;
   });
 
   it('renounces its permissions to withdraw tokens through the ProtocolFeesWithdrawer', async () => {
-    expect(await authorizer.hasRole(withdrawCollectedFeesRole, coordinator.address)).to.be.false;
+    expect(await authorizer.hasRole(withdrawCollectedFeesRole, coordinator.target)).to.be.false;
   });
 
   it('fails on future attempts to send tokens to Vault', async () => {

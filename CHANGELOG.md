@@ -48,6 +48,8 @@
 - Deployed V3 Gyro 2-CLP Factory (V2) to all networks.
 - Deployed V3 Weighted LP Oracle Factory (V2) to all networks.
 - Deployed V3 Stable LP Oracle Factory (V2) to all networks.
+- Deployed V3 ECLP Oracle Factory to all networks.
+- Deployed V3 AutoRange (ReClamm) Pool Factory V3 to all networks.
 
 #### V2
 
@@ -84,7 +86,7 @@
 - Deployed `ComposableStablePoolFactory` V6 to all networks.
 - Deployed `VeBoost` 2.1 to Mainnet.
 - Deployed `Vault` 2.1 to Plasma.
-- Deployed `ClaimSignatureRegistry` to all networks.
+- Deployed `ClaimSignatureRegistry` (V1 and V2) to all networks.
 
 ### Deprecations
 

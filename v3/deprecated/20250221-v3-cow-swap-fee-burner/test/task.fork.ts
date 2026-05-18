@@ -4,7 +4,7 @@ import { describeForkTest, getForkedNetwork, getSigner, impersonate, Task, TaskM
 import { ZERO_ADDRESS } from '@helpers/constants';
 import { fp } from '@helpers/numbers';
 import { CowSwapFeeBurnerDeployment } from '../input';
-import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
+import { SignerWithAddress } from '@nomicfoundation/hardhat-ethers/signers';
 import { expect } from 'chai';
 
 describeForkTest.skip('CowSwapFeeBurner', 'mainnet', 21896824, function () {
@@ -48,7 +48,7 @@ describeForkTest.skip('CowSwapFeeBurner', 'mainnet', 21896824, function () {
   });
 
   it('burn tokens', async () => {
-    expect(await cowSwapFeeBurner.getOrderStatus(usdc.address)).to.equal(OrderStatus.Nonexistent);
+    expect(await cowSwapFeeBurner.getOrderStatus(usdc.target.toString())).to.equal(OrderStatus.Nonexistent);
 
     const initBalance = 1000000e6;
     const minAmountOut = initBalance / 2;
@@ -57,8 +57,11 @@ describeForkTest.skip('CowSwapFeeBurner', 'mainnet', 21896824, function () {
     // Grant burn role to admin
     await authorizer
       .connect(govMultisig)
-      .grantRole(await cowSwapFeeBurner.getActionId(cowSwapFeeBurner.interface.getSighash('burn')), usdcWhale.address);
-    await usdc.connect(usdcWhale).approve(cowSwapFeeBurner.address, initBalance);
+      .grantRole(
+        await cowSwapFeeBurner.getActionId(cowSwapFeeBurner.interface.getFunction('burn')!.selector),
+        usdcWhale.address
+      );
+    await usdc.connect(usdcWhale).approve(cowSwapFeeBurner.target.toString(), initBalance);
 
     const block = await ethers.provider.getBlock('latest');
 
@@ -66,7 +69,7 @@ describeForkTest.skip('CowSwapFeeBurner', 'mainnet', 21896824, function () {
       .connect(usdcWhale)
       .burn(
         ZERO_ADDRESS,
-        usdc.address,
+        usdc.target.toString(),
         initBalance,
         waUSDC_ADDRESS,
         minAmountOut,
@@ -74,22 +77,22 @@ describeForkTest.skip('CowSwapFeeBurner', 'mainnet', 21896824, function () {
         block.timestamp + FIVE_MINUTES
       );
 
-    const existingRawOrder = await cowSwapFeeBurner.getOrder(usdc.address);
+    const existingRawOrder = await cowSwapFeeBurner.getOrder(usdc.target.toString());
     const existingOrder = {
       sellToken: existingRawOrder.sellToken,
       buyToken: existingRawOrder.buyToken,
       receiver: existingRawOrder.receiver,
-      sellAmount: existingRawOrder.sellAmount.toNumber(),
-      buyAmount: existingRawOrder.buyAmount.toNumber(),
+      sellAmount: existingRawOrder.sellAmount,
+      buyAmount: existingRawOrder.buyAmount,
       validTo: existingRawOrder.validTo,
       appData: existingRawOrder.appData,
-      feeAmount: existingRawOrder.feeAmount.toNumber(),
+      feeAmount: existingRawOrder.feeAmount,
       kind: existingRawOrder.kind,
       partiallyFillable: existingRawOrder.partiallyFillable,
     };
 
     const expectedOrder = {
-      sellToken: usdc.address,
+      sellToken: usdc.target.toString(),
       buyToken: waUSDC_ADDRESS,
       receiver: admin.address,
       sellAmount: initBalance,
@@ -97,11 +100,11 @@ describeForkTest.skip('CowSwapFeeBurner', 'mainnet', 21896824, function () {
       validTo: block.timestamp + FIVE_MINUTES,
       appData: input.AppDataHash,
       feeAmount: 0,
-      kind: ethers.utils.keccak256(ethers.utils.toUtf8Bytes('sell')),
+      kind: ethers.keccak256(ethers.toUtf8Bytes('sell')),
       partiallyFillable: true,
     };
 
     expect(existingOrder).to.deep.equal(expectedOrder);
-    expect(await cowSwapFeeBurner.getOrderStatus(usdc.address)).to.equal(OrderStatus.Active);
+    expect(await cowSwapFeeBurner.getOrderStatus(usdc.target.toString())).to.equal(OrderStatus.Active);
   });
 });

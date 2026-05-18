@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { Contract, ContractReceipt } from 'ethers';
 
 import { bn } from '@helpers/numbers';
-import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signer-with-address';
+import { SignerWithAddress } from '@nomicfoundation/hardhat-ethers/signers';
 import { expectTransferEvent } from '@helpers/expectTransfer';
 
 import { describeForkTest } from '@src';
@@ -58,7 +58,7 @@ describeForkTest.skip('veBALGaugeFixCoordinator', 'mainnet', 14850000, function 
 
     await authorizer
       .connect(govMultisig)
-      .grantRole('0x0000000000000000000000000000000000000000000000000000000000000000', coordinator.address);
+      .grantRole('0x0000000000000000000000000000000000000000000000000000000000000000', coordinator.target);
   });
 
   it('perform first stage', async () => {
@@ -72,7 +72,7 @@ describeForkTest.skip('veBALGaugeFixCoordinator', 'mainnet', 14850000, function 
   });
 
   it('sets equal weights for all other gauge types', async () => {
-    for (const type of range(0, await gaugeController.n_gauge_types())) {
+    for (const type of range(0, Number(await gaugeController.n_gauge_types()))) {
       if (type == LMC_GAUGE_TYPE) continue;
 
       expect(await gaugeController.get_type_weight(type)).to.equal(1);
@@ -113,7 +113,7 @@ describeForkTest.skip('veBALGaugeFixCoordinator', 'mainnet', 14850000, function 
       {
         from: ZERO_ADDRESS,
         to: VEBAL_BAL_TOKEN_HOLDER,
-        value: bn('14500e18').mul(2),
+        value: bn('14500e18') * 2n,
       },
       BAL_TOKEN
     );
@@ -125,7 +125,7 @@ describeForkTest.skip('veBALGaugeFixCoordinator', 'mainnet', 14850000, function 
       {
         from: ZERO_ADDRESS,
         to: ARBITRUM_BAL_TOKEN_HOLDER,
-        value: bn('10150e18').mul(2),
+        value: bn('10150e18') * 2n,
       },
       BAL_TOKEN
     );
@@ -137,7 +137,7 @@ describeForkTest.skip('veBALGaugeFixCoordinator', 'mainnet', 14850000, function 
       {
         from: ZERO_ADDRESS,
         to: POLYGON_BAL_TOKEN_HOLDER,
-        value: bn('24650e18').mul(2),
+        value: bn('24650e18') * 2n,
       },
       BAL_TOKEN
     );
@@ -145,10 +145,7 @@ describeForkTest.skip('veBALGaugeFixCoordinator', 'mainnet', 14850000, function 
 
   it('renounces the admin role', async () => {
     expect(
-      await authorizer.hasRole(
-        '0x0000000000000000000000000000000000000000000000000000000000000000',
-        coordinator.address
-      )
+      await authorizer.hasRole('0x0000000000000000000000000000000000000000000000000000000000000000', coordinator.target)
     ).to.equal(false);
   });
 });

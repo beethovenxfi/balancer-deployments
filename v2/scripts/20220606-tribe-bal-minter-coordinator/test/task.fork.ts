@@ -2,7 +2,7 @@ import hre from 'hardhat';
 import { expect } from 'chai';
 import { Contract } from 'ethers';
 
-import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signer-with-address';
+import { SignerWithAddress } from '@nomicfoundation/hardhat-ethers/signers';
 
 import { describeForkTest } from '@src';
 import { Task, TaskMode } from '@src';
@@ -53,7 +53,7 @@ describeForkTest.skip('TribeBALMinterCoordinator', 'mainnet', 14850000, function
 
     // Gov approval for relayer
     mintRole = await actionId(balancerTokenAdmin, 'mint');
-    await authorizer.connect(govMultisig).grantRoles([mintRole], coordinator.address);
+    await authorizer.connect(govMultisig).grantRoles([mintRole], coordinator.target);
   });
 
   it('mints BAL', async () => {
@@ -64,12 +64,12 @@ describeForkTest.skip('TribeBALMinterCoordinator', 'mainnet', 14850000, function
       balToken.interface,
       'Transfer',
       { from: ZERO_ADDRESS, to: TRIBE_BAL_RECIPIENT, value: TRIBE_BAL_MINT_AMOUNT },
-      balToken.address
+      balToken.target.toString()
     );
   });
 
   it('renounces its permission to mint BAL', async () => {
-    expect(await authorizer.hasRole(mintRole, coordinator.address)).to.be.false;
+    expect(await authorizer.hasRole(mintRole, coordinator.target)).to.be.false;
   });
 
   it('fails on future attempts to mint BAL', async () => {

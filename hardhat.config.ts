@@ -1,12 +1,15 @@
-import '@nomiclabs/hardhat-ethers';
-import '@nomiclabs/hardhat-vyper';
-import '@nomiclabs/hardhat-waffle';
+import '@nomicfoundation/hardhat-toolbox';
+import '@nomicfoundation/hardhat-ethers';
 import '@nomicfoundation/hardhat-verify';
+import '@nomiclabs/hardhat-vyper';
+import '@typechain/hardhat';
 import 'hardhat-local-networks-config-plugin';
 import 'hardhat-ignore-warnings';
 import 'tsconfig-paths/register';
 
 import './src/helpers/setupTests';
+import './scripts/hyperevm-big-blocks';
+import './scripts/hyperliquid-bridge';
 
 import { task } from 'hardhat/config';
 import { TASK_TEST } from 'hardhat/builtin-tasks/task-names';
@@ -453,6 +456,10 @@ task(
 task(TASK_TEST).addOptionalParam('id', 'Specific task ID of the fork test to run.').setAction(test);
 
 export default {
+  typechain: {
+    target: 'ethers-v6',
+    outDir: '.src/typechain-types',
+  },
   mocha: {
     timeout: 600000,
   },

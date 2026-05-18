@@ -483,6 +483,16 @@
     "status": "SCRIPT",
     "version": "v2"
   },
+  "20260302-claim-signature-registry-v2": {
+    "contracts": [
+      {
+        "name": "ClaimSignatureRegistry",
+        "address": "0xDaa273AeEc06e9CCb7428a77E2abb1E4659B16D2"
+      }
+    ],
+    "status": "SCRIPT",
+    "version": "v2"
+  },
   "20241204-v3-vault": {
     "contracts": [
       {
@@ -832,7 +842,7 @@
         "address": "0x443aC03E071E38577f2c50e3a7bdE30D9CEc06C2"
       }
     ],
-    "status": "ACTIVE",
+    "status": "DEPRECATED",
     "version": "v3"
   },
   "20250813-v3-constant-price-feed": {
@@ -997,11 +1007,11 @@
     "contracts": [
       {
         "name": "WeightedLPOracleFactory",
-        "address": "0x9958317b80ee5f10457017d54c2484D722059157"
+        "address": "0x397BC40Ba584E651f4f5Cf4Ae089F0130569a1c7"
       },
       {
         "name": "MockWeightedLPOracle",
-        "address": "0x63DFB4cdB6bD225ec41f669d8D26279714B4Ad6E"
+        "address": "0xFf4C6f3d1682Bf16376568aeAf5F7624176c68eC"
       }
     ],
     "status": "ACTIVE",
@@ -1011,11 +1021,43 @@
     "contracts": [
       {
         "name": "StableLPOracleFactory",
-        "address": "0x5939ab16fDf1991B0EF603c639B6b501A7841fAB"
+        "address": "0x254F3A2974b97dc2E675f6115c845567C55f83b0"
       },
       {
         "name": "MockStableLPOracle",
-        "address": "0x0EC96D7d3d3a4fE856C30E72a3522C8Fc73D2f33"
+        "address": "0xc10DA7439B7DF61A105dD9C9a93178b93458006A"
+      }
+    ],
+    "status": "ACTIVE",
+    "version": "v3"
+  },
+  "20260209-v3-gyro-eclp-oracle": {
+    "contracts": [
+      {
+        "name": "EclpLPOracleFactory",
+        "address": "0x1780e8185199DAc45284039Bb3E3B64060D943AB"
+      },
+      {
+        "name": "MockEclpLPOracle",
+        "address": "0xc289d9691c78792a7Ac85F0CFc307D17c1E28e99"
+      }
+    ],
+    "status": "ACTIVE",
+    "version": "v3"
+  },
+  "20260428-v3-reclamm-pool-v3": {
+    "contracts": [
+      {
+        "name": "ReClammPoolHelper",
+        "address": "0x04E66e492Cc14947138608811Eeed0B17224F2b6"
+      },
+      {
+        "name": "ReClammPoolFactory",
+        "address": "0x3ccD78683efFffdDc1A16f5553C896ac6D3ab7FF"
+      },
+      {
+        "name": "MockReClammPool",
+        "address": "0x986959155bef59dE027F9C23aB023cF0b21D33cD"
       }
     ],
     "status": "ACTIVE",

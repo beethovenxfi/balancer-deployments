@@ -29,17 +29,17 @@ describeForkTest.skip('AuthorizerAdaptorEntrypoint', 'mainnet', 16041900, functi
   describe('constructor', () => {
     it('checks vault address', async () => {
       const entrypointVault = await adaptorEntrypoint.getVault();
-      expect(entrypointVault).to.equal(vault.address);
+      expect(entrypointVault).to.equal(vault.target.toString());
     });
 
     it('checks authorizer address', async () => {
       const entrypointAuthorizer = await adaptorEntrypoint.getAuthorizer();
-      expect(entrypointAuthorizer).to.equal(authorizer.address);
+      expect(entrypointAuthorizer).to.equal(authorizer.target);
     });
 
     it('checks authorizer adaptor address', async () => {
       const entrypointAuthorizerAdaptor = await adaptorEntrypoint.getAuthorizerAdaptor();
-      expect(entrypointAuthorizerAdaptor).to.equal(authorizerAdaptor.address);
+      expect(entrypointAuthorizerAdaptor).to.equal(authorizerAdaptor.target.toString());
     });
   });
 });

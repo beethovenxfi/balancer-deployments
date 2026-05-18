@@ -645,6 +645,16 @@
     "status": "SCRIPT",
     "version": "v2"
   },
+  "20260302-claim-signature-registry-v2": {
+    "contracts": [
+      {
+        "name": "ClaimSignatureRegistry",
+        "address": "0x9E22Fc4D225Dfd2D952cAe01ca097ED465Ea312E"
+      }
+    ],
+    "status": "SCRIPT",
+    "version": "v2"
+  },
   "20241204-v3-vault": {
     "contracts": [
       {
@@ -1124,7 +1134,7 @@
         "address": "0x78bE2bd092045315D30D2b91d98CAbb15333e021"
       }
     ],
-    "status": "ACTIVE",
+    "status": "DEPRECATED",
     "version": "v3"
   },
   "20250806-v3-token-pair-registry": {
@@ -1254,7 +1264,7 @@
         "address": "0x1f7821096bF1630119f58bfE1676384D159Ac166"
       }
     ],
-    "status": "ACTIVE",
+    "status": "DEPRECATED",
     "version": "v3"
   },
   "20260115-v3-weighted-pool-v2": {
@@ -1331,11 +1341,11 @@
     "contracts": [
       {
         "name": "WeightedLPOracleFactory",
-        "address": "0xa1B43C4EcB2fB798f32DfBAfc71c383EA5DA52Bd"
+        "address": "0x8bcC4794c10A8ad91e17166704473CcCCC324F43"
       },
       {
         "name": "MockWeightedLPOracle",
-        "address": "0x1291bDDF7514a36b08563BF7Fd5c8cc61671cE67"
+        "address": "0xf63c8Af0Ab3376E7CBBAb6f03633909B8847b180"
       }
     ],
     "status": "ACTIVE",
@@ -1345,11 +1355,43 @@
     "contracts": [
       {
         "name": "StableLPOracleFactory",
-        "address": "0x4A282996a433503ce22570E23eDD7900D230d825"
+        "address": "0x49EbB31e7243E287EBC3A75A6E72e7E5940f69a3"
       },
       {
         "name": "MockStableLPOracle",
-        "address": "0x24E985938459Af9edc0a48D3Ab464A9eb16a11F2"
+        "address": "0xD4bAE0132a839F11f5de62C0013355EE57fc0a77"
+      }
+    ],
+    "status": "ACTIVE",
+    "version": "v3"
+  },
+  "20260209-v3-gyro-eclp-oracle": {
+    "contracts": [
+      {
+        "name": "EclpLPOracleFactory",
+        "address": "0x75428F1f13bAF278c1a18B4DfD61d4544e0bdc92"
+      },
+      {
+        "name": "MockEclpLPOracle",
+        "address": "0x63D6b09d37490DcEFE7dA89c034169f6847117dA"
+      }
+    ],
+    "status": "ACTIVE",
+    "version": "v3"
+  },
+  "20260428-v3-reclamm-pool-v3": {
+    "contracts": [
+      {
+        "name": "ReClammPoolHelper",
+        "address": "0x55bf929459c6931b2789a73C91cad6889E6E6112"
+      },
+      {
+        "name": "ReClammPoolFactory",
+        "address": "0x0F5eF30D8440213dc7A9d7bbcf83322041a3e296"
+      },
+      {
+        "name": "MockReClammPool",
+        "address": "0x0E6C056B9f7B05bc9b03c5D2D6dD46F94B6b4740"
       }
     ],
     "status": "ACTIVE",

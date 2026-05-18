@@ -1,6 +1,7 @@
 import hre from 'hardhat';
 import { Contract } from 'ethers';
 import { describeForkTest, getForkedNetwork, Task, TaskMode } from '@src';
+import * as expectEvent from '@helpers/expectEvent';
 import { fpMul, fromFp } from '@helpers/numbers';
 import { expect } from 'chai';
 import { ZERO_ADDRESS } from '@helpers/constants';
@@ -43,10 +44,10 @@ describeForkTest.skip('StableLPOracle', 'mainnet', 23182450, function () {
     ]);
 
     const receipt = await tx.wait();
-    const event = receipt.events?.find((e: { event: string }) => e.event === 'StableLPOracleCreated');
+    const event = expectEvent.inReceipt(receipt, 'StableLPOracleCreated');
     stableLPOracle = await task.instanceAt('StableLPOracle', event?.args?.oracle);
     expect(stableLPOracle).to.not.be.undefined;
-    expect(stableLPOracle).to.not.be.eq(ZERO_ADDRESS);
+    expect(stableLPOracle).to.not.be === ZERO_ADDRESS;
   });
 
   it('checks price feeds', async () => {

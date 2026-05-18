@@ -1,6 +1,7 @@
 import hre from 'hardhat';
 import { Contract } from 'ethers';
 import { describeForkTest, getForkedNetwork, Task, TaskMode } from '@src';
+import * as expectEvent from '@helpers/expectEvent';
 import { fpMul, fromFp } from '@helpers/numbers';
 import { expect } from 'chai';
 import { ZERO_ADDRESS } from '@helpers/constants';
@@ -38,10 +39,10 @@ describeForkTest.skip('WeightedLPOracle', 'base', 34453000, function () {
     const tx = await weightedLPOracleFactory.create(WEIGHTED_POOL_ADDRESS, [USDC_FEED_ADDRESS, ETH_FEED_ADDRESS]);
 
     const receipt = await tx.wait();
-    const event = receipt.events?.find((e: { event: string }) => e.event === 'WeightedLPOracleCreated');
+    const event = expectEvent.inReceipt(receipt, 'WeightedLPOracleCreated');
     weightedLPOracle = await task.instanceAt('WeightedLPOracle', event?.args?.oracle);
     expect(weightedLPOracle).to.not.be.undefined;
-    expect(weightedLPOracle).to.not.be.eq(ZERO_ADDRESS);
+    expect(weightedLPOracle).to.not.be === ZERO_ADDRESS;
   });
 
   it('checks price feeds', async () => {

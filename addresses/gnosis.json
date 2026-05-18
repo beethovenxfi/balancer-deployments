@@ -581,6 +581,16 @@
     "status": "SCRIPT",
     "version": "v2"
   },
+  "20260302-claim-signature-registry-v2": {
+    "contracts": [
+      {
+        "name": "ClaimSignatureRegistry",
+        "address": "0x90e065b28c9B7464B44f185f5a6b8e4B4c827f2a"
+      }
+    ],
+    "status": "SCRIPT",
+    "version": "v2"
+  },
   "20241204-v3-vault": {
     "contracts": [
       {
@@ -1030,7 +1040,7 @@
         "address": "0x3004934b023631DaA3fF7Ad020aA3f5C4Ed0eC1B"
       }
     ],
-    "status": "ACTIVE",
+    "status": "DEPRECATED",
     "version": "v3"
   },
   "20250813-v3-constant-price-feed": {
@@ -1150,7 +1160,7 @@
         "address": "0xb9A47E725828d432C06Eeba654B4F865051c90e7"
       }
     ],
-    "status": "ACTIVE",
+    "status": "DEPRECATED",
     "version": "v3"
   },
   "20260115-v3-weighted-pool-v2": {
@@ -1227,11 +1237,11 @@
     "contracts": [
       {
         "name": "WeightedLPOracleFactory",
-        "address": "0x332694Ef46D880DF6Ea9593e04CB8ABEE5F81D99"
+        "address": "0x187a05fb9e4234Dd310ae74215743560D1BAA6Ac"
       },
       {
         "name": "MockWeightedLPOracle",
-        "address": "0x4B1Ca18D2D32f12BD3a6bE7Cd254ce434081A13c"
+        "address": "0xb2910659963B02af2a6B0c5f0795a3e3604D6C4e"
       }
     ],
     "status": "ACTIVE",
@@ -1241,11 +1251,43 @@
     "contracts": [
       {
         "name": "StableLPOracleFactory",
-        "address": "0x4eFcd8bcE8AC9b94bd76648e2c85bEf6c40F3228"
+        "address": "0xfA80c17EE7E382c9C541bFa4bea0514E46DCCba5"
       },
       {
         "name": "MockStableLPOracle",
-        "address": "0xe73d9025943F10D212CA802695edace037c0c389"
+        "address": "0x7848aF1E96B16c044766405eC5D90a9Bc7e45CB0"
+      }
+    ],
+    "status": "ACTIVE",
+    "version": "v3"
+  },
+  "20260209-v3-gyro-eclp-oracle": {
+    "contracts": [
+      {
+        "name": "EclpLPOracleFactory",
+        "address": "0x9Dcf4E2Fea84ee8081ABecFb6321Ae2c55E1691D"
+      },
+      {
+        "name": "MockEclpLPOracle",
+        "address": "0x2508A1abd19daDaA33577b11FC872dC3DbaC95d2"
+      }
+    ],
+    "status": "ACTIVE",
+    "version": "v3"
+  },
+  "20260428-v3-reclamm-pool-v3": {
+    "contracts": [
+      {
+        "name": "ReClammPoolHelper",
+        "address": "0x04E66e492Cc14947138608811Eeed0B17224F2b6"
+      },
+      {
+        "name": "ReClammPoolFactory",
+        "address": "0x3ccD78683efFffdDc1A16f5553C896ac6D3ab7FF"
+      },
+      {
+        "name": "MockReClammPool",
+        "address": "0xa53090a9B065f670216125746C1DEDF67510d0F2"
       }
     ],
     "status": "ACTIVE",
